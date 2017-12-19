@@ -29,15 +29,15 @@ interface IJoinpoint {
     // be passed.
     // When called with arguments, they will be passed
     // *instead of* the original arguments
-    proceed: (...[any]) => any,
+    proceed: (...args: any[]) => any,
 
     // Similar to proceed, but accepts an Array of new
     // arguments, (like Function.apply)
-    proceedApply: (...[any]) => any,
+    proceedApply: (...args: any[]) => any,
 
     // Returns the number of times proceed and/or proceedApply
     // have been called
-    proceedCount: (...[any]) => any
+    proceedCount: (...args: any[]) => any
 }
 
 @observableDecorator
@@ -122,7 +122,7 @@ export class SlidingExpirationCache<T> {
 
     // Fetch a value from the cache. Either returns the value, or if it
     // doesn't exist (or has expired) return null.
-    get(key: string, seconds?: number) {
+    get(key: string, seconds?: number): T | null {
         // If the value has expired, before returning null remove the key
         // from the storage backend to free up the space.
         if (this._cache.hasExpired(key)) {
@@ -151,6 +151,7 @@ export class SlidingExpirationCache<T> {
         this.asObservable.on(this.eventName(key), callback);
     }
 
+    // must destory, or leaking ...
     destroy() {
         if (this._timeInterval) {
             clearInterval(this._timeInterval);
