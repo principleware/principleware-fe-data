@@ -23,6 +23,7 @@
     },
     "private": true,
     "dependencies": {
+        "principleware-fe-dependencies": "https://github.com/principleware/principleware-fe-dependencies.git",
         "principleware-tinymce-tailor": "https://github.com/principleware/principleware-tinymce-tailor.git"
     },
     "devDependencies": {
