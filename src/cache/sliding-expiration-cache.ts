@@ -3,7 +3,9 @@ import * as dependencies from 'principleware-fe-dependencies';
 import { MemoryBackend } from './memory-backend';
 import { observableDecorator } from '../decorators/observable.decorator';
 
-import { IEventArgs, IObservable } from '../decorators/interfaces';
+import { IEventArgs } from '../interfaces/event-args.interface';
+import { IObservable } from '../interfaces/observable.interface';
+import { IJoinpoint } from '../interfaces/joint-point.interface';
 
 const locache = dependencies.locache;
 const meld = dependencies.meld;
@@ -12,32 +14,6 @@ const originalRemove = Object.getPrototypeOf(locache).remove;
 
 const currentTime = function() {
     return new Date().getTime();
-}
-
-interface IJoinpoint {
-    // Context (i.e. this) of the original method call
-    target: any,
-
-    // Array of arguments passed to the original method call
-    args: any[],
-
-    // Name of the original method
-    method: string,
-
-    // When, called, causes the original method to be invoked
-    // When called without arguments, the original arguments will
-    // be passed.
-    // When called with arguments, they will be passed
-    // *instead of* the original arguments
-    proceed: (...args: any[]) => any,
-
-    // Similar to proceed, but accepts an Array of new
-    // arguments, (like Function.apply)
-    proceedApply: (...args: any[]) => any,
-
-    // Returns the number of times proceed and/or proceedApply
-    // have been called
-    proceedCount: (...args: any[]) => any
 }
 
 @observableDecorator

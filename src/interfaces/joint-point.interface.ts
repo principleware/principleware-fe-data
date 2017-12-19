@@ -26,23 +26,28 @@
 // sale, use or other dealings in this Software without prior written
 // authorization.
 
-export interface IEventArgs {
-    args: any,
-    type: string,
-    preventDefault: () => void;
-    stopPropagation: () => void;
-    stopImmediatePropagation: () => void;
+export interface IJoinpoint {
+    // Context (i.e. this) of the original method call
+    target: any;
 
-    isDefaultPrevented: () => boolean;
-    isPropagationStopped: () => boolean;
-    isImmediatePropagationStopped: () => boolean;
+    // Array of arguments passed to the original method call
+    args: any[];
+
+    // Name of the original method
+    method: string;
+
+    // When, called, causes the original method to be invoked
+    // When called without arguments, the original arguments will
+    // be passed.
+    // When called with arguments, they will be passed
+    // *instead of* the original arguments
+    proceed: (...args: any[]) => any;
+
+    // Similar to proceed, but accepts an Array of new
+    // arguments, (like Function.apply)
+    proceedApply: (...args: any[]) => any;
+
+    // Returns the number of times proceed and/or proceedApply
+    // have been called
+    proceedCount: (...args: any[]) => any;
 }
-
-export interface IObservable {
-    fire(name: string, args?: IEventArgs, bubble?: boolean): IEventArgs;
-    on(name: string, callback: (...args: any[]) => any, prepend?: boolean): any;
-    off(name: string, callback: (...args: any[]) => any): any;
-    once(name: string, callback: (...args: any[]) => any): any;
-    hasEventListeners(name: string): boolean;
-}
-

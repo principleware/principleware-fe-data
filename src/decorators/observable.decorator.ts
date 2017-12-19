@@ -29,7 +29,7 @@
 
 import * as EventDispatcher from 'principleware-tinymce-tailor/util/EventDispatcher';
 
-import { IEventArgs } from './interfaces';
+import { IEventArgs } from '../interfaces/event-args.interface';
 
 const getEventDispatcher = function(obj) {
     if (!obj._eventDispatcher) {
