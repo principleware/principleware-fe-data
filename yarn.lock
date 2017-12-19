@@ -3454,6 +3454,10 @@ loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
     emojis-list "^2.0.0"
     json5 "^0.5.0"
 
+"locache@https://github.com/principleware/locache.git":
+  version "0.5.0"
+  resolved "https://github.com/principleware/locache.git#f93bb35868e541165de076d63bda399df6d83a08"
+
 lodash._basecopy@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash._basecopy/-/lodash._basecopy-3.0.1.tgz#8da0e6a876cf344c0ad8a54882111dd3c5c7ca36"
@@ -3678,6 +3682,10 @@ md5.js@^1.3.4:
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
+
+meld@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/meld/-/meld-1.3.2.tgz#8c3235fb5001b8796f8768818e9e4563b0de8066"
 
 memory-fs@^0.4.0, memory-fs@^0.4.1, memory-fs@~0.4.1:
   version "0.4.1"
@@ -4697,7 +4705,10 @@ pretty-hrtime@^1.0.0:
 
 "principleware-fe-dependencies@https://github.com/principleware/principleware-fe-dependencies.git":
   version "1.0.0"
-  resolved "https://github.com/principleware/principleware-fe-dependencies.git#0296169776fd802ff03deb4bfa0ea765cc538fd8"
+  resolved "https://github.com/principleware/principleware-fe-dependencies.git#349b269b0376a4f4fa1d4697fbf2578ccac9f9c9"
+  dependencies:
+    locache "https://github.com/principleware/locache.git"
+    meld "^1.3.2"
 
 "principleware-tinymce-tailor@https://github.com/principleware/principleware-tinymce-tailor.git":
   version "4.7.4"
