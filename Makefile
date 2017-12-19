@@ -1,7 +1,7 @@
 include Makefile.inc
 
-DST_DIR := dist
-SRC_DIR := src
+DST_DIR := src
+SRC_DIR := host
 
 PACKAGE_SOURCES := $(SRC_DIR)/decorators/interfaces.ts \
  $(SRC_DIR)/decorators/observable.decorator.ts 
