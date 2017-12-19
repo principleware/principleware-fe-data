@@ -2,6 +2,12 @@
 
 This project consists of a set of high-level building blocks about constructing observable data, memory relational database, ngrx store, and more. 
 
+## Dependencies 
+
+* principleware-tinymce-tailor 
+  
+  [Visit this project and read its doc](https://github.com/principleware/tinymce.git)
+
 ## Install 
 
 To use it, clone this repo and install it as follows 
