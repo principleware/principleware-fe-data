@@ -14,6 +14,20 @@ To use it, clone this repo and install it as follows
 
 > npm i --save-dev principleware-fe-data/dist
 
+## Development and Test
+
+Create your modules in the **src** directory, and run the following command for test
+
+> ng test
+
+To generate published modules, run 
+
+> make dist
+
+To generate documents, run 
+
+> gulp doc
+
 ## Documents 
 
 [Visit documents](https://principleware.github.io/principleware-fe-data/index.html)
