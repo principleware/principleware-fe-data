@@ -16,16 +16,19 @@ $(DST_DIR)/decorators/%.ts: $(SRC_DIR)/decorators/%.ts
 	$(CP) $(CPFlALGS) $< $@
 
 prepare_dir:
+	echo "Preparing directory ..."
 	rm -rf $(DST_DIR)
+	echo "Generating dist ..."
 
 $(PACKAGE_TARGETS): | prepare_dir
 
 dist: $(PACKAGE_TARGETS)
-	echo "Generating dist ..."
 	echo "Copying package...."
 	$(CP) $(CPFlALGS) dist-package.json $(DST_DIR)/package.json
 
 
-
+test:
+	echo $(PACKAGE_SOURCES)
+	echo $(PACKAGE_TARGETS)
 
 
