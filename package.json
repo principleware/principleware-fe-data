@@ -1,13 +1,13 @@
 {
     "name": "principleware-fe-data",
-    "version": "1.0.0",    
+    "version": "1.0.0",
     "description": "A set of data construct, including memory relational database, ngrx store, memory cache, observable object, and so on",
     "main": "index.ts",
     "repository": {
         "type": "git",
         "url": "git+https://principleware@github.com/principleware/principleware-fe-data.git"
     },
-    "author": "Tom Tang",    
+    "author": "Tom Tang",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/principleware/principleware-fe-data/issues"
@@ -23,26 +23,25 @@
     },
     "private": true,
     "dependencies": {
+        "principleware-tinymce-tailor": "https://github.com/principleware/principleware-tinymce-tailor.git"
     },
     "devDependencies": {
         "@angular/animations": "^4.0.0",
+        "@angular/cli": "1.1.1",
         "@angular/common": "^4.0.0",
         "@angular/compiler": "^4.0.0",
+        "@angular/compiler-cli": "^4.0.0",
         "@angular/core": "^4.0.0",
         "@angular/forms": "^4.0.0",
         "@angular/http": "^4.0.0",
+        "@angular/language-service": "^4.0.0",
         "@angular/platform-browser": "^4.0.0",
         "@angular/platform-browser-dynamic": "^4.0.0",
         "@angular/router": "^4.0.0",
-        "core-js": "^2.4.1",
-        "rxjs": "^5.1.0",
-        "zone.js": "^0.8.4",
-        "@angular/cli": "1.1.1",
-        "@angular/compiler-cli": "^4.0.0",
-        "@angular/language-service": "^4.0.0",
         "@types/jasmine": "2.5.45",
         "@types/node": "~6.0.60",
         "codelyzer": "~3.0.1",
+        "core-js": "^2.4.1",
         "gulp": "^3.9.1",
         "gulp-ignore": "^2.0.2",
         "gulp-typedoc": "^2.1.1",
@@ -54,11 +53,12 @@
         "karma-coverage-istanbul-reporter": "^1.2.1",
         "karma-jasmine": "~1.1.0",
         "karma-jasmine-html-reporter": "^0.2.2",
-        "principleware-tinymce-tailor": "file:///C:\\cygwin\\home\\xlongtang\\tinymce\\principleware-tinymce-tailor",
         "protractor": "~5.1.2",
+        "rxjs": "^5.1.0",
         "ts-node": "~3.0.4",
         "tslint": "~5.3.2",
         "typedoc": "^0.9.0",
-        "typescript": "~2.3.3"
+        "typescript": "~2.3.3",
+        "zone.js": "^0.8.4"
     }
 }

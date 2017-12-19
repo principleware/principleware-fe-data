@@ -3,7 +3,9 @@ include Makefile.inc
 DST_DIR := src
 SRC_DIR := host
 
-PACKAGE_SOURCES := $(SRC_DIR)/decorators/interfaces.ts \
+PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
+ $(SRC_DIR)/interfaces/event-args.interface.ts \
+ $(SRC_DIR)/interfaces/observable.interface.ts \
  $(SRC_DIR)/decorators/observable.decorator.ts 
 
 PACKAGE_TARGETS := $(subst src,dist,$(PACKAGE_SOURCES))
@@ -15,17 +17,19 @@ $(DST_DIR)/decorators/%.ts: $(SRC_DIR)/decorators/%.ts
 	$(MKDIR) -p $(dir $@)
 	$(CP) $(CPFlALGS) $< $@
 
+$(DST_DIR)/interfaces/%.ts: $(SRC_DIR)/interfaces/%.ts
+	$(ECHO) Making a file $@ from $<
+	$(MKDIR) -p $(dir $@)
+	$(CP) $(CPFlALGS) $< $@
+
 prepare_dir:
 	echo "Preparing directory ..."
 	rm -rf $(DST_DIR)
-	echo "Generating dist ..."
+	echo "Generating src ..."
 
 $(PACKAGE_TARGETS): | prepare_dir
 
 dist: $(PACKAGE_TARGETS)
-	echo "Copying package...."
-	$(CP) $(CPFlALGS) dist-package.json $(DST_DIR)/package.json
-
 
 test:
 	echo $(PACKAGE_SOURCES)

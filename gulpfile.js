@@ -2,7 +2,7 @@ var gulp = require("gulp");
 var typedoc = require("gulp-typedoc");
 gulp.task("doc", function() {
     return gulp
-        .src(["dist/**/*.ts"])
+        .src(["src/**/*.ts"])
         .pipe(typedoc({
             name: "Principleware typescipt data (1.0.0)",            
             out: "docs/",            
