@@ -2,7 +2,7 @@ import * as tools from 'principleware-tinymce-tailor/util/Tools';
 
 import { Test } from './test-class.spec';
 
-import { IObservable } from './interfaces';
+import { IObservable } from '../interfaces/observable.interface';
 
 
 import * as EventDispatcher from 'principleware-tinymce-tailor/util/EventDispatcher';
