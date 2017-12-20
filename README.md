@@ -22,7 +22,7 @@ Create your modules in the **src** directory, and run the following command for 
 
 To generate published modules, run 
 
-> make dist
+> make publish
 
 To generate documents, run 
 
