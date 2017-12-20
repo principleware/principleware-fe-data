@@ -23,7 +23,7 @@ export interface IRelationalTableOptions {
 export interface IRelationalTable {
     name: string;
     cascade: boolean;
-    dataProvider: any;
+    dataProvider(): any;
     add(model: object): IModelLike;
     addMany(models: any[]): IModelLike[];
     addForeignRelation(foreignKey: string, foreignTable: IRelationalTable): void;
@@ -82,7 +82,7 @@ export class RelationalTable implements IRelationalTable {
         return this._cascade;
     }
 
-    public get dataProvider(): any {
+    public dataProvider(): any {
         return this._dataProvider;
     }
 
@@ -106,7 +106,7 @@ export class RelationalTable implements IRelationalTable {
             if (revRelations.hasOwnProperty(revK)) {
                 const revTables = revRelations[revK];
                 hasFound = _.some(revTables, (fromTable) => {
-                    const fromTableDataProvider = fromTable.dataProvider;
+                    const fromTableDataProvider = fromTable.dataProvider();
                     const filter = {};
                     filter[revK] = item.id;
                     const anyUse = fromTableDataProvider.findWhere(filter);
@@ -130,7 +130,7 @@ export class RelationalTable implements IRelationalTable {
             if (revRelation.hasOwnProperty(revK)) {
                 const revTables = revRelation[revK];
                 revTables.forEach((reverseTable) => {
-                    const dataProvider = reverseTable.dataProvider;
+                    const dataProvider = reverseTable.dataProvider();
                     const toBeRemoved = [];
                     removedItems.forEach((item) => {
                         const filter = {};
@@ -174,7 +174,7 @@ export class RelationalTable implements IRelationalTable {
         }
 
         const table = this._foreignRelation[foreignKey];
-        return table.dataProvider.get(value);
+        return table.dataProvider().get(value);
     }
 
     /**
