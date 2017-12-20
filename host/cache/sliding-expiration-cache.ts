@@ -67,13 +67,14 @@ export class SlidingExpirationCache<T> {
             // more time is required ...
             if (event.isDefaultPrevented()) {
                 this.resetExpireKey(key, this._defaultSeconds);
-                return;
+                return false;
             }
 
             // Otherwise, continue the original logic
             // Remove all 
             this.asObservable.off(name, null);
             input.proceed();
+            return true;
         });
 
         // interval
@@ -128,8 +129,9 @@ export class SlidingExpirationCache<T> {
         // If the value has expired, before returning null remove the key
         // from the storage backend to free up the space.
         if (this._cache.hasExpired(key)) {
-            this._cache.remove(key);
-            return null;
+            if (this._cache.remove(key)) {
+                return null;
+            }
         }
 
         const valueKey = this._cache.key(key);
