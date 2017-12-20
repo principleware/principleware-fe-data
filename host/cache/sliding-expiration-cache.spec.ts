@@ -15,6 +15,12 @@ describe('Basic cache', () => {
 
         expect(cache.get('name')).toEqual('hello');
     });
+
+    it('reset', () => {
+        cache.reset();
+
+        expect(cache.get('name')).toBeNull();
+    });
 });
 
 
