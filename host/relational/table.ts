@@ -24,6 +24,7 @@ export interface IRelationalTable {
     name: string;
     cascade: boolean;
     dataProvider(): any;
+    get(id: any): IModelLike,
     add(model: object): IModelLike;
     addMany(models: any[]): IModelLike[];
     addForeignRelation(foreignKey: string, foreignTable: IRelationalTable): void;

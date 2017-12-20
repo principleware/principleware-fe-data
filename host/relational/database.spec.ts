@@ -70,7 +70,15 @@ describe('databse usecase', () => {
     it('Product has no more reference after destroying offer', () => {
         oM1.destroyFromTable();
 
+        expect(offer.get('o1')).toBeUndefined();
         expect(oP1.hasAnyReference()).toBeFalsy();
     });
+
+    it('Product has no more reference after destroying offer', () => {
+        oP1.destroyFromTable();
+
+        expect(product.get('p1')).toBeUndefined();
+    });
+
 
 });
