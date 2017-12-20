@@ -83,35 +83,35 @@ function mountFeatures() {
         options.methodKey = method;
         options.endPointKey = model.endPointKey || (model.collection ? model.collection.endPointKey : null);
         if (options.endPointKey) {
-            var configuration = globalConfigurationMapping[options.endPointKey];
-            configuration = configuration.options;
+            const configuration = globalConfigurationMapping[options.endPointKey];
+            const confOptions = configuration.options;
             if (method === 'delete') {
-                if (configuration.deleteUrl) {
-                    options.url = configuration.deleteUrl;
+                if (confOptions.deleteUrl) {
+                    options.url = confOptions.deleteUrl;
                 }
-                if (configuration.deleteContentType) {
-                    options.contentType = configuration.deleteContentType;
+                if (confOptions.deleteContentType) {
+                    options.contentType = confOptions.deleteContentType;
                 }
             } else if (method === 'update') {
-                if (configuration.updateUrl) {
-                    options.url = configuration.updateUrl;
+                if (confOptions.updateUrl) {
+                    options.url = confOptions.updateUrl;
                 }
-                if (configuration.updateContentType) {
-                    options.contentType = configuration.updateContentType;
+                if (confOptions.updateContentType) {
+                    options.contentType = confOptions.updateContentType;
                 }
             } else if (method === 'create') {
-                if (configuration.createUrl) {
-                    options.url = configuration.createUrl;
+                if (confOptions.createUrl) {
+                    options.url = confOptions.createUrl;
                 }
-                if (configuration.createContentType) {
-                    options.contentType = configuration.createContentType;
+                if (confOptions.createContentType) {
+                    options.contentType = confOptions.createContentType;
                 }
             } else if (method === 'patch') {
-                if (configuration.patchUrl) {
-                    options.url = configuration.patchUrl;
+                if (confOptions.patchUrl) {
+                    options.url = confOptions.patchUrl;
                 }
-                if (configuration.patchContentType) {
-                    options.contentType = configuration.patchContentType;
+                if (confOptions.patchContentType) {
+                    options.contentType = confOptions.patchContentType;
                 }
             }
         }
@@ -119,12 +119,11 @@ function mountFeatures() {
 
     mountedFeatureRemovers.push(remover);
     remover = mountAjaxBeforeAdvice(function(options) {
-        var configuration, policyDelegate, extraParams;
         if (options.endPointKey) {
-            configuration = globalConfigurationMapping[options.endPointKey];
-            configuration = configuration.options;
-            policyDelegate = configuration.securityDelegate;
-            extraParams = configuration.extraParams;
+            const configuration = globalConfigurationMapping[options.endPointKey];
+            const confOptions = configuration.options;
+            const policyDelegate = confOptions.securityDelegate;
+            const extraParams = confOptions.extraParams;
             if (configuration.contentType === 'application/x-www-form-urlencoded' &&
                 options.contentType === 'application/json') {
                 options.data = JSON.parse(options.data);
@@ -152,12 +151,11 @@ function mountFeatures() {
     mountedFeatureRemovers.push(remover);
 
     remover = mountSyncAroundAdvice(function(jointpoint) {
-        var options, syncDelegate, configuration;
-        options = jointpoint.args[2];
+        const options = jointpoint.args[2];
         if (options.endPointKey) {
-            configuration = globalConfigurationMapping[options.endPointKey];
+            const configuration = globalConfigurationMapping[options.endPointKey];
             if (configuration.options && configuration.options.syncDelegate) {
-                syncDelegate = configuration.options.syncDelegate;
+                const syncDelegate = configuration.options.syncDelegate;
                 // Return a promise
                 return syncDelegate(options.endPointKey, options, configuration, function() {
                     return jointpoint.proceed();
