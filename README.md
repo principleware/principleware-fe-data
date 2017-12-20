@@ -6,7 +6,7 @@ This project consists of a set of high-level building blocks about constructing 
 
 * principleware-tinymce-tailor 
   
-  [Visit this project and read its doc](https://github.com/principleware/tinymce.git)
+  [Visit this project and read its doc](https://github.com/principleware/principleware-tinymce-tailor/index.html)
 
 ## Install 
 
