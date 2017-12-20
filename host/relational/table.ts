@@ -244,11 +244,11 @@ export class RelationalTable implements IRelationalTable {
     addReverseForeignRelation(reverseForeignKey: string, table: IRelationalTable): void {
         const reverseTables = this._reverseForeignRelation[reverseForeignKey];
         if (reverseTables) {
-            const index = reverseTables.findIndex((elem) => {
+            const anyOne = _.some(reverseTables, (elem) => {
                 return elem === table;
             });
 
-            if (index !== -1) {
+            if (anyOne) {
                 throw new Error('Reverse foreign table exists: ' + reverseForeignKey);
             }
 
