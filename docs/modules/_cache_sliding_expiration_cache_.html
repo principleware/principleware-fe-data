@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;observable.decorator&quot; | Principleware typescipt data (1.0.0)</title>
+	<title>&quot;cache/sliding-expiration-cache&quot; | Principleware typescipt data (1.0.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_observable_decorator_.html">&quot;observable.decorator&quot;</a>
+					<a href="_cache_sliding_expiration_cache_.html">&quot;cache/sliding-expiration-cache&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;observable.decorator&quot;</h1>
+			<h1>External module &quot;cache/sliding-expiration-cache&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -69,69 +69,77 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter"><a href="../classes/_cache_sliding_expiration_cache_.slidingexpirationcache.html" class="tsd-kind-icon">Sliding<wbr>Expiration<wbr>Cache</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_cache_sliding_expiration_cache_.html#locache" class="tsd-kind-icon">locache</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_cache_sliding_expiration_cache_.html#meld" class="tsd-kind-icon">meld</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_cache_sliding_expiration_cache_.html#originalremove" class="tsd-kind-icon">original<wbr>Remove</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_observable_decorator_.html#geteventdispatcher" class="tsd-kind-icon">get<wbr>Event<wbr>Dispatcher</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_observable_decorator_.html#observabledecorator" class="tsd-kind-icon">observable<wbr>Decorator</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_cache_sliding_expiration_cache_.html#currenttime" class="tsd-kind-icon">current<wbr>Time</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="locache" class="tsd-anchor"></a>
+					<h3>locache</h3>
+					<div class="tsd-signature tsd-kind-icon">locache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;dependencies.locache</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in cache/sliding-expiration-cache.ts:39</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="meld" class="tsd-anchor"></a>
+					<h3>meld</h3>
+					<div class="tsd-signature tsd-kind-icon">meld<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;dependencies.meld</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in cache/sliding-expiration-cache.ts:40</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="originalremove" class="tsd-anchor"></a>
+					<h3>original<wbr>Remove</h3>
+					<div class="tsd-signature tsd-kind-icon">original<wbr>Remove<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;Object.getPrototypeOf(locache.locache).remove</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in cache/sliding-expiration-cache.ts:42</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="geteventdispatcher" class="tsd-anchor"></a>
-					<h3>get<wbr>Event<wbr>Dispatcher</h3>
+					<a name="currenttime" class="tsd-anchor"></a>
+					<h3>current<wbr>Time</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Event<wbr>Dispatcher<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">current<wbr>Time<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in observable.decorator.ts:34</li>
+									<li>Defined in cache/sliding-expiration-cache.ts:44</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>obj: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-					<a name="observabledecorator" class="tsd-anchor"></a>
-					<h3>observable<wbr>Decorator</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">observable<wbr>Decorator&lt;T&gt;<span class="tsd-signature-symbol">(</span>constructor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous class)</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in observable.decorator.ts:49</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>constructor: <span class="tsd-signature-type">T</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous class)</span>
-								<span class="tsd-signature-symbol"> &amp; </span>
-								<span class="tsd-signature-type">T</span>
-							</h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -144,20 +152,44 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_interfaces_.html">"interfaces"</a>
+						<a href="_cache_cache_backend_interface_.html">"cache/cache-<wbr>backend.interface"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_cache_memory_backend_.html">"cache/memory-<wbr>backend"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_observable_decorator_.html">"observable.decorator"</a>
+						<a href="_cache_sliding_expiration_cache_.html">"cache/sliding-<wbr>expiration-<wbr>cache"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_decorators_observable_decorator_.html">"decorators/observable.decorator"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_interfaces_event_args_interface_.html">"interfaces/event-<wbr>args.interface"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_interfaces_joint_point_interface_.html">"interfaces/joint-<wbr>point.interface"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_interfaces_observable_interface_.html">"interfaces/observable.interface"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_observable_decorator_.html#geteventdispatcher" class="tsd-kind-icon">get<wbr>Event<wbr>Dispatcher</a>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../classes/_cache_sliding_expiration_cache_.slidingexpirationcache.html" class="tsd-kind-icon">Sliding<wbr>Expiration<wbr>Cache</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_observable_decorator_.html#observabledecorator" class="tsd-kind-icon">observable<wbr>Decorator</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_cache_sliding_expiration_cache_.html#locache" class="tsd-kind-icon">locache</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_cache_sliding_expiration_cache_.html#meld" class="tsd-kind-icon">meld</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_cache_sliding_expiration_cache_.html#originalremove" class="tsd-kind-icon">original<wbr>Remove</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_cache_sliding_expiration_cache_.html#currenttime" class="tsd-kind-icon">current<wbr>Time</a>
 					</li>
 				</ul>
 			</nav>
