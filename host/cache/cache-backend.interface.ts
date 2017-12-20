@@ -31,15 +31,15 @@
 // for locache.
 export interface ICacheBackend<T> {
 
-    set(key: string, value: T): any;
+    set(key: string, value: T | number): any;
 
-    get(key: string): T | null;
+    get(key: string): T | number | null;
 
     remove(key: string): any;
 
     length(key: string): number;
 
-    key(index: number): T | null;
+    key(index: number): T | number | null;
 
     enabled(): boolean;
 }

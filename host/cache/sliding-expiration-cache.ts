@@ -39,7 +39,7 @@ import { IJoinpoint } from '../interfaces/joint-point.interface';
 const locache = dependencies.locache;
 const meld = dependencies.meld;
 
-const originalRemove = Object.getPrototypeOf(locache).remove;
+const originalRemove = Object.getPrototypeOf(locache.locache).remove;
 
 const currentTime = function() {
     return new Date().getTime();
@@ -54,12 +54,10 @@ export class SlidingExpirationCache<T> {
     constructor(private _defaultSeconds: number,
         scheduleInterval?: number) {
 
-        const backend = new MemoryBackend();
-        this._cache = locache.createCache({ storage: backend });
+        const backend = new MemoryBackend<T>();
+        this._cache = locache.locache.createCache({ storage: backend });
 
-        this._cache.remove = originalRemove;
-
-        meld.around('remove', (input: IJoinpoint) => {
+        this._cache.remove = meld.around(originalRemove, (input: IJoinpoint) => {
 
             const key = input.args[0];
             const name = this.eventName(key);
@@ -116,8 +114,7 @@ export class SlidingExpirationCache<T> {
             // seconds, so multiply by 1000.
             const ms = seconds * 1000;
             this._cache.storage.set(expirekey, currentTime() + ms);
-        }
-        else {
+        } else {
             // Remove the expire key, if no timeout is set
             this._cache.storage.remove(expirekey);
         }

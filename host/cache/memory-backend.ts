@@ -3,7 +3,7 @@ import { ICacheBackend } from './cache-backend.interface';
 
 export class MemoryBackend<T> implements ICacheBackend<T> {
 
-    private _store: { [key: string]: T };
+    private _store: { [key: string]: T | number };
 
     constructor() {
         this._store = {};
@@ -12,23 +12,23 @@ export class MemoryBackend<T> implements ICacheBackend<T> {
     /**
      * Sets a key-value pair
      */
-    set(key: string, value: T): T {
-        this._store.key = value;
+    set(key: string, value: T | number): T | number {
+        this._store[key] = value;
         return value;
     }
 
     /**
      * Gets the value for a given key.
      */
-    get(key: string): T | null {
-        return this._store.key || null;
+    get(key: string): T | number | null {
+        return this._store[key] || null;
     }
 
     /**
      * Removes the given key and its corresponding value.
      */
     remove(key: string): void {
-        delete this._store.key;
+        delete this._store[key];
     }
 
     /**
@@ -44,7 +44,7 @@ export class MemoryBackend<T> implements ICacheBackend<T> {
      * @param {Number} i the index of the key to be searched for.
      * @returns {String} The key at the index.
      */
-    key(index: number): T | null {
+    key(index: number): T | number | null {
         const keys = Object.keys(this._store);
 
         if (index >= 0 && index < keys.length) {

@@ -4705,7 +4705,7 @@ pretty-hrtime@^1.0.0:
 
 "principleware-fe-dependencies@https://github.com/principleware/principleware-fe-dependencies.git":
   version "1.0.0"
-  resolved "https://github.com/principleware/principleware-fe-dependencies.git#349b269b0376a4f4fa1d4697fbf2578ccac9f9c9"
+  resolved "https://github.com/principleware/principleware-fe-dependencies.git#27e15a7c6de487b89b6b7b1c52b0c117fde9451d"
   dependencies:
     locache "https://github.com/principleware/locache.git"
     meld "^1.3.2"
