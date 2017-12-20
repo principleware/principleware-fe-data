@@ -23,7 +23,11 @@
     },
     "private": true,
     "dependencies": {
+        "@types/backbone": "^1.3.42",
+        "@types/backbone.paginator": "^2.0.31",
+        "@types/underscore": "^1.8.6",
         "principleware-fe-dependencies": "https://github.com/principleware/principleware-fe-dependencies.git",
+        "principleware-fe-utilities": "https://github.com/principleware/principleware-fe-utilities.git",
         "principleware-tinymce-tailor": "https://github.com/principleware/principleware-tinymce-tailor.git"
     },
     "devDependencies": {
