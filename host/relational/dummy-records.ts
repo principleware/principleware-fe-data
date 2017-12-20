@@ -12,8 +12,12 @@ export class DummyRecords {
 
     private _data: { [key: string]: IModelLike };
 
+    constructor() {
+        this._data = {};
+    }
+
     getDummyRecord(key: string) {
-        if (this._data[key]) {
+        if (!this._data[key]) {
             this._data[key] = new backbone.Model({});
         }
         return this._data[key];

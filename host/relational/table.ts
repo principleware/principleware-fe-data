@@ -153,7 +153,7 @@ export class RelationalTable implements IRelationalTable {
         return this._dataProvider.get(id);
     }
 
-    destroyFromTable(thatItem: IModelLike): void {
+    private destroyFromTable(thatItem: IModelLike): void {
         const removedItem = this._dataProvider.remove(thatItem);
         if (!removedItem) {
             return;
@@ -165,7 +165,7 @@ export class RelationalTable implements IRelationalTable {
         this.removeReverseForeign([removedItem]);
     }
 
-    getForeignModel(thatItem: IModelLike, foreignKey: string): IModelLike {
+    private getForeignModel(thatItem: IModelLike, foreignKey: string): IModelLike {
         const value = thatItem.attributes[foreignKey];
 
         // If we do not have this foreignKey, then return a dummy one
