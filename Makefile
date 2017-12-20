@@ -9,7 +9,11 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/decorators/observable.decorator.ts \
  $(SRC_DIR)/cache/cache-backend.interface.ts \
  $(SRC_DIR)/cache/memory-backend.ts \
- $(SRC_DIR)/cache/sliding-expiration-cache.ts
+ $(SRC_DIR)/cache/sliding-expiration-cache.ts \
+ $(SRC_DIR)/relational/dummy-records.ts \
+ $(SRC_DIR)/relational/interfaces.ts \
+ $(SRC_DIR)/relational/table.ts \
+ $(SRC_DIR)/relational/database.ts 
 
 PACKAGE_TARGETS := $(subst $(SRC_DIR),$(DST_DIR),$(PACKAGE_SOURCES))
 
@@ -29,6 +33,12 @@ $(DST_DIR)/cache/%.ts: $(SRC_DIR)/cache/%.ts
 	$(ECHO) Making a file $@ from $<
 	$(MKDIR) -p $(dir $@)
 	$(CP) $(CPFlALGS) $< $@
+
+$(DST_DIR)/relational/%.ts: $(SRC_DIR)/relational/%.ts
+	$(ECHO) Making a file $@ from $<
+	$(MKDIR) -p $(dir $@)
+	$(CP) $(CPFlALGS) $< $@
+
 
 prepare_dir:
 	echo "Preparing directory ..."
