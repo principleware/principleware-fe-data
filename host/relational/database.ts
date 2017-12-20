@@ -11,13 +11,13 @@ import { DummyRecords } from './dummy-records';
 
 export interface IRelationalDatabase {
     getReference(): IRelationalDatabase;
-    addTable(options: IRelationalTableOptions): void;
+    addTable(options: IRelationalTableOptions): IRelationalTable;
     getTable(name: string): IRelationalTable;
-    addForeignkey(name: string, foreignKey: string);
+    addForeignkey(name: string, foreignKey: string, foreignName: string): void;
     destroy(): void;
 }
 
-export class RelationDatabase {
+export class RelationDatabase implements IRelationalDatabase {
 
     private _tableCollection: { [key: string]: IRelationalTable };
     private _referenceCounter: number;
@@ -45,8 +45,8 @@ export class RelationDatabase {
      * @function addTable
      * @param {Object} settings
      */
-    addTable(options: IRelationalTableOptions): void {
-        this._tableCollection[options.name] = new RelationalTable(options, this._dummyRecords);
+    addTable(options: IRelationalTableOptions): IRelationalTable {
+        return this._tableCollection[options.name] = new RelationalTable(options, this._dummyRecords);
     }
 
     /**
@@ -59,16 +59,16 @@ export class RelationDatabase {
     /**
      * Defines a foreign relation between two tables.
      */
-    addForeignkey(name: string, foreignKey: string) {
+    addForeignkey(name: string, foreignKey: string, foreignName: string): void {
         // Constraints
         const table = this._tableCollection[name];
         if (!table) {
             throw new Error('Undefined table: ' + name);
         }
 
-        const foreignTable = this._tableCollection[foreignKey];
+        const foreignTable = this._tableCollection[foreignName];
         if (!foreignTable) {
-            throw new Error('Undefined foreign table: ' + foreignKey);
+            throw new Error('Undefined foreign table: ' + foreignName);
         }
 
         table.addForeignRelation(foreignKey, foreignTable);
@@ -78,7 +78,7 @@ export class RelationDatabase {
     /**
      * Destroys database
      */
-    destroy() {
+    destroy(): void {
         this._referenceCounter--;
         if (this._referenceCounter === 0) {
             for (const k in this._tableCollection) {

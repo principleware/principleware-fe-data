@@ -20,6 +20,7 @@ describe('Table basic', () => {
         expect(table.get('tom').attributes.age).toBe(33);
         expect(table.get('tom').getForeignModel).toBeDefined();
         expect(table.get('tom').destroyFromTable).toBeDefined();
+        expect(table.get('tom').hasAnyReference).toBeDefined();
     });
 
     it('addMany', () => {

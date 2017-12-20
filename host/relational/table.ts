@@ -93,7 +93,7 @@ export class RelationalTable implements IRelationalTable {
     /**
      * Check if the given items are still in use.
      */
-    hasAnyReference(item: IModelLike): boolean {
+    private hasAnyReference(item: IModelLike): boolean {
         // Check if this item is in this table or not
         const itemInTable = this._dataProvider.get(item.id);
         if (!itemInTable) {
@@ -124,7 +124,7 @@ export class RelationalTable implements IRelationalTable {
     /**
      * Removing any items in other tables which depend on the deleted item.
      */
-    removeReverseForeign(removedItems: IModelLike[]): void {
+    private removeReverseForeign(removedItems: IModelLike[]): void {
         const revRelation = this._reverseForeignRelation;
         for (const revK in revRelation) {
             if (revRelation.hasOwnProperty(revK)) {
@@ -208,6 +208,11 @@ export class RelationalTable implements IRelationalTable {
         addedItem.getForeignModel = function(foreignKey: string): IModelLike {
             const thatItem = this;
             return selfContext.getForeignModel(thatItem, foreignKey);
+        };
+
+        addedItem.hasAnyReference = function(): boolean {
+            const thatItem = this;
+            return selfContext.hasAnyReference(thatItem);
         };
 
         return addedItem;

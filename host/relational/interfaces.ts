@@ -3,4 +3,5 @@ export interface IModelLike {
     attributes: any;
     destroyFromTable(): void;
     getForeignModel(foreignKey: string): IModelLike;
+    hasAnyReference(): boolean;
 }
