@@ -13,6 +13,8 @@ import { urlEncode } from 'principleware-fe-utilities/src/tools/url';
 
 import { SlidingExpirationCache } from '../cache/sliding-expiration-cache';
 
+import { IJoinpoint } from '../interfaces/joint-point.interface';
+
 import {
     mountSyncBeforeAdvice,
     mountAjaxBeforeAdvice,
@@ -26,8 +28,6 @@ const _ = dependencies.underscore;
 
 /**
  * The endpoint types for a backend service.
- * @readonly 
- * @enum {number} endPointEnum
  */
 export const endPointEnum = {
     model: 1,
@@ -150,7 +150,7 @@ function mountFeatures() {
     });
     mountedFeatureRemovers.push(remover);
 
-    remover = mountSyncAroundAdvice(function(jointpoint) {
+    remover = mountSyncAroundAdvice(function(jointpoint: IJoinpoint) {
         const options = jointpoint.args[2];
         if (options.endPointKey) {
             const configuration = globalConfigurationMapping[options.endPointKey];
