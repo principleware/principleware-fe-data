@@ -115,3 +115,53 @@ describe('void event handler', () => {
     });
 });
 
+describe("schedule off ", function() {
+    var originalTimeout;
+    var myname = 'worl';
+    let another: SlidingExpirationCache<string>;
+
+    beforeEach(function(done) {
+        originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+        another = new SlidingExpirationCache<string>(4);
+        another.set('name', 'hello', 4);
+        done();
+    });
+
+    it("takes a long time", function(done) {
+        setTimeout(function() {
+            expect(another.count).toBe(1);
+            done();
+        }, 8000);
+    });
+
+    afterEach(function() {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+    });
+});
+
+
+describe("schedule on ", function() {
+    var originalTimeout;
+    var myname = 'worl';
+    let another: SlidingExpirationCache<string>;
+
+    beforeEach(function(done) {
+        originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+        another = new SlidingExpirationCache<string>(4, 2);
+        another.set('name', 'hello', 4);
+        done();
+    });
+
+    it("takes a long time", function(done) {
+        setTimeout(function() {
+            expect(another.count).toBe(0);
+            done();
+        }, 8000);
+    });
+
+    afterEach(function() {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+    });
+});

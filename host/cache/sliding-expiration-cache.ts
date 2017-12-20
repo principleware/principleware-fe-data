@@ -155,6 +155,10 @@ export class SlidingExpirationCache<T> {
         this.asObservable.on(this.eventName(key), callback);
     }
 
+    public get count(): number {
+        return this._cache.length();
+    }
+
     reset() {
         const keys = this._cache.keys();
         keys.forEach((k) => {
