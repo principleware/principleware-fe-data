@@ -62,6 +62,9 @@ export class RelationalTable implements IRelationalTable {
             this._dataProvider = new ctor();
         }
 
+        this._addConstraint = cjs.constraint([]);
+        this._deleteConstraint = cjs.constraint([]);
+
         // Todo: Figure out parameters 
         this._onDeletedHandler = (...args: any[]) => {
             this.onDeleted();
