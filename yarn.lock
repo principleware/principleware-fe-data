@@ -3887,6 +3887,10 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   dependencies:
     minimist "0.0.8"
 
+model-js@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/model-js/-/model-js-0.2.5.tgz#59550df6a04e9f1f785f282c3a7fbcd475addfb3"
+
 ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
@@ -4747,7 +4751,7 @@ pretty-hrtime@^1.0.0:
 
 "principleware-fe-dependencies@https://github.com/principleware/principleware-fe-dependencies.git":
   version "1.0.0"
-  resolved "https://github.com/principleware/principleware-fe-dependencies.git#8d4e3042804913ce4b57f4bba801d0ea6caf4a02"
+  resolved "https://github.com/principleware/principleware-fe-dependencies.git#871f5d98a271581804f61d29c803552813f9d193"
   dependencies:
     backbone "^1.3.3"
     backbone.paginator "^2.0.6"
@@ -4755,6 +4759,7 @@ pretty-hrtime@^1.0.0:
     jquery "^3.2.1"
     locache "https://github.com/principleware/locache.git"
     meld "^1.3.2"
+    model-js "^0.2.5"
 
 "principleware-fe-utilities@https://github.com/principleware/principleware-fe-utilities.git":
   version "1.0.0"
