@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;interfaces/event-args.interface&quot; | Principleware typescipt data (1.0.0)</title>
+	<title>IModelLike | Principleware typescipt data (1.0.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,27 +54,130 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_interfaces_event_args_interface_.html">&quot;interfaces/event-args.interface&quot;</a>
+					<a href="../modules/_relational_interfaces_.html">&quot;relational/interfaces&quot;</a>
+				</li>
+				<li>
+					<a href="_relational_interfaces_.imodellike.html">IModelLike</a>
 				</li>
 			</ul>
-			<h1>External module &quot;interfaces/event-args.interface&quot;</h1>
+			<h1>Interface IModelLike</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">IModelLike</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-kind-icon">IEvent<wbr>Args</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_relational_interfaces_.imodellike.html#attributes" class="tsd-kind-icon">attributes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_relational_interfaces_.imodellike.html#id" class="tsd-kind-icon">id</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_relational_interfaces_.imodellike.html#destroyfromtable" class="tsd-kind-icon">destroy<wbr>From<wbr>Table</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_relational_interfaces_.imodellike.html#getforeignmodel" class="tsd-kind-icon">get<wbr>Foreign<wbr>Model</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_relational_interfaces_.imodellike.html#hasanyreference" class="tsd-kind-icon">has<wbr>Any<wbr>Reference</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="attributes" class="tsd-anchor"></a>
+					<h3>attributes</h3>
+					<div class="tsd-signature tsd-kind-icon">attributes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in relational/interfaces.ts:3</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in relational/interfaces.ts:2</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="destroyfromtable" class="tsd-anchor"></a>
+					<h3>destroy<wbr>From<wbr>Table</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">destroy<wbr>From<wbr>Table<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in relational/interfaces.ts:4</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="getforeignmodel" class="tsd-anchor"></a>
+					<h3>get<wbr>Foreign<wbr>Model</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Foreign<wbr>Model<span class="tsd-signature-symbol">(</span>foreignKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_relational_interfaces_.imodellike.html" class="tsd-signature-type">IModelLike</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in relational/interfaces.ts:5</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>foreignKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_relational_interfaces_.imodellike.html" class="tsd-signature-type">IModelLike</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="hasanyreference" class="tsd-anchor"></a>
+					<h3>has<wbr>Any<wbr>Reference</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Any<wbr>Reference<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in relational/interfaces.ts:6</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -85,45 +188,66 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_cache_cache_backend_interface_.html">"cache/cache-<wbr>backend.interface"</a>
+						<a href="../modules/_cache_cache_backend_interface_.html">"cache/cache-<wbr>backend.interface"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_cache_memory_backend_.html">"cache/memory-<wbr>backend"</a>
+						<a href="../modules/_cache_memory_backend_.html">"cache/memory-<wbr>backend"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_cache_sliding_expiration_cache_.html">"cache/sliding-<wbr>expiration-<wbr>cache"</a>
+						<a href="../modules/_cache_sliding_expiration_cache_.html">"cache/sliding-<wbr>expiration-<wbr>cache"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_decorators_observable_decorator_.html">"decorators/observable.decorator"</a>
+						<a href="../modules/_decorators_observable_decorator_.html">"decorators/observable.decorator"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_interfaces_event_args_interface_.html">"interfaces/event-<wbr>args.interface"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_interfaces_joint_point_interface_.html">"interfaces/joint-<wbr>point.interface"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_interfaces_observable_interface_.html">"interfaces/observable.interface"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_relational_database_.html">"relational/database"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_relational_dummy_records_.html">"relational/dummy-<wbr>records"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_interfaces_event_args_interface_.html">"interfaces/event-<wbr>args.interface"</a>
+						<a href="../modules/_relational_interfaces_.html">"relational/interfaces"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_interfaces_joint_point_interface_.html">"interfaces/joint-<wbr>point.interface"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_interfaces_observable_interface_.html">"interfaces/observable.interface"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_relational_database_.html">"relational/database"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_relational_dummy_records_.html">"relational/dummy-<wbr>records"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_relational_interfaces_.html">"relational/interfaces"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_relational_table_.html">"relational/table"</a>
+						<a href="../modules/_relational_table_.html">"relational/table"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-kind-icon">IEvent<wbr>Args</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_relational_interfaces_.imodellike.html" class="tsd-kind-icon">IModel<wbr>Like</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_relational_interfaces_.imodellike.html#attributes" class="tsd-kind-icon">attributes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_relational_interfaces_.imodellike.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_relational_interfaces_.imodellike.html#destroyfromtable" class="tsd-kind-icon">destroy<wbr>From<wbr>Table</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_relational_interfaces_.imodellike.html#getforeignmodel" class="tsd-kind-icon">get<wbr>Foreign<wbr>Model</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_relational_interfaces_.imodellike.html#hasanyreference" class="tsd-kind-icon">has<wbr>Any<wbr>Reference</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 				</ul>
 			</nav>
 		</div>

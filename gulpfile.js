@@ -12,6 +12,13 @@ gulp.task("doc", function() {
 
             experimentalDecorators: true,
             excludePrivate: true,
-            excludeExternals: true
+            excludeExternals: true,
+
+            "lib": [
+                "lib.dom.d.ts",
+                "lib.es2015.d.ts",                
+                "lib.es2016.d.ts"
+            ]
+            
         }));
 });
