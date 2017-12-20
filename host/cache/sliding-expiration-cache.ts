@@ -155,8 +155,18 @@ export class SlidingExpirationCache<T> {
         this.asObservable.on(this.eventName(key), callback);
     }
 
+    reset() {
+        const keys = this._cache.keys();
+        keys.forEach((k) => {
+            this.asObservable.off(this.eventName(k), null);
+            originalRemove.call(this._cache, k);
+        });
+    }
+
     // must destory, or leaking ...
     destroy() {
+        this.reset();
+
         if (this._timeInterval) {
             clearInterval(this._timeInterval);
         }
