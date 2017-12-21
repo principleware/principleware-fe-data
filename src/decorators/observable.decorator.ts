@@ -27,7 +27,7 @@
 // authorization.
 
 
-import * as EventDispatcher from 'principleware-tinymce-tailor/util/EventDispatcher';
+import * as EventDispatcher from 'principleware-tinymce-tailor/src/util/EventDispatcher';
 
 import { IEventArgs } from '../interfaces/event-args.interface';
 
