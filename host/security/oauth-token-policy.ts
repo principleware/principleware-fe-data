@@ -45,7 +45,7 @@ export class OAuthTokenPolicy extends PolicyBase {
         this.expiresIn = null;
         this.createdOn = null;
         this.refreshToken = '';
-    },
+    }
 
     /**
      * Feeds the policy with some settings from outside,
