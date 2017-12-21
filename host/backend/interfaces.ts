@@ -9,13 +9,13 @@ export interface IBackboneQueryParams {
 }
 
 export interface IBackboneOptions {
-    endPointKey?: string;
-
     securityDelegate: (options: any) => void;
+    url: string;
     modelId?: (attributes: any) => any;
     model?: any;
 
     syncDelegate?: any;
+    parse?: any;
 
     parseState?: (resp, queryParams, state, options) => any;
     parseRecords?: (resp, options) => any;
@@ -46,3 +46,16 @@ export interface IBackboneConfiguration {
     options: IBackboneWorkingOptions;
 }
 
+export interface IEndpointSpec {
+    [key: string]: {
+        url: string,
+        options?: IBackboneOptions
+    }
+}
+
+
+export interface IParserTableSpec {
+    [key: string]: {
+        parser: string
+    }
+}
