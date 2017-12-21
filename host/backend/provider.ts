@@ -184,12 +184,12 @@ export class GlobalProvider {
     private _myEndPointKeys: any[];
     private _uniqueNamePrefix: string;
 
-    constructor(settings: IGlobalProviderCtorOptions) {
+    constructor(ctorOptions: IGlobalProviderCtorOptions) {
         this._cache = new SlidingExpirationCache(defaultLivePeroid);
         this._dataflow = new DataFlow();
         this._myEndPointKeys = [];
-        this._host = (settings && settings.webhost) ? settings.webhost : '';
-        this._uniqueNamePrefix = this._host ? this._host.replace('.', '-') + '-' : '';
+        this._host = ctorOptions.webhost || '';
+        this._uniqueNamePrefix = this._host ? (this._host.replace('.', '-') + '-') : '';
 
         // Mount features
         mountFeatures();
@@ -321,11 +321,11 @@ export class GlobalProvider {
      */
     destroy() {
         // Delete cache
-        this._myEndPointKeys.forEach(function(oneKey) {
-            delete this.configurationMapping[oneKey];
+        this._myEndPointKeys.forEach(function(k) {
+            delete globalConfigurationMapping[k];
         });
 
-        this._myEndPointKeys = [];
+        this._myEndPointKeys.length = 0;
 
         this._cache.destroy();
 
