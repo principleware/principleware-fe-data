@@ -69,6 +69,7 @@ export class OAuthTokenPolicy extends PolicyBase {
         };
     }
 
+    // TODO: Support progress loading 
     getTokenInternal(): PromiseLike<string> {
         const params = this.getParams();
         return $.ajax({
