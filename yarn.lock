@@ -4763,7 +4763,7 @@ pretty-hrtime@^1.0.0:
 
 "principleware-fe-utilities@https://github.com/principleware/principleware-fe-utilities.git":
   version "1.0.0"
-  resolved "https://github.com/principleware/principleware-fe-utilities.git#d0e5cca80066e1a5a0eb9a31a29978f48f05912b"
+  resolved "https://github.com/principleware/principleware-fe-utilities.git#9b84a8e66444e96c863f933cf5118b96d74cfbaf"
 
 "principleware-tinymce-tailor@https://github.com/principleware/principleware-tinymce-tailor.git":
   version "4.7.4"
