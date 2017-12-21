@@ -1,18 +1,12 @@
 # Pirnciple-fe-data
 
-This project consists of a set of high-level building blocks about constructing observable data, memory relational database, ngrx store, and more. 
-
-## Dependencies 
-
-* principleware-tinymce-tailor 
-  
-  [Visit this project and read its doc](https://github.com/principleware/principleware-tinymce-tailor)
+This project consists of a set of high-level components about observable data, memory relational database, ngrx store, and more. 
 
 ## Install 
 
-To use it, clone this repo and install it as follows 
+To use it, clone this repo and install it from you local disk, or run the command as follows 
 
-> npm i --save-dev principleware-fe-data/dist
+> yarn add https://github.com/principleware/principleware-fe-data.git
 
 ## Development and Test
 
@@ -30,4 +24,4 @@ To generate documents, run
 
 ## Documents 
 
-[Visit documents](https://principleware.github.io/principleware-fe-data/index.html)
+[Visit documents](https://principleware.github.io/principleware-fe-data)
