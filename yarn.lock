@@ -4767,7 +4767,7 @@ pretty-hrtime@^1.0.0:
 
 "principleware-tinymce-tailor@https://github.com/principleware/principleware-tinymce-tailor.git":
   version "4.7.4"
-  resolved "https://github.com/principleware/principleware-tinymce-tailor.git#5c75cca1e685ff32b0e0fc98b13c2ac09c328850"
+  resolved "https://github.com/principleware/principleware-tinymce-tailor.git#fd1fa07101e0d9af98a755edb7f9680ba2087606"
 
 process-nextick-args@~1.0.6:
   version "1.0.7"
