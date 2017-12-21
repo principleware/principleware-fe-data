@@ -21,6 +21,8 @@ import {
     mountSyncAroundAdvice
 } from './event-hub';
 
+import { IBackboneOptions, IBackboneConfiguration } from './interfaces';
+
 const DataFlow = dependencies['data-flow'];
 const backbone = dependencies.backend;
 const backbonePaginator = dependencies['backbone-paginator'];
@@ -55,8 +57,8 @@ export const syncMethodEnum = {
     delete: 'delete'
 };
 
-const globalConfigurationMapping = {};
-const mountedFeatureRemovers = [];
+const globalConfigurationMapping: { [key: string]: IBackboneConfiguration } = {};
+const mountedFeatureRemovers: any[] = [];
 
 // Idempotent
 // Instance once ... 
@@ -83,35 +85,35 @@ function mountFeatures() {
         options.methodKey = method;
         options.endPointKey = model.endPointKey || (model.collection ? model.collection.endPointKey : null);
         if (options.endPointKey) {
-            const configuration = globalConfigurationMapping[options.endPointKey];
-            const confOptions = configuration.options;
+            const cfg = globalConfigurationMapping[options.endPointKey];
+            const cfgOptions = cfg.options;
             if (method === 'delete') {
-                if (confOptions.deleteUrl) {
-                    options.url = confOptions.deleteUrl;
+                if (cfgOptions.deleteUrl) {
+                    options.url = cfgOptions.deleteUrl;
                 }
-                if (confOptions.deleteContentType) {
-                    options.contentType = confOptions.deleteContentType;
+                if (cfgOptions.deleteContentType) {
+                    options.contentType = cfgOptions.deleteContentType;
                 }
             } else if (method === 'update') {
-                if (confOptions.updateUrl) {
-                    options.url = confOptions.updateUrl;
+                if (cfgOptions.updateUrl) {
+                    options.url = cfgOptions.updateUrl;
                 }
-                if (confOptions.updateContentType) {
-                    options.contentType = confOptions.updateContentType;
+                if (cfgOptions.updateContentType) {
+                    options.contentType = cfgOptions.updateContentType;
                 }
             } else if (method === 'create') {
-                if (confOptions.createUrl) {
-                    options.url = confOptions.createUrl;
+                if (cfgOptions.createUrl) {
+                    options.url = cfgOptions.createUrl;
                 }
-                if (confOptions.createContentType) {
-                    options.contentType = confOptions.createContentType;
+                if (cfgOptions.createContentType) {
+                    options.contentType = cfgOptions.createContentType;
                 }
             } else if (method === 'patch') {
-                if (confOptions.patchUrl) {
-                    options.url = confOptions.patchUrl;
+                if (cfgOptions.patchUrl) {
+                    options.url = cfgOptions.patchUrl;
                 }
-                if (confOptions.patchContentType) {
-                    options.contentType = confOptions.patchContentType;
+                if (cfgOptions.patchContentType) {
+                    options.contentType = cfgOptions.patchContentType;
                 }
             }
         }
@@ -120,11 +122,11 @@ function mountFeatures() {
     mountedFeatureRemovers.push(remover);
     remover = mountAjaxBeforeAdvice(function(options) {
         if (options.endPointKey) {
-            const configuration = globalConfigurationMapping[options.endPointKey];
-            const confOptions = configuration.options;
-            const policyDelegate = confOptions.securityDelegate;
-            const extraParams = confOptions.extraParams;
-            if (configuration.contentType === 'application/x-www-form-urlencoded' &&
+            const cfg = globalConfigurationMapping[options.endPointKey];
+            const cfgOptions = cfg.options;
+            const policyDelegate = cfgOptions.securityDelegate;
+            const extraParams = cfgOptions.extraParams;
+            if (cfgOptions.contentType === 'application/x-www-form-urlencoded' &&
                 options.contentType === 'application/json') {
                 options.data = JSON.parse(options.data);
                 if (extraParams) {
@@ -134,7 +136,7 @@ function mountFeatures() {
                     policyDelegate(options);
                 }
                 options.data = urlEncode(options.data);
-                options.contentType = configuration.contentType;
+                options.contentType = cfgOptions.contentType;
             } else {
                 if (extraParams) {
                     _.extend(options.data, extraParams);
@@ -153,11 +155,12 @@ function mountFeatures() {
     remover = mountSyncAroundAdvice(function(jointpoint: IJoinpoint) {
         const options = jointpoint.args[2];
         if (options.endPointKey) {
-            const configuration = globalConfigurationMapping[options.endPointKey];
-            if (configuration.options && configuration.options.syncDelegate) {
-                const syncDelegate = configuration.options.syncDelegate;
+            const cfg = globalConfigurationMapping[options.endPointKey];
+            const cfgOptions = cfg.options;
+            if (cfgOptions.syncDelegate) {
+                const syncDelegate = cfgOptions.syncDelegate;
                 // Return a promise
-                return syncDelegate(options.endPointKey, options, configuration, function() {
+                return syncDelegate(options.endPointKey, options, cfg, function() {
                     return jointpoint.proceed();
                 });
             }
@@ -196,22 +199,22 @@ export class GlobalProvider {
         return this._host;
     }
 
-    public get configurationMapping(): any {
+    public get configurationMapping(): { [key: string]: any } {
         return globalConfigurationMapping;
     }
 
     /**
      * Defines an endpoint for a kind of service.
      */
-    addEndPoint(name: string, tag: number, options: object) {
-        const confMapping = this.configurationMapping;
+    addEndPoint(name: string, tag: number, options: IBackboneOptions) {
+        const cfgMapping = this.configurationMapping;
         const dataflow = this._dataflow;
         const uniqueName = this._uniqueNamePrefix + name;
 
-        if (confMapping[uniqueName]) {
+        if (cfgMapping[uniqueName]) {
             throw new Error('Redefined endpoint: ' + name);
         }
-        confMapping[uniqueName] = {
+        cfgMapping[uniqueName] = {
             options: _.extend(options, { endPointKey: uniqueName }),
             tag: tag
         };
@@ -240,27 +243,27 @@ export class GlobalProvider {
         const uniqueName = this._uniqueNamePrefix + name;
 
         if (ignoreCache !== true) {
-            const value = cache.get(uniqueName);
-            if (value) {
-                return value;
+            const cachedValue = cache.get(uniqueName);
+            if (cachedValue) {
+                return cachedValue;
             }
         }
 
-        const confMapping = this.configurationMapping;
+        const cfgMapping = this.configurationMapping;
 
-        const configuration = confMapping[uniqueName];
-        if (!configuration) {
+        const cfg = cfgMapping[uniqueName];
+        if (!cfg) {
             const error = new Error('No given endpoint is defined for: ' + name);
             throw error;
         }
 
         let value = null;
-        if (configuration.tag === endPointEnum.model) {
-            value = backbone.Model.extend(configuration.options);
-        } else if (configuration.tag === endPointEnum.collection) {
-            value = backbone.Collection.extend(configuration.options);
-        } else if (configuration.tag === endPointEnum.pagedCollection) {
-            value = backbone.PageableCollection.extend(configuration.options);
+        if (cfg.tag === endPointEnum.model) {
+            value = backbone.Model.extend(cfg.options);
+        } else if (cfg.tag === endPointEnum.collection) {
+            value = backbone.Collection.extend(cfg.options);
+        } else if (cfg.tag === endPointEnum.pagedCollection) {
+            value = backbone.PageableCollection.extend(cfg.options);
         } else {
             throw new Error('Not implemented');
         }
@@ -276,8 +279,8 @@ export class GlobalProvider {
      */
     getConfiguration(endPointKey: string) {
         const uniqueName = this._uniqueNamePrefix + endPointKey;
-        const confMapping = this.configurationMapping;
-        return confMapping[uniqueName];
+        const cfgMapping = this.configurationMapping;
+        return cfgMapping[uniqueName];
     }
 
     /**
