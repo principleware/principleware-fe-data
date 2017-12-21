@@ -49,7 +49,7 @@ const getEventDispatcher = function(obj) {
 export function observableDecorator<T extends { new(...args: any[]) }>(constructor: T) {
     return class extends constructor {
 
-        public fire(name: string, evt: { args?: any }, bubble?: boolean): IEventArgs {
+        public fire(name: string, evt: {}, bubble?: boolean): IEventArgs {
             const self = this;
 
             // Prevent all events except the remove event after the instance has been removed

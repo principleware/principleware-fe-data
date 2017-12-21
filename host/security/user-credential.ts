@@ -106,7 +106,7 @@ export class UserCredential {
 
         this._user = data;
         const evt = {
-            args: data
+            user: data
         };
         this.asObservable.fire('change:user', evt);
     }
