@@ -16,6 +16,16 @@ import { PolicyBase } from './policy-base';
 const _ = dependencies.underscore;
 const $ = dependencies.jquery;
 
+export function adaptToOAuthToken(data): IOAuthToken {
+    data = data || {};
+    data.expiresIn = data.expiresIn || 0;
+    data.createdOn = data.createdOn || 0;
+    data.token = data.token || '';
+    data.refreshToken = data.refreshToken || '';
+
+    return data;
+}
+
 export class OAuthTokenPolicy extends PolicyBase {
 
     protected clientId: string;
@@ -87,7 +97,7 @@ export class OAuthTokenPolicy extends PolicyBase {
     /**
      * Returns if the token is expired or not.
      */
-    isExpired() {
+    isExpired(): boolean {
         if (!this.token || this.token.length < 1) {
             return true;
         }
