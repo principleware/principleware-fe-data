@@ -16,7 +16,13 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/relational/database.ts \
  $(SRC_DIR)/backend/interfaces.ts \
  $(SRC_DIR)/backend/event-hub.ts \
- $(SRC_DIR)/backend/provider.ts
+ $(SRC_DIR)/backend/provider.ts \
+ $(SRC_DIR)/security/interfaces.ts \
+ $(SRC_DIR)/security/policy-base.ts \
+ $(SRC_DIR)/security/oauth-token-policy.ts \
+ $(SRC_DIR)/security/user-credential.ts \
+ $(SRC_DIR)/net/inter-op.ts \
+ $(SRC_DIR)/net/xhr-promise.ts
 
 PACKAGE_TARGETS := $(subst $(SRC_DIR),$(DST_DIR),$(PACKAGE_SOURCES))
 
@@ -43,6 +49,16 @@ $(DST_DIR)/relational/%.ts: $(SRC_DIR)/relational/%.ts
 	$(CP) $(CPFlALGS) $< $@
 
 $(DST_DIR)/backend/%.ts: $(SRC_DIR)/backend/%.ts
+	$(ECHO) Making a file $@ from $<
+	$(MKDIR) -p $(dir $@)
+	$(CP) $(CPFlALGS) $< $@
+
+$(DST_DIR)/net/%.ts: $(SRC_DIR)/net/%.ts
+	$(ECHO) Making a file $@ from $<
+	$(MKDIR) -p $(dir $@)
+	$(CP) $(CPFlALGS) $< $@
+
+$(DST_DIR)/security/%.ts: $(SRC_DIR)/security/%.ts
 	$(ECHO) Making a file $@ from $<
 	$(MKDIR) -p $(dir $@)
 	$(CP) $(CPFlALGS) $< $@

@@ -88,15 +88,14 @@ export class XHRPromise {
 
         /**
          * Builds a promise for sending requests to the server.
-         * @param {} params
          */
-        const requestPromise: (any) => Promise<any> = (params) => {
+        const requestPromise: (any) => Promise<any> = (data) => {
             return new Promise((resolve, reject) => {
                 const xhrSettings = {
                     url: settings.url,
                     content_type: settings.content_type,
                     type: settings.type,
-                    data: params,
+                    data: data,
                     async: settings.async,
                     success: resolve,
                     error: reject,
@@ -125,14 +124,13 @@ export class XHRPromise {
         }
 
         let result = requestPromise(params);
+        result.then(onResolve, onReject);
         result = result.then(function(data) {
             if (settings.response_type === 'json') {
                 data = JSON.parse(data);
             }
             return data;
         });
-        // Result 
-        result = result.then(onResolve, onReject);
         return result;
     }
 }
