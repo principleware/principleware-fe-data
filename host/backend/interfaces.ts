@@ -19,7 +19,7 @@ export interface IBackboneOptions {
 
     parseState?: (resp, queryParams, state, options) => any;
     parseRecords?: (resp, options) => any;
-    queryParams: IBackboneQueryParams;
+    queryParams?: IBackboneQueryParams;
 
     deleteUrl?: string;
     deleteContentType?: string;

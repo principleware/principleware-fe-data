@@ -24,8 +24,7 @@ import {
 import { IBackboneOptions, IBackboneConfiguration } from './interfaces';
 
 const DataFlow = dependencies['data-flow'];
-const backbone = dependencies.backend;
-const backbonePaginator = dependencies['backbone-paginator'];
+const backbone = dependencies['backbone'];
 const _ = dependencies.underscore;
 
 /**
