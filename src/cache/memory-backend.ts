@@ -40,18 +40,15 @@ export class MemoryBackend<T> implements ICacheBackend<T> {
 
     /**
      * Retuns the ith key in the store table.
-     * @function key
-     * @param {Number} i the index of the key to be searched for.
-     * @returns {String} The key at the index.
      */
-    key(index: number): T | number | null {
+    key(index: number): string {
         const keys = Object.keys(this._store);
 
         if (index >= 0 && index < keys.length) {
-            return this._store[keys[index]];
+            return keys[index];
         }
 
-        return null;
+        return '';
     }
 
     /**

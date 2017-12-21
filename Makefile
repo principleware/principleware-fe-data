@@ -13,7 +13,10 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/relational/dummy-records.ts \
  $(SRC_DIR)/relational/interfaces.ts \
  $(SRC_DIR)/relational/table.ts \
- $(SRC_DIR)/relational/database.ts 
+ $(SRC_DIR)/relational/database.ts \
+ $(SRC_DIR)/backend/interfaces.ts \
+ $(SRC_DIR)/backend/event-hub.ts \
+ $(SRC_DIR)/backend/provider.ts
 
 PACKAGE_TARGETS := $(subst $(SRC_DIR),$(DST_DIR),$(PACKAGE_SOURCES))
 
@@ -35,6 +38,11 @@ $(DST_DIR)/cache/%.ts: $(SRC_DIR)/cache/%.ts
 	$(CP) $(CPFlALGS) $< $@
 
 $(DST_DIR)/relational/%.ts: $(SRC_DIR)/relational/%.ts
+	$(ECHO) Making a file $@ from $<
+	$(MKDIR) -p $(dir $@)
+	$(CP) $(CPFlALGS) $< $@
+
+$(DST_DIR)/backend/%.ts: $(SRC_DIR)/backend/%.ts
 	$(ECHO) Making a file $@ from $<
 	$(MKDIR) -p $(dir $@)
 	$(CP) $(CPFlALGS) $< $@

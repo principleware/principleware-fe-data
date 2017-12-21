@@ -39,7 +39,7 @@ export interface ICacheBackend<T> {
 
     length(key: string): number;
 
-    key(index: number): T | number | null;
+    key(index: number): string;
 
     enabled(): boolean;
 }

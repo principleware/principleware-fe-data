@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IModelLike | Principleware typescipt data (1.0.0)</title>
+	<title>IRelationDatabaseSchema | Principleware typescipt data (1.0.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,10 +57,10 @@
 					<a href="../modules/_relational_interfaces_.html">&quot;relational/interfaces&quot;</a>
 				</li>
 				<li>
-					<a href="_relational_interfaces_.imodellike.html">IModelLike</a>
+					<a href="_relational_interfaces_.irelationdatabaseschema.html">IRelationDatabaseSchema</a>
 				</li>
 			</ul>
-			<h1>Interface IModelLike</h1>
+			<h1>Interface IRelationDatabaseSchema</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IModelLike</span>
+						<span class="target">IRelationDatabaseSchema</span>
 					</li>
 				</ul>
 			</section>
@@ -82,16 +82,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_relational_interfaces_.imodellike.html#attributes" class="tsd-kind-icon">attributes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_relational_interfaces_.imodellike.html#id" class="tsd-kind-icon">id</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_relational_interfaces_.imodellike.html#destroyfromtable" class="tsd-kind-icon">destroy<wbr>From<wbr>Table</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_relational_interfaces_.imodellike.html#getforeignmodel" class="tsd-kind-icon">get<wbr>Foreign<wbr>Model</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_relational_interfaces_.imodellike.html#hasanyreference" class="tsd-kind-icon">has<wbr>Any<wbr>Reference</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_relational_interfaces_.irelationdatabaseschema.html#assocations" class="tsd-kind-icon">assocations</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_relational_interfaces_.irelationdatabaseschema.html#leaftables" class="tsd-kind-icon">leaf<wbr>Tables</a></li>
 							</ul>
 						</section>
 					</div>
@@ -100,84 +92,60 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="attributes" class="tsd-anchor"></a>
-					<h3>attributes</h3>
-					<div class="tsd-signature tsd-kind-icon">attributes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="assocations" class="tsd-anchor"></a>
+					<h3>assocations</h3>
+					<div class="tsd-signature tsd-kind-icon">assocations<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in relational/interfaces.ts:3</li>
+							<li>Defined in relational/interfaces.ts:18</li>
 						</ul>
 					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">object</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>relations<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter-index-signature">
+												<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="leaftables" class="tsd-anchor"></a>
+					<h3>leaf<wbr>Tables</h3>
+					<div class="tsd-signature tsd-kind-icon">leaf<wbr>Tables<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in relational/interfaces.ts:2</li>
+							<li>Defined in relational/interfaces.ts:10</li>
 						</ul>
 					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="destroyfromtable" class="tsd-anchor"></a>
-					<h3>destroy<wbr>From<wbr>Table</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">destroy<wbr>From<wbr>Table<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in relational/interfaces.ts:4</li>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">object</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> relations<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter-index-signature">
+												<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+									</li>
 								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="getforeignmodel" class="tsd-anchor"></a>
-					<h3>get<wbr>Foreign<wbr>Model</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Foreign<wbr>Model<span class="tsd-signature-symbol">(</span>foreignKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_relational_interfaces_.imodellike.html" class="tsd-signature-type">IModelLike</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in relational/interfaces.ts:5</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>foreignKey: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_relational_interfaces_.imodellike.html" class="tsd-signature-type">IModelLike</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="hasanyreference" class="tsd-anchor"></a>
-					<h3>has<wbr>Any<wbr>Reference</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">has<wbr>Any<wbr>Reference<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in relational/interfaces.ts:6</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -233,33 +201,24 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_relational_interfaces_.imodellike.html" class="tsd-kind-icon">IModel<wbr>Like</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_relational_interfaces_.imodellike.html" class="tsd-kind-icon">IModel<wbr>Like</a>
+						<a href="_relational_interfaces_.irelationdatabaseschema.html" class="tsd-kind-icon">IRelation<wbr>Database<wbr>Schema</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_relational_interfaces_.imodellike.html#attributes" class="tsd-kind-icon">attributes</a>
+								<a href="_relational_interfaces_.irelationdatabaseschema.html#assocations" class="tsd-kind-icon">assocations</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_relational_interfaces_.imodellike.html#id" class="tsd-kind-icon">id</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_relational_interfaces_.imodellike.html#destroyfromtable" class="tsd-kind-icon">destroy<wbr>From<wbr>Table</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_relational_interfaces_.imodellike.html#getforeignmodel" class="tsd-kind-icon">get<wbr>Foreign<wbr>Model</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_relational_interfaces_.imodellike.html#hasanyreference" class="tsd-kind-icon">has<wbr>Any<wbr>Reference</a>
+								<a href="_relational_interfaces_.irelationdatabaseschema.html#leaftables" class="tsd-kind-icon">leaf<wbr>Tables</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_relational_interfaces_.irelationdatabaseschema.html" class="tsd-kind-icon">IRelation<wbr>Database<wbr>Schema</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
