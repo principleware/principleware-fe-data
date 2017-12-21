@@ -49,26 +49,26 @@ const getEventDispatcher = function(obj) {
 export function observableDecorator<T extends { new(...args: any[]) }>(constructor: T) {
     return class extends constructor {
 
-        public fire(name: string, args?: IEventArgs, bubble?: boolean): IEventArgs {
+        public fire(name: string, evt: { args?: any }, bubble?: boolean): IEventArgs {
             const self = this;
 
             // Prevent all events except the remove event after the instance has been removed
             if (self.removed && name !== 'remove') {
-                return args;
+                return null;
             }
 
-            args = getEventDispatcher(self).fire(name, args, bubble);
+            const newEvt = getEventDispatcher(self).fire(name, evt, bubble);
 
             // Bubble event up to parents
             if (bubble !== false && self.parent) {
                 let parent = self.parent();
-                while (parent && !args.isPropagationStopped()) {
-                    parent.fire(name, args, false);
+                while (parent && !newEvt.isPropagationStopped()) {
+                    parent.fire(name, newEvt, false);
                     parent = parent.parent();
                 }
             }
 
-            return args;
+            return newEvt;
         }
 
 
