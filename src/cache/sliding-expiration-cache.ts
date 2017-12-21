@@ -61,7 +61,7 @@ export class SlidingExpirationCache<T> {
 
             const key = input.args[0];
             const name = this.eventName(key);
-            const event = this.asObservable.fire(name);
+            const event = this.asObservable.fire(name, {});
 
             // if the event is stopped, then stop doing it
             // more time is required ...
