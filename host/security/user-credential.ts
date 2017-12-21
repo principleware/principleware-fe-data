@@ -95,11 +95,11 @@ export class UserCredential {
 
 
     // Does not trigger any event
-    readFrom(data): void {
+    readFrom(data: IUserProfile): void {
         this._user = _.extend(this._user, data);
     }
 
-    setUser(data): void {
+    setUser(data: IUserProfile): void {
         if (isEquiva(this._user, data)) {
             return;
         }
@@ -111,7 +111,7 @@ export class UserCredential {
         this.asObservable.fire('change:user', evt);
     }
 
-    extendUser(data): void {
+    extendUser(data: IUserProfile): void {
         const newData = _.extend({}, this._user, data);
         this.setUser(newData);
     }
