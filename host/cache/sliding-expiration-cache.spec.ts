@@ -60,7 +60,7 @@ describe('stop expiring', () => {
         return evt;
     };
 
-    another.addExpireHandler('name', callback);
+    another.addOnExpireHandler('name', callback);
 
     beforeEach(function() {
         originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
@@ -92,7 +92,7 @@ describe('void event handler', () => {
         return evt;
     };
 
-    another.addExpireHandler('name', callback);
+    another.addOnExpireHandler('name', callback);
 
     beforeEach(function() {
         originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
@@ -101,7 +101,7 @@ describe('void event handler', () => {
 
     it("takes a long time", function(done) {
 
-        another.removeExpireHandler('name', callback);
+        another.rmOnExpireHandler('name', callback);
 
         setTimeout(function() {
             myname = another.get('name');
@@ -114,6 +114,69 @@ describe('void event handler', () => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
     });
 });
+
+
+describe('after remove', () => {
+    var originalTimeout;
+    var myname = 'worl';
+    const another = new SlidingExpirationCache<string>(2);
+
+    beforeEach(function(done) {
+        originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+
+        another.set('name', 'hello', 2, function(evt) {
+            myname = 'gogo';
+            done();
+            return evt;
+        });
+
+        setTimeout(function() {
+            another.get('name');
+        }, 3000);
+
+    });
+
+    it("takes a long time", function(done) {
+        expect(myname).toEqual('gogo');
+        done();
+    });
+
+    afterEach(function() {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+    });
+});
+
+
+describe('clean and then triggerd after remove', () => {
+    var originalTimeout;
+    var myname = 'worl';
+    const another = new SlidingExpirationCache<string>(2);
+
+    beforeEach(function(done) {
+        originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+
+        another.set('name', 'hello', 2, function(evt) {
+            myname = 'gogo';
+            done();
+            return evt;
+        });
+
+        another.reset();
+    });
+
+    it("takes a long time", function(done) {
+        expect(myname).toEqual('gogo');
+        done();
+    });
+
+    afterEach(function() {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+    });
+});
+
+
 
 describe("schedule off ", function() {
     var originalTimeout;

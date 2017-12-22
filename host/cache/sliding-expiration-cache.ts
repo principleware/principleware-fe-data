@@ -60,8 +60,8 @@ export class SlidingExpirationCache<T> {
         this._cache.remove = meld.around(originalRemove, (input: IJoinpoint) => {
 
             const key = input.args[0];
-            const name = this.eventName(key);
-            const event = this.asObservable.fire(name, {});
+            const onExpireEvtName = this.onExpireEventName(key);
+            const event = this.asObservable.fire(onExpireEvtName, {});
 
             // if the event is stopped, then stop doing it
             // more time is required ...
@@ -71,9 +71,14 @@ export class SlidingExpirationCache<T> {
             }
 
             // Otherwise, continue the original logic
-            // Remove all 
-            this.asObservable.off(name, null);
+            // Remove all listener
+            this.asObservable.off(onExpireEvtName, null);
             input.proceed();
+
+            // fire event
+            const afterRemoveEvtName = this.afterRemoveEventName(key);
+            this.asObservable.fire(afterRemoveEvtName, {});
+
             return true;
         });
 
@@ -87,8 +92,12 @@ export class SlidingExpirationCache<T> {
         }
     }
 
-    private eventName(key: string): string {
-        return 'expire:' + key;
+    private onExpireEventName(key: string): string {
+        return 'onExpire:' + key;
+    }
+
+    private afterRemoveEventName(key: string): string {
+        return 'afterRemove:' + key;
     }
 
     private resetExpireKey(key: string, seconds: number) {
@@ -105,7 +114,7 @@ export class SlidingExpirationCache<T> {
 
     // Given a key, a value and an optional number of seconds store the value
     // in the storage backend.
-    set(key: string, value: T, seconds: number) {
+    set(key: string, value: T, seconds: number, afterRemoveCallback?: (evt: IEventArgs) => IEventArgs) {
 
         const expirekey = this._cache.expirekey(key);
         const valueKey = this._cache.key(key);
@@ -118,6 +127,10 @@ export class SlidingExpirationCache<T> {
         } else {
             // Remove the expire key, if no timeout is set
             this._cache.storage.remove(expirekey);
+        }
+
+        if (afterRemoveCallback) {
+            this.asObservable.once(this.afterRemoveEventName(key), afterRemoveCallback);
         }
 
         return this._cache.storage.set(valueKey, value);
@@ -147,12 +160,12 @@ export class SlidingExpirationCache<T> {
         return value;
     }
 
-    removeExpireHandler(key: string, callback: (evt: IEventArgs) => IEventArgs): void {
-        this.asObservable.off(this.eventName(key), callback);
+    rmOnExpireHandler(key: string, callback: (evt: IEventArgs) => IEventArgs): void {
+        this.asObservable.off(this.onExpireEventName(key), callback);
     }
 
-    addExpireHandler(key: string, callback: (evt: IEventArgs) => IEventArgs): void {
-        this.asObservable.on(this.eventName(key), callback);
+    addOnExpireHandler(key: string, callback: (evt: IEventArgs) => IEventArgs): void {
+        this.asObservable.on(this.onExpireEventName(key), callback);
     }
 
     public get count(): number {
@@ -162,8 +175,9 @@ export class SlidingExpirationCache<T> {
     reset() {
         const keys = this._cache.keys();
         keys.forEach((k) => {
-            this.asObservable.off(this.eventName(k), null);
+            this.asObservable.off(this.onExpireEventName(k), null);
             originalRemove.call(this._cache, k);
+            this.asObservable.fire(this.afterRemoveEventName(k), {});
         });
     }
 
