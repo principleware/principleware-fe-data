@@ -120,7 +120,7 @@ export class OAuthTokenPolicy extends PolicyBase {
      * Applys the token to the given options.
      */
     applyTo(options: any): void {
-        options.beforeSend = function(xhr) {
+        options.beforeSend = (xhr) => {
             xhr.setRequestHeader('Authorization', ("Bearer ".concat(this.token)));
         };
     }
