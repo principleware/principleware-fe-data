@@ -1,8 +1,9 @@
 import { UserCredential } from './user-credential'
+import { PolicyBase } from './policy-base';
 
 describe('user credential basic', () => {
 
-    let credential: UserCredential = new UserCredential(null);
+    let credential: UserCredential<PolicyBase> = new UserCredential<PolicyBase>(null);
 
     it('readFrom', () => {
         credential.readFrom({
@@ -43,7 +44,7 @@ describe('user credential basic', () => {
 
 describe('subscribe', () => {
 
-    let credential: UserCredential = new UserCredential(null);
+    let credential: UserCredential<PolicyBase> = new UserCredential<PolicyBase>(null);
 
     let getMessage = 0;
 
@@ -74,7 +75,7 @@ describe('subscribe', () => {
 describe('set again again', () => {
     var originalTimeout;
 
-    let credential: UserCredential = new UserCredential(null);
+    let credential: UserCredential<PolicyBase> = new UserCredential<PolicyBase>(null);
 
     let getMessage = 0;
 
