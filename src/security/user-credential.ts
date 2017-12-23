@@ -78,14 +78,16 @@ export interface IUserProfile {
 // immutable 
 
 @observableDecorator
-export class UserCredential {
+export class UserCredential<T extends PolicyBase> {
 
+    private _security: T;
     private _user: IUserProfile;
     /**
      * @constructor Credential
      */
-    constructor(public authPolicy: PolicyBase) {
+    constructor(public authPolicy: T) {
         this._user = {};
+        this._security = authPolicy;
     }
 
     public get asObservable(): IObservable {
@@ -93,6 +95,12 @@ export class UserCredential {
         return self as IObservable;
     }
 
+    public security(value?: T): T {
+        if (value) {
+            this._security = value;
+        }
+        return this._security;
+    }
 
     // Does not trigger any event
     readFrom(data: IUserProfile): void {
