@@ -61,12 +61,5 @@ export function sendPromise(options: IXHRCtorOption): PromiseLike<any> {
         XHR.send(xhrSettings);
     });
 
-    promise = promise.then(function(data) {
-        if (settings.response_type === 'json') {
-            data = JSON.parse(data);
-        }
-        return data;
-    });
-
     return promise;
 }
