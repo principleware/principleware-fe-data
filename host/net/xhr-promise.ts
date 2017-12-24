@@ -41,6 +41,7 @@ export function sendPromise(options: IXHRCtorOption): PromiseLike<any> {
         const xhrSettings = {
             url: settings.url,
             content_type: settings.content_type,
+            response_type: settings.response_type,
             type: settings.type,
             data: settings.data,
             async: settings.async,
