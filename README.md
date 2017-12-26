@@ -1,4 +1,4 @@
-# Pirnciple-fe-data
+# Pirncipleware-fe-data
 
 This project consists of a set of high-level components about observable data, memory relational database, ngrx store, and more. 
 
