@@ -22,7 +22,13 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/security/oauth-token-policy.ts \
  $(SRC_DIR)/security/user-credential.ts \
  $(SRC_DIR)/net/inter-op.ts \
- $(SRC_DIR)/net/xhr-promise.ts
+ $(SRC_DIR)/net/xhr-promise.ts \
+ $(SRC_DIR)/generic-store/collection-action-def.ts \
+ $(SRC_DIR)/generic-store/collection-store.interface.ts \
+ $(SRC_DIR)/generic-store/collection-abstract.store.ts \
+ $(SRC_DIR)/generic-store/factory.ts \
+ $(SRC_DIR)/generic-store/reducers/collection.reducer.ts \
+ $(SRC_DIR)/generic-store/reducers/index.ts
 
 PACKAGE_TARGETS := $(subst $(SRC_DIR),$(DST_DIR),$(PACKAGE_SOURCES))
 
@@ -59,6 +65,11 @@ $(DST_DIR)/net/%.ts: $(SRC_DIR)/net/%.ts
 	$(CP) $(CPFlALGS) $< $@
 
 $(DST_DIR)/security/%.ts: $(SRC_DIR)/security/%.ts
+	$(ECHO) Making a file $@ from $<
+	$(MKDIR) -p $(dir $@)
+	$(CP) $(CPFlALGS) $< $@
+
+$(DST_DIR)/generic-store/%.ts: $(SRC_DIR)/generic-store/%.ts
 	$(ECHO) Making a file $@ from $<
 	$(MKDIR) -p $(dir $@)
 	$(CP) $(CPFlALGS) $< $@
