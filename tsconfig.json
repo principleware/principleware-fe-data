@@ -2,7 +2,7 @@
     "compileOnSave": false,
     "compilerOptions": {
         "outDir": "./dist/out-tsc",
-        "baseUrl": "src",
+        "baseUrl": "host",
         "paths": {
             "jquery": [
                 "../node_modules/jquery/dist/jquery.js"              
