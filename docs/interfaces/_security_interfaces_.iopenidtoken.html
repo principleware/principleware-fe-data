@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;security/policy-base&quot; | Principleware typescript data (1.0.0)</title>
+	<title>IOpenIDToken | Principleware typescript data (1.0.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,44 +54,102 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_security_policy_base_.html">&quot;security/policy-base&quot;</a>
+					<a href="../modules/_security_interfaces_.html">&quot;security/interfaces&quot;</a>
+				</li>
+				<li>
+					<a href="_security_interfaces_.iopenidtoken.html">IOpenIDToken</a>
 				</li>
 			</ul>
-			<h1>External module &quot;security/policy-base&quot;</h1>
+			<h1>Interface IOpenIDToken</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="_security_interfaces_.ioauthtoken.html" class="tsd-signature-type">IOAuthToken</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">IOpenIDToken</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_security_policy_base_.policybase.html" class="tsd-kind-icon">Policy<wbr>Base</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Variables</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_security_policy_base_.html#_" class="tsd-kind-icon">_</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_security_interfaces_.iopenidtoken.html#createdon" class="tsd-kind-icon">created<wbr>On</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_security_interfaces_.iopenidtoken.html#expiresin" class="tsd-kind-icon">expires<wbr>In</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_security_interfaces_.iopenidtoken.html#openid" class="tsd-kind-icon">open<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_security_interfaces_.iopenidtoken.html#refreshtoken" class="tsd-kind-icon">refresh<wbr>Token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_security_interfaces_.iopenidtoken.html#token" class="tsd-kind-icon">token</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="_" class="tsd-anchor"></a>
-					<h3>_</h3>
-					<div class="tsd-signature tsd-kind-icon">_<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;dependencies.underscore</span></div>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="createdon" class="tsd-anchor"></a>
+					<h3>created<wbr>On</h3>
+					<div class="tsd-signature tsd-kind-icon">created<wbr>On<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_security_interfaces_.ioauthtoken.html">IOAuthToken</a>.<a href="_security_interfaces_.ioauthtoken.html#createdon">createdOn</a></p>
+						<ul>
+							<li>Defined in security/interfaces.ts:20</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="expiresin" class="tsd-anchor"></a>
+					<h3>expires<wbr>In</h3>
+					<div class="tsd-signature tsd-kind-icon">expires<wbr>In<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_security_interfaces_.ioauthtoken.html">IOAuthToken</a>.<a href="_security_interfaces_.ioauthtoken.html#expiresin">expiresIn</a></p>
+						<ul>
+							<li>Defined in security/interfaces.ts:19</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="openid" class="tsd-anchor"></a>
+					<h3>open<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">open<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in security/policy-base.ts:12</li>
+							<li>Defined in security/interfaces.ts:26</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="refreshtoken" class="tsd-anchor"></a>
+					<h3>refresh<wbr>Token</h3>
+					<div class="tsd-signature tsd-kind-icon">refresh<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_security_interfaces_.ioauthtoken.html">IOAuthToken</a>.<a href="_security_interfaces_.ioauthtoken.html#refreshtoken">refreshToken</a></p>
+						<ul>
+							<li>Defined in security/interfaces.ts:22</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="token" class="tsd-anchor"></a>
+					<h3>token</h3>
+					<div class="tsd-signature tsd-kind-icon">token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_security_interfaces_.ioauthtoken.html">IOAuthToken</a>.<a href="_security_interfaces_.ioauthtoken.html#token">token</a></p>
+						<ul>
+							<li>Defined in security/interfaces.ts:21</li>
 						</ul>
 					</aside>
 				</section>
@@ -104,17 +162,50 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_security_policy_base_.html">"security/policy-<wbr>base"</a>
+						<a href="../modules/_security_interfaces_.html">"security/interfaces"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_security_policy_base_.policybase.html" class="tsd-kind-icon">Policy<wbr>Base</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_security_interfaces_.ioauthparams.html" class="tsd-kind-icon">IOAuth<wbr>Params</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_security_policy_base_.html#_" class="tsd-kind-icon">_</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_security_interfaces_.ioauthtoken.html" class="tsd-kind-icon">IOAuth<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_security_interfaces_.ioauthtokenpolicyctoroptions.html" class="tsd-kind-icon">IOAuth<wbr>Token<wbr>Policy<wbr>Ctor<wbr>Options</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_security_interfaces_.iopenidtoken.html" class="tsd-kind-icon">IOpenIDToken</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_security_interfaces_.iopenidtoken.html#createdon" class="tsd-kind-icon">created<wbr>On</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_security_interfaces_.iopenidtoken.html#expiresin" class="tsd-kind-icon">expires<wbr>In</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_security_interfaces_.iopenidtoken.html#openid" class="tsd-kind-icon">open<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_security_interfaces_.iopenidtoken.html#refreshtoken" class="tsd-kind-icon">refresh<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_security_interfaces_.iopenidtoken.html#token" class="tsd-kind-icon">token</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_security_interfaces_.ipolicyctoroptions.html" class="tsd-kind-icon">IPolicy<wbr>Ctor<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
+						<a href="../modules/_security_interfaces_.html#dummyoauthtokenctorparams" class="tsd-kind-icon">DummyOAuth<wbr>Token<wbr>Ctor<wbr>Params</a>
 					</li>
 				</ul>
 			</nav>

@@ -7,7 +7,7 @@ import * as dependencies from 'principleware-fe-dependencies';
 
 import { safeParseInt } from 'principleware-fe-utilities/dist';
 import {
-    IAuthPolicyCtorOptions,
+    IOAuthTokenPolicyCtorOptions,
     IOAuthToken,
     IOAuthParams
 } from './interfaces';
@@ -36,7 +36,7 @@ export class OAuthTokenPolicy extends PolicyBase {
     protected refreshToken: string;
     protected grantType: any;
 
-    constructor(settings: IAuthPolicyCtorOptions) {
+    constructor(settings: IOAuthTokenPolicyCtorOptions) {
         super(settings);
 
         this.clientId = settings.clientId;
