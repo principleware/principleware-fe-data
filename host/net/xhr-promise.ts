@@ -7,7 +7,7 @@ import * as dependencies from 'principleware-fe-dependencies';
 
 import * as XHR from 'principleware-tinymce-tailor/src/util/XHR';
 
-import { urlEncode } from 'principleware-fe-utilities/src/tools/url';
+import { urlEncode } from 'principleware-fe-utilities/dist';
 
 const _ = dependencies.underscore;
 

@@ -5,7 +5,7 @@
 
 import * as dependencies from 'principleware-fe-dependencies';
 
-import { safeParseInt } from 'principleware-fe-utilities/src/typing/type-cast';
+import { safeParseInt } from 'principleware-fe-utilities/dist';
 import {
     IAuthPolicyCtorOptions,
     IOAuthToken,

@@ -8,8 +8,7 @@ import * as dependencies from 'principleware-fe-dependencies';
 
 import {
     isArray
-} from 'principleware-fe-utilities/src/typing/type-checker';
-
+} from 'principleware-fe-utilities/dist';
 
 import { observableDecorator } from '../decorators/observable.decorator';
 import { IObservable } from '../interfaces/observable.interface';

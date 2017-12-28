@@ -1,6 +1,6 @@
 {
     "name": "principleware-fe-data",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "A set of data construct, including memory relational database, ngrx store, memory cache, observable object, and so on",
     "main": "index.ts",
     "repository": {

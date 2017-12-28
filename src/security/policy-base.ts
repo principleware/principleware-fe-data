@@ -5,7 +5,7 @@
 
 import * as dependencies from 'principleware-fe-dependencies';
 
-import { lift } from 'principleware-fe-utilities/src/promise/monadic-operations';
+import { lift } from 'principleware-fe-utilities/dist';
 
 import { IPolicyCtorOptions } from './interfaces';
 
