@@ -21,3 +21,7 @@ export interface IOAuthToken {
     token: string;
     refreshToken: string;
 }
+
+export interface IOpenIDToken extends IOAuthToken {
+    openId: string;
+}
