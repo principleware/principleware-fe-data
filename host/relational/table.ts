@@ -5,7 +5,7 @@
  */
 
 import * as dependencies from 'principleware-fe-dependencies';
-import { pushArray } from 'principleware-fe-utilities/src/tools/array';
+import { pushArray } from 'principleware-fe-utilities/dist';
 import { IModelLike } from './interfaces';
 import { DummyRecords } from './dummy-records';
 

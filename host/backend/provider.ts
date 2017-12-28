@@ -9,7 +9,7 @@
 
 import * as dependencies from 'principleware-fe-dependencies';
 
-import { urlEncode } from 'principleware-fe-utilities/src/tools/url';
+import { urlEncode } from 'principleware-fe-utilities/dist';
 
 import { SlidingExpirationCache } from '../cache/sliding-expiration-cache';
 
