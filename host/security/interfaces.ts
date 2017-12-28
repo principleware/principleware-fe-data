@@ -2,7 +2,7 @@ export interface IPolicyCtorOptions {
     url: string;
 }
 
-export interface IAuthPolicyCtorOptions extends IPolicyCtorOptions {
+export interface IOAuthTokenPolicyCtorOptions extends IPolicyCtorOptions {
     clientId: string;
     clientSecret: string;
     scope: string;
@@ -25,3 +25,10 @@ export interface IOAuthToken {
 export interface IOpenIDToken extends IOAuthToken {
     openId: string;
 }
+
+export const DummyOAuthTokenCtorParams: IOAuthTokenPolicyCtorOptions = {
+    url: 'dummy',
+    clientId: 'dummy',
+    clientSecret: 'dummy',
+    scope: 'all'
+};

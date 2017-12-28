@@ -4,7 +4,8 @@
  */
 
 import {
-    IOpenIDToken
+    IOpenIDToken,
+    DummyOAuthTokenCtorParams
 } from './interfaces';
 
 import { OAuthTokenPolicy, adaptToOAuthToken } from './oauth-token-policy';
@@ -18,16 +19,11 @@ export function adaptToOpenIDToken(data): IOpenIDToken {
 
 export class OpenIDPolicy extends OAuthTokenPolicy {
 
-    protected openId: string;
+    private _openId: string;
 
     constructor() {
-        super({
-            url: 'dummy',
-            clientId: 'dummy',
-            clientSecret: 'dummy',
-            scope: 'all'
-        });
-        this.openId = '';
+        super(DummyOAuthTokenCtorParams);
+        this._openId = '';
     }
 
     /**
@@ -35,7 +31,7 @@ export class OpenIDPolicy extends OAuthTokenPolicy {
      */
     persistent(): IOpenIDToken {
         const r = super.persistent();
-        return { ...r, openId: this.openId };
+        return { ...r, openId: this._openId };
     }
 
     /**
@@ -43,7 +39,7 @@ export class OpenIDPolicy extends OAuthTokenPolicy {
      */
     readFrom(settings: IOpenIDToken) {
         super.readFrom(settings);
-        this.openId = settings.openId;
+        this._openId = settings.openId;
         return this;
     }
 }
