@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IBackboneQueryParams | Principleware typescript data (1.0.0)</title>
+	<title>IBackboneCollectionLike | Principleware typescript data (1.0.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,10 +57,10 @@
 					<a href="../modules/_backend_interfaces_.html">&quot;backend/interfaces&quot;</a>
 				</li>
 				<li>
-					<a href="_backend_interfaces_.ibackbonequeryparams.html">IBackboneQueryParams</a>
+					<a href="_backend_interfaces_.ibackbonecollectionlike.html">IBackboneCollectionLike</a>
 				</li>
 			</ul>
-			<h1>Interface IBackboneQueryParams</h1>
+			<h1>Interface IBackboneCollectionLike</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IBackboneQueryParams</span>
+						<span class="target">IBackboneCollectionLike</span>
 					</li>
 				</ul>
 			</section>
@@ -82,13 +82,16 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonequeryparams.html#currentpage" class="tsd-kind-icon">current<wbr>Page</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonequeryparams.html#directions" class="tsd-kind-icon">directions</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonequeryparams.html#order" class="tsd-kind-icon">order</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonequeryparams.html#pagesize" class="tsd-kind-icon">page<wbr>Size</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonequeryparams.html#sortkey" class="tsd-kind-icon">sort<wbr>Key</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonequeryparams.html#totalpages" class="tsd-kind-icon">total<wbr>Pages</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonequeryparams.html#totalrecords" class="tsd-kind-icon">total<wbr>Records</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonecollectionlike.html#state" class="tsd-kind-icon">state</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonecollectionlike.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonecollectionlike.html#getfirstpage" class="tsd-kind-icon">get<wbr>First<wbr>Page</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonecollectionlike.html#getnextpage" class="tsd-kind-icon">get<wbr>Next<wbr>Page</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_backend_interfaces_.ibackbonecollectionlike.html#hasnextpage" class="tsd-kind-icon">has<wbr>Next<wbr>Page</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,74 +100,109 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="currentpage" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> current<wbr>Page</h3>
-					<div class="tsd-signature tsd-kind-icon">current<wbr>Page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="state" class="tsd-anchor"></a>
+					<h3>state</h3>
+					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <a href="_backend_interfaces_.ibackbonequeryparams.html" class="tsd-signature-type">IBackboneQueryParams</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in backend/interfaces.ts:2</li>
+							<li>Defined in backend/interfaces.ts:64</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="directions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> directions</h3>
-					<div class="tsd-signature tsd-kind-icon">directions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in backend/interfaces.ts:8</li>
-						</ul>
-					</aside>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="foreach" class="tsd-anchor"></a>
+					<h3>for<wbr>Each</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<span class="tsd-signature-symbol">(</span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in backend/interfaces.ts:72</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>f: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>elem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>elem: <span class="tsd-signature-type">any</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="order" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> order</h3>
-					<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in backend/interfaces.ts:7</li>
-						</ul>
-					</aside>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="getfirstpage" class="tsd-anchor"></a>
+					<h3>get<wbr>First<wbr>Page</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>First<wbr>Page<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in backend/interfaces.ts:68</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="pagesize" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> page<wbr>Size</h3>
-					<div class="tsd-signature tsd-kind-icon">page<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in backend/interfaces.ts:3</li>
-						</ul>
-					</aside>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="getnextpage" class="tsd-anchor"></a>
+					<h3>get<wbr>Next<wbr>Page</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Next<wbr>Page<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in backend/interfaces.ts:70</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="sortkey" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> sort<wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">sort<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in backend/interfaces.ts:6</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="totalpages" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> total<wbr>Pages</h3>
-					<div class="tsd-signature tsd-kind-icon">total<wbr>Pages<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in backend/interfaces.ts:4</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="totalrecords" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> total<wbr>Records</h3>
-					<div class="tsd-signature tsd-kind-icon">total<wbr>Records<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in backend/interfaces.ts:5</li>
-						</ul>
-					</aside>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="hasnextpage" class="tsd-anchor"></a>
+					<h3>has<wbr>Next<wbr>Page</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Next<wbr>Page<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in backend/interfaces.ts:66</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -181,45 +219,39 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="_backend_interfaces_.ibackbonecollectionlike.html" class="tsd-kind-icon">IBackbone<wbr>Collection<wbr>Like</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_backend_interfaces_.ibackbonecollectionlike.html#state" class="tsd-kind-icon">state</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_backend_interfaces_.ibackbonecollectionlike.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_backend_interfaces_.ibackbonecollectionlike.html#getfirstpage" class="tsd-kind-icon">get<wbr>First<wbr>Page</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_backend_interfaces_.ibackbonecollectionlike.html#getnextpage" class="tsd-kind-icon">get<wbr>Next<wbr>Page</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_backend_interfaces_.ibackbonecollectionlike.html#hasnextpage" class="tsd-kind-icon">has<wbr>Next<wbr>Page</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="_backend_interfaces_.ibackboneconfiguration.html" class="tsd-kind-icon">IBackbone<wbr>Configuration</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="_backend_interfaces_.ibackboneoptions.html" class="tsd-kind-icon">IBackbone<wbr>Options</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="_backend_interfaces_.ibackbonequeryparams.html" class="tsd-kind-icon">IBackbone<wbr>Query<wbr>Params</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_backend_interfaces_.ibackbonequeryparams.html#currentpage" class="tsd-kind-icon">current<wbr>Page</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_backend_interfaces_.ibackbonequeryparams.html#directions" class="tsd-kind-icon">directions</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_backend_interfaces_.ibackbonequeryparams.html#order" class="tsd-kind-icon">order</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_backend_interfaces_.ibackbonequeryparams.html#pagesize" class="tsd-kind-icon">page<wbr>Size</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_backend_interfaces_.ibackbonequeryparams.html#sortkey" class="tsd-kind-icon">sort<wbr>Key</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_backend_interfaces_.ibackbonequeryparams.html#totalpages" class="tsd-kind-icon">total<wbr>Pages</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_backend_interfaces_.ibackbonequeryparams.html#totalrecords" class="tsd-kind-icon">total<wbr>Records</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="_backend_interfaces_.ibackboneworkingoptions.html" class="tsd-kind-icon">IBackbone<wbr>Working<wbr>Options</a>
 					</li>

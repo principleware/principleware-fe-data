@@ -59,3 +59,15 @@ export interface IParserTableSpec {
         parser: string
     }
 }
+
+export interface IBackboneCollectionLike {
+    state: IBackboneQueryParams;
+
+    hasNextPage(): boolean;
+
+    getFirstPage(): PromiseLike<any>;
+
+    getNextPage(): PromiseLike<any>;
+
+    forEach(f: (elem: any) => any): any;
+}
