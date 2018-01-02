@@ -102,11 +102,11 @@ export class UserCredential<T extends PolicyBase> {
     }
 
     // Does not trigger any event
-    readFrom(data: IUserProfile): void {
+    readFrom<U extends IUserProfile>(data: U): void {
         this._user = _.extend(this._user, data);
     }
 
-    setUser(data: IUserProfile): void {
+    setUser<U extends IUserProfile>(data: U): void {
         if (isEquiva(this._user, data)) {
             return;
         }
@@ -118,12 +118,12 @@ export class UserCredential<T extends PolicyBase> {
         this.asObservable.fire('change:user', evt);
     }
 
-    extendUser(data: IUserProfile): void {
+    extendUser<U extends IUserProfile>(data: U): void {
         const newData = _.extend({}, this._user, data);
         this.setUser(newData);
     }
 
-    getUser(): IUserProfile {
+    getUser<U extends IUserProfile>(): U {
         return _.extend({}, this._user);
     }
 
