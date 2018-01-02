@@ -17,6 +17,7 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/backend/interfaces.ts \
  $(SRC_DIR)/backend/event-hub.ts \
  $(SRC_DIR)/backend/provider.ts \
+ $(SRC_DIR)/backend/aggregate-collection.ts \
  $(SRC_DIR)/security/interfaces.ts \
  $(SRC_DIR)/security/policy-base.ts \
  $(SRC_DIR)/security/oauth-token-policy.ts \
