@@ -4,7 +4,7 @@
  */
 import * as dependencies from 'principleware-fe-dependencies';
 
-import { IModelLike } from './interfaces';
+import { IModelLike } from '../interfaces/backbone.interface';
 
 const backbone = dependencies.backbone;
 

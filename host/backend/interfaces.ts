@@ -1,12 +1,4 @@
-export interface IBackboneQueryParams {
-    currentPage?: any;
-    pageSize?: any;
-    totalPages?: any;
-    totalRecords?: any;
-    sortKey?: any;
-    order?: any;
-    directions?: any;
-}
+import { IBackboneQueryParams } from '../interfaces/backbone.interface';
 
 export interface IBackboneOptions {
     securityDelegate: (options: any) => void;
@@ -60,14 +52,3 @@ export interface IParserTableSpec {
     }
 }
 
-export interface IBackboneCollectionLike {
-    state: IBackboneQueryParams;
-
-    hasNextPage(): boolean;
-
-    getFirstPage(): PromiseLike<any>;
-
-    getNextPage(): PromiseLike<any>;
-
-    forEach(f: (elem: any) => any): any;
-}

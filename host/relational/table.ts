@@ -6,7 +6,7 @@
 
 import * as dependencies from 'principleware-fe-dependencies';
 import { pushArray } from 'principleware-fe-utilities/dist';
-import { IModelLike } from './interfaces';
+import { IModelLike } from '../interfaces/backbone.interface';
 import { DummyRecords } from './dummy-records';
 
 const backbone = dependencies.backbone;
