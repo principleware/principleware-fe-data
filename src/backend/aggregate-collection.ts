@@ -11,7 +11,7 @@
 
 import * as dependencies from 'principleware-fe-dependencies';
 
-import { IBackboneCollectionLike } from './interfaces';
+import { IBackboneCollectionLike } from '../interfaces/backbone.interface';
 
 const when = dependencies.when;
 const _ = dependencies.underscore;
