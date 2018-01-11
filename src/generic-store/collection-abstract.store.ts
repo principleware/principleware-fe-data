@@ -7,10 +7,6 @@ import { ICollectionStore } from './collection-store.interface';
 
 export abstract class CollectionAbstractStore<T extends ICollectionItem> implements ICollectionStore<T> {
 
-    constructor(private _addedEventName: string,
-        private _removedEventName: string,
-        private _modifiedEventNamed: string) { }
-
     public abstract getState(): Store<ICollectionState<T>>;
 
     public add(payload: Array<T>): void {

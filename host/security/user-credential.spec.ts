@@ -1,4 +1,5 @@
 import { UserCredential } from './user-credential'
+import { IUserProfile } from './user-credential'
 import { PolicyBase } from './policy-base';
 
 describe('user credential basic', () => {
@@ -10,7 +11,7 @@ describe('user credential basic', () => {
             username: 'hello'
         });
 
-        expect(credential.getUser().username).toBe('hello');
+        expect(credential.getUser<IUserProfile>().username).toBe('hello');
     });
 
     it('setUser', () => {
@@ -18,7 +19,7 @@ describe('user credential basic', () => {
             username: 'world'
         });
 
-        expect(credential.getUser().username).toBe('world');
+        expect(credential.getUser<IUserProfile>().username).toBe('world');
 
     });
 
@@ -27,7 +28,7 @@ describe('user credential basic', () => {
             dispayName: 'pp'
         });
 
-        expect(credential.getUser().dispayName).toBe('pp');
+        expect(credential.getUser<IUserProfile>().dispayName).toBe('pp');
 
     });
 
