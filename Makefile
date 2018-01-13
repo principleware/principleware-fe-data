@@ -28,6 +28,7 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/net/xhr-promise.ts \
  $(SRC_DIR)/generic-store/collection-action-def.ts \
  $(SRC_DIR)/generic-store/collection-store.interface.ts \
+ $(SRC_DIR)/generic-store/collection.store.ts \
  $(SRC_DIR)/generic-store/collection-abstract.store.ts \
  $(SRC_DIR)/generic-store/factory.ts \
  $(SRC_DIR)/generic-store/reducers/collection.reducer.ts \
