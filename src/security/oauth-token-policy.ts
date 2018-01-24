@@ -70,7 +70,7 @@ export class OAuthTokenPolicy extends PolicyBase {
         };
     }
 
-    getParams(): IOAuthParams {
+    getParams(): any {
         return {
             client_id: this.clientId,
             client_secret: this.clientSecret,
