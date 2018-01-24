@@ -193,7 +193,8 @@ export class RelationalTable implements IRelationalTable {
         let addedItem = dataProvider.get(modelId);
 
         if (addedItem) {
-            addedItem.set(model);
+            const newAttr = _.extend({}, addedItem.attributes, model);
+            addedItem.set(newAttr);
             return addedItem;
         }
 
