@@ -18,4 +18,10 @@ export class OAuthTokenExtPolicy extends OAuthTokenPolicy {
     public get payload(): object {
         return this._payload;
     }
+
+    // override 
+    getParams(): any {
+        const p = super.getParams();
+        return { ...p, ... this._payload };
+    }
 }
