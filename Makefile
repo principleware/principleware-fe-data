@@ -11,6 +11,7 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/cache/cache-backend.interface.ts \
  $(SRC_DIR)/cache/memory-backend.ts \
  $(SRC_DIR)/cache/sliding-expiration-cache.ts \
+ $(SRC_DIR)/cache/sliding-expire-cache.interface.ts \
  $(SRC_DIR)/relational/dummy-records.ts \
  $(SRC_DIR)/relational/interfaces.ts \
  $(SRC_DIR)/relational/table.ts \

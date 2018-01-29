@@ -36,6 +36,8 @@ import { IEventArgs } from '../interfaces/event-args.interface';
 import { IObservable } from '../interfaces/observable.interface';
 import { IJoinpoint } from '../interfaces/joint-point.interface';
 
+import { ISlidingExpireCache } from './sliding-expire-cache.interface';
+
 const locache = dependencies.locache;
 const meld = dependencies.meld;
 
@@ -46,7 +48,7 @@ const currentTime = function() {
 }
 
 @observableDecorator
-export class SlidingExpirationCache<T> {
+export class SlidingExpirationCache<T> implements ISlidingExpireCache<T> {
 
     private _cache: any;
     private _timeInterval: any;

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SlidingExpirationCache | Principleware typescript data (1.0.0)</title>
+	<title>ISlidingExpireCache | Principleware typescript data (1.0.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,13 +54,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_cache_sliding_expiration_cache_.html">&quot;cache/sliding-expiration-cache&quot;</a>
+					<a href="../modules/_cache_sliding_expire_cache_interface_.html">&quot;cache/sliding-expire-cache.interface&quot;</a>
 				</li>
 				<li>
-					<a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html">SlidingExpirationCache</a>
+					<a href="_cache_sliding_expire_cache_interface_.islidingexpirecache.html">ISlidingExpireCache</a>
 				</li>
 			</ul>
-			<h1>Class SlidingExpirationCache&lt;T&gt;</h1>
+			<h1>Interface ISlidingExpireCache&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -79,14 +79,14 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SlidingExpirationCache</span>
+						<span class="target">ISlidingExpireCache</span>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel">
-				<h3>Implements</h3>
+				<h3>Implemented by</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/_cache_sliding_expire_cache_interface_.islidingexpirecache.html" class="tsd-signature-type">ISlidingExpireCache</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><a href="../classes/_cache_sliding_expiration_cache_.slidingexpirationcache.html" class="tsd-signature-type">SlidingExpirationCache</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -94,111 +94,30 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Accessors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#asobservable" class="tsd-kind-icon">as<wbr>Observable</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#count" class="tsd-kind-icon">count</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#addonexpirehandler" class="tsd-kind-icon">add<wbr>OnExpire<wbr>Handler</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#destroy" class="tsd-kind-icon">destroy</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#get" class="tsd-kind-icon">get</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#reset" class="tsd-kind-icon">reset</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#rmonexpirehandler" class="tsd-kind-icon">rm<wbr>OnExpire<wbr>Handler</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#set" class="tsd-kind-icon">set</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_cache_sliding_expire_cache_interface_.islidingexpirecache.html#addonexpirehandler" class="tsd-kind-icon">add<wbr>OnExpire<wbr>Handler</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_cache_sliding_expire_cache_interface_.islidingexpirecache.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_cache_sliding_expire_cache_interface_.islidingexpirecache.html#rmonexpirehandler" class="tsd-kind-icon">rm<wbr>OnExpire<wbr>Handler</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_cache_sliding_expire_cache_interface_.islidingexpirecache.html#set" class="tsd-kind-icon">set</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Sliding<wbr>Expiration<wbr>Cache<span class="tsd-signature-symbol">(</span>_defaultSeconds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, scheduleInterval<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html" class="tsd-signature-type">SlidingExpirationCache</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in cache/sliding-expiration-cache.ts:54</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>_defaultSeconds: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> scheduleInterval: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html" class="tsd-signature-type">SlidingExpirationCache</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="asobservable" class="tsd-anchor"></a>
-					<h3>as<wbr>Observable</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> asObservable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_observable_interface_.iobservable.html" class="tsd-signature-type">IObservable</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in cache/sliding-expiration-cache.ts:111</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_interfaces_observable_interface_.iobservable.html" class="tsd-signature-type">IObservable</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="count" class="tsd-anchor"></a>
-					<h3>count</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> count<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in cache/sliding-expiration-cache.ts:173</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="addonexpirehandler" class="tsd-anchor"></a>
 					<h3>add<wbr>OnExpire<wbr>Handler</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
 						<li class="tsd-signature tsd-kind-icon">add<wbr>OnExpire<wbr>Handler<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in cache/sliding-expiration-cache.ts:169</li>
+									<li>Defined in cache/sliding-expire-cache.interface.ts:15</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -211,17 +130,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>evt: <a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h5>
+															<h5>evt: <a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h5>
 														</li>
 													</ul>
-													<h4 class="tsd-returns-title">Returns <a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h4>
+													<h4 class="tsd-returns-title">Returns <a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h4>
 												</li>
 											</ul>
 										</li>
@@ -232,35 +151,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="destroy" class="tsd-anchor"></a>
-					<h3>destroy</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">destroy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in cache/sliding-expiration-cache.ts:187</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="get" class="tsd-anchor"></a>
 					<h3>get</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
 						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, seconds<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_cache_sliding_expire_cache_interface_.islidingexpirecache.html">ISlidingExpireCache</a>.<a href="../interfaces/_cache_sliding_expire_cache_interface_.islidingexpirecache.html#get">get</a></p>
 								<ul>
-									<li>Defined in cache/sliding-expiration-cache.ts:143</li>
+									<li>Defined in cache/sliding-expire-cache.interface.ts:11</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -279,34 +180,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="reset" class="tsd-anchor"></a>
-					<h3>reset</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">reset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in cache/sliding-expiration-cache.ts:177</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="rmonexpirehandler" class="tsd-anchor"></a>
 					<h3>rm<wbr>OnExpire<wbr>Handler</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
 						<li class="tsd-signature tsd-kind-icon">rm<wbr>OnExpire<wbr>Handler<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in cache/sliding-expiration-cache.ts:165</li>
+									<li>Defined in cache/sliding-expire-cache.interface.ts:13</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -319,17 +203,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>evt: <a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h5>
+															<h5>evt: <a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h5>
 														</li>
 													</ul>
-													<h4 class="tsd-returns-title">Returns <a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h4>
+													<h4 class="tsd-returns-title">Returns <a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h4>
 												</li>
 											</ul>
 										</li>
@@ -340,17 +224,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="set" class="tsd-anchor"></a>
 					<h3>set</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
 						<li class="tsd-signature tsd-kind-icon">set<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, seconds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, afterRemoveCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in cache/sliding-expiration-cache.ts:119</li>
+									<li>Defined in cache/sliding-expire-cache.interface.ts:7</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -369,17 +253,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>evt: <a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h5>
+															<h5>evt: <a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h5>
 														</li>
 													</ul>
-													<h4 class="tsd-returns-title">Returns <a href="../interfaces/_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h4>
+													<h4 class="tsd-returns-title">Returns <a href="_interfaces_event_args_interface_.ieventargs.html" class="tsd-signature-type">IEventArgs</a></h4>
 												</li>
 											</ul>
 										</li>
@@ -399,7 +283,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_cache_sliding_expiration_cache_.html">"cache/sliding-<wbr>expiration-<wbr>cache"</a>
+						<a href="../modules/_cache_sliding_expire_cache_interface_.html">"cache/sliding-<wbr>expire-<wbr>cache.interface"</a>
 					</li>
 				</ul>
 			</nav>
@@ -407,52 +291,25 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html" class="tsd-kind-icon">Sliding<wbr>Expiration<wbr>Cache</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_cache_sliding_expire_cache_interface_.islidingexpirecache.html" class="tsd-kind-icon">ISliding<wbr>Expire<wbr>Cache</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_cache_sliding_expire_cache_interface_.islidingexpirecache.html#addonexpirehandler" class="tsd-kind-icon">add<wbr>OnExpire<wbr>Handler</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#asobservable" class="tsd-kind-icon">as<wbr>Observable</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_cache_sliding_expire_cache_interface_.islidingexpirecache.html#get" class="tsd-kind-icon">get</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#count" class="tsd-kind-icon">count</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_cache_sliding_expire_cache_interface_.islidingexpirecache.html#rmonexpirehandler" class="tsd-kind-icon">rm<wbr>OnExpire<wbr>Handler</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#addonexpirehandler" class="tsd-kind-icon">add<wbr>OnExpire<wbr>Handler</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#destroy" class="tsd-kind-icon">destroy</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#get" class="tsd-kind-icon">get</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#reset" class="tsd-kind-icon">reset</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#rmonexpirehandler" class="tsd-kind-icon">rm<wbr>OnExpire<wbr>Handler</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_cache_sliding_expiration_cache_.slidingexpirationcache.html#set" class="tsd-kind-icon">set</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_cache_sliding_expire_cache_interface_.islidingexpirecache.html#set" class="tsd-kind-icon">set</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_cache_sliding_expiration_cache_.html#locache" class="tsd-kind-icon">locache</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_cache_sliding_expiration_cache_.html#meld" class="tsd-kind-icon">meld</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_cache_sliding_expiration_cache_.html#originalremove" class="tsd-kind-icon">original<wbr>Remove</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_cache_sliding_expiration_cache_.html#currenttime" class="tsd-kind-icon">current<wbr>Time</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
