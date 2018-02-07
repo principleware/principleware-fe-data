@@ -16,8 +16,6 @@ export interface IBackboneCollectionLike {
     getNextPage(): PromiseLike<any>;
 
     forEach(f: (elem: any) => any): any;
-
-    where<T extends IModelLike>(fiters: { [key: string]: any }): Array<T>;
 }
 
 export interface IBackboneQueryParams {
