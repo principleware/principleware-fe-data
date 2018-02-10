@@ -116,7 +116,7 @@ export class SlidingExpirationCache<T> implements ISlidingExpireCache<T> {
 
     // Given a key, a value and an optional number of seconds store the value
     // in the storage backend.
-    set(key: string, value: T, seconds: number, afterRemoveCallback?: (evt: IEventArgs) => IEventArgs) {
+    set(key: string, value: T, seconds: number, afterRemoveCallback?: (evt: IEventArgs<{}>) => IEventArgs<{}>) {
 
         const expirekey = this._cache.expirekey(key);
         const valueKey = this._cache.key(key);
@@ -162,11 +162,11 @@ export class SlidingExpirationCache<T> implements ISlidingExpireCache<T> {
         return value;
     }
 
-    rmOnExpireHandler(key: string, callback: (evt: IEventArgs) => IEventArgs): void {
+    rmOnExpireHandler(key: string, callback: (evt: IEventArgs<{}>) => IEventArgs<{}>): void {
         this.asObservable.off(this.onExpireEventName(key), callback);
     }
 
-    addOnExpireHandler(key: string, callback: (evt: IEventArgs) => IEventArgs): void {
+    addOnExpireHandler(key: string, callback: (evt: IEventArgs<{}>) => IEventArgs<{}>): void {
         this.asObservable.on(this.onExpireEventName(key), callback);
     }
 

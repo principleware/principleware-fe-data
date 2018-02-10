@@ -26,8 +26,8 @@
 // sale, use or other dealings in this Software without prior written
 // authorization.
 
-export interface IEventArgs {
-    args: any,
+export interface IEventArgs<T> {
+    data: T,
     type: string,
     preventDefault: () => void;
     stopPropagation: () => void;
