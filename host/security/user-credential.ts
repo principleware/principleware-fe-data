@@ -112,10 +112,9 @@ export class UserCredential<T extends PolicyBase> {
         }
 
         this._user = data;
-        const evt = {
-            user: data
-        };
-        this.asObservable.fire('change:user', evt);
+        this.asObservable.fire('change:user', {
+            data: this._user
+        });
     }
 
     extendUser<U extends IUserProfile>(data: U): void {
@@ -127,11 +126,11 @@ export class UserCredential<T extends PolicyBase> {
         return _.extend({}, this._user);
     }
 
-    subscribe(handler: (evt: IEventArgs) => IEventArgs) {
+    subscribe<U extends IUserProfile>(handler: (evt: IEventArgs<U>) => IEventArgs<U>) {
         this.asObservable.on('change:user', handler);
     }
 
-    unSubscribe(handler: (evt: IEventArgs) => IEventArgs) {
+    unSubscribe(handler: (evt: any) => any) {
         this.asObservable.off('change:user', handler);
     }
 

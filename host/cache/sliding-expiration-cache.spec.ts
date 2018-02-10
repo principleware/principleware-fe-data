@@ -55,7 +55,7 @@ describe('stop expiring', () => {
     const another = new SlidingExpirationCache<string>(2);
     another.set('name', 'hello', 2);
 
-    const callback = (evt: IEventArgs) => {
+    const callback = (evt: IEventArgs<{}>) => {
         evt.preventDefault();
         return evt;
     };
@@ -87,7 +87,7 @@ describe('void event handler', () => {
     const another = new SlidingExpirationCache<string>(2);
     another.set('name', 'hello', 2);
 
-    const callback = (evt: IEventArgs) => {
+    const callback = (evt: IEventArgs<{}>) => {
         evt.preventDefault();
         return evt;
     };

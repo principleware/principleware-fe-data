@@ -2,6 +2,8 @@ import { UserCredential } from './user-credential'
 import { IUserProfile } from './user-credential'
 import { PolicyBase } from './policy-base';
 
+import { IEventArgs } from '../interfaces/event-args.interface';
+
 describe('user credential basic', () => {
 
     let credential: UserCredential<PolicyBase> = new UserCredential<PolicyBase>(null);
@@ -49,14 +51,17 @@ describe('subscribe', () => {
 
     let getMessage = 0;
 
+    let retEvt: IEventArgs<IUserProfile>;
+
     beforeEach((done) => {
-        credential.subscribe((evt) => {
+        credential.subscribe<IUserProfile>((evt) => {
             getMessage++;
+            retEvt = evt;
             done();
             return evt;
         });
 
-        credential.setUser({
+        credential.setUser<IUserProfile>({
             username: 'world'
         });
     });
@@ -64,11 +69,11 @@ describe('subscribe', () => {
     it('setUser and get change', (done) => {
         expect(getMessage).toBe(1);
 
-        done();
-        credential.setUser({
-            username: 'world'
-        });
+        expect(retEvt.data).toBeDefined();
 
+        expect(retEvt.data.username).toEqual('world');
+
+        done();
     });
 
 });
