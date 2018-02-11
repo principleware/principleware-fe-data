@@ -126,8 +126,13 @@ export class UserCredential<T extends PolicyBase> {
         return _.extend({}, this._user);
     }
 
-    subscribe<U extends IUserProfile>(handler: (evt: IEventArgs<U>) => IEventArgs<U>) {
+    subscribe<U extends IUserProfile>(handler: (evt: IEventArgs<U>) => IEventArgs<U>, likeBehaviorSubject: boolean = false) {
         this.asObservable.on('change:user', handler);
+
+        if (likeBehaviorSubject) {
+            const newEvt: any = { data: this._user };
+            handler(newEvt as IEventArgs<U>);
+        }
     }
 
     unSubscribe(handler: (evt: any) => any) {
