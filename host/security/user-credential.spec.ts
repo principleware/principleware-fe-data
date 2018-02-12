@@ -30,7 +30,7 @@ describe('user credential basic', () => {
             dispayName: 'pp'
         });
 
-        expect(credential.getUser<IUserProfile>().dispayName).toBe('pp');
+        expect(credential.getUser<IUserProfile>().displayName).toBe('pp');
 
     });
 

@@ -71,7 +71,7 @@ export interface IUserProfile {
     username?: string;
     email?: string;
     role?: string;
-    dispayName?: string;
+    displayName?: string;
 }
 
 // immutable 

@@ -4,7 +4,7 @@ gulp.task("doc", function() {
     return gulp
         .src(["src/**/*.ts"])
         .pipe(typedoc({
-            name: "Principleware typescript data (1.3.0)",            
+            name: "Principleware typescript data (1.3.1)",            
             out: "docs/",            
             
             module: "commonjs",
