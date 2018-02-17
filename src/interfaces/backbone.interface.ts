@@ -6,6 +6,11 @@ export interface IModelLike {
     hasAnyReference(): boolean;
 }
 
+export interface IFullModelLike extends IModelLike {
+    set(...args: any[]);
+    trigger(evt: string, data: any);
+}
+
 export interface IBackboneCollectionLike {
     state: IBackboneQueryParams;
 
@@ -16,6 +21,18 @@ export interface IBackboneCollectionLike {
     getNextPage(): PromiseLike<any>;
 
     forEach(f: (elem: any) => any): any;
+}
+
+export interface IFullBackboneCollectionLike extends IBackboneCollectionLike {
+    get(id: any): IFullModelLike;
+    findWhere(filter: { [key: string]: any }): IFullModelLike;
+    where(filter: { [key: string]: any }): [IFullModelLike];
+
+    add(m: any): IFullModelLike;
+    remove(m: IModelLike): IFullModelLike;
+
+    modelId(m: object): any;
+    reset(): void;
 }
 
 export interface IBackboneQueryParams {

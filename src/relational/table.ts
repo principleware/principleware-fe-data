@@ -6,7 +6,12 @@
 
 import * as dependencies from 'principleware-fe-dependencies';
 import { pushArray } from 'principleware-fe-utilities/dist';
-import { IModelLike } from '../interfaces/backbone.interface';
+import {
+    IModelLike,
+    IBackboneCollectionLike,
+    IFullBackboneCollectionLike,
+    IFullModelLike
+} from '../interfaces/backbone.interface';
 import { DummyRecords } from './dummy-records';
 
 const backbone = dependencies.backbone;
@@ -23,10 +28,10 @@ export interface IRelationalTableOptions {
 export interface IRelationalTable {
     name: string;
     cascade: boolean;
-    dataProvider(): any;
-    get(id: any): IModelLike,
-    add(model: object): IModelLike;
-    addMany(models: any[]): IModelLike[];
+    dataProvider(): IFullBackboneCollectionLike;
+    get(id: any): IFullModelLike;
+    add(model: object): IFullModelLike;
+    addMany(models: any[]): IFullModelLike[];
     addForeignRelation(foreignKey: string, foreignTable: IRelationalTable): void;
     addReverseForeignRelation(reverseForeignKey: string, table: IRelationalTable): void;
     hasForeignRelation(foreignKey: string): boolean;
@@ -43,7 +48,7 @@ export class RelationalTable implements IRelationalTable {
     private _foreignRelation: { [key: string]: IRelationalTable };
     private _reverseForeignRelation: { [key: string]: IRelationalTable[] };
 
-    private _dataProvider: any;
+    private _dataProvider: IFullBackboneCollectionLike;
     private _onDeletedHandler: any;
 
     constructor(options: IRelationalTableOptions,
@@ -83,7 +88,7 @@ export class RelationalTable implements IRelationalTable {
         return this._cascade;
     }
 
-    public dataProvider(): any {
+    public dataProvider(): IFullBackboneCollectionLike {
         return this._dataProvider;
     }
 
@@ -150,7 +155,7 @@ export class RelationalTable implements IRelationalTable {
     /**
      * Gets the model in the table by id.
      */
-    get(id: any): IModelLike {
+    get(id: any): IFullModelLike {
         return this._dataProvider.get(id);
     }
 
@@ -181,7 +186,7 @@ export class RelationalTable implements IRelationalTable {
     /**
      * Adds an item in the Table and recursively add foreign items.
      */
-    add(model: object): IModelLike {
+    add(model: object): IFullModelLike {
 
         const selfContext = this;
 
@@ -223,7 +228,7 @@ export class RelationalTable implements IRelationalTable {
     /**
      * Add many items into a table. 
      */
-    addMany(models: any[]): IModelLike[] {
+    addMany(models: any[]): IFullModelLike[] {
         return models.map(model => {
             return this.add(model);
         });
