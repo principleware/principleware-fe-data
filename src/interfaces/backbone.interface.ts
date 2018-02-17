@@ -24,6 +24,9 @@ export interface IBackboneCollectionLike {
 }
 
 export interface IFullBackboneCollectionLike extends IBackboneCollectionLike {
+
+    models: [IFullModelLike];
+
     get(id: any): IFullModelLike;
     findWhere(filter: { [key: string]: any }): IFullModelLike;
     where(filter: { [key: string]: any }): [IFullModelLike];
@@ -33,6 +36,10 @@ export interface IFullBackboneCollectionLike extends IBackboneCollectionLike {
 
     modelId(m: object): any;
     reset(): void;
+
+    on(evt: string, callback: any);
+    off(evt: string, callback: any);
+    once(evt: string, callback: any);
 }
 
 export interface IBackboneQueryParams {
