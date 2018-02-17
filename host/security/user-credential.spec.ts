@@ -27,7 +27,7 @@ describe('user credential basic', () => {
 
     it('extendUser', () => {
         credential.extendUser({
-            dispayName: 'pp'
+            displayName: 'pp'
         });
 
         expect(credential.getUser<IUserProfile>().displayName).toBe('pp');
