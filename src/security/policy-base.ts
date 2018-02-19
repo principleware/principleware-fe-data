@@ -7,11 +7,11 @@ import * as dependencies from 'principleware-fe-dependencies';
 
 import { lift } from 'principleware-fe-utilities/dist';
 
-import { IPolicyCtorOptions } from './interfaces';
+import { IPolicyCtorOptions, IPolicy } from './interfaces';
 
 const _ = dependencies.underscore;
 
-export abstract class PolicyBase {
+export abstract class PolicyBase implements IPolicy {
 
     protected url: string;
     protected token: string;

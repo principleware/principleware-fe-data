@@ -14,7 +14,7 @@ import { observableDecorator } from '../decorators/observable.decorator';
 import { IObservable } from '../interfaces/observable.interface';
 import { IEventArgs } from '../interfaces/event-args.interface';
 
-import { PolicyBase } from './policy-base';
+import { IPolicy } from './interfaces';
 
 const _ = dependencies.underscore;
 
@@ -77,7 +77,7 @@ export interface IUserProfile {
 // immutable 
 
 @observableDecorator
-export class UserCredential<T extends PolicyBase> {
+export class UserCredential<T extends IPolicy> {
 
     private _security: T;
     private _user: IUserProfile;
