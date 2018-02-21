@@ -14,7 +14,7 @@ import { IAntiForgeryKeyCtorOptions } from './interfaces';
 import { PolicyBase } from './policy-base';
 
 const $ = dependencies.jquery;
-const defaultAntiForgeryKey = '__RequestVerificationToken',
+const defaultAntiForgeryKey = '__RequestVerificationToken';
 const defaultElementTag = '';
 
 /*
