@@ -8,6 +8,11 @@ export interface IOAuthTokenPolicyCtorOptions extends IPolicyCtorOptions {
     scope: string;
 }
 
+export interface IAntiForgeryKeyCtorOptions extends IPolicyCtorOptions {
+    antiForgeryKey: string;
+    elementTag: string;
+}
+
 export interface IOAuthParams {
     client_id: string;
     client_secret: string;

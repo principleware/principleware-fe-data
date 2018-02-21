@@ -27,6 +27,7 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/security/open-id-policy.ts \
  $(SRC_DIR)/security/user-credential.ts \
  $(SRC_DIR)/security/null-policy.ts \
+ $(SRC_DIR)/security/antiforgerykey-policy.ts \
  $(SRC_DIR)/net/xhr-promise.ts \
  $(SRC_DIR)/generic-store/collection-action-def.ts \
  $(SRC_DIR)/generic-store/collection-store.interface.ts \
