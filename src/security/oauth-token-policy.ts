@@ -34,7 +34,7 @@ export class OAuthTokenPolicy extends PolicyBase {
     protected expiresIn: number;
     protected createdOn: number;
     protected refreshToken: string;
-    protected grantType: any;
+    public grantType: 'authorization_code' | 'refresh_token' | 'password' | 'client_credentials';
 
     constructor(settings: IOAuthTokenPolicyCtorOptions) {
         super(settings);
