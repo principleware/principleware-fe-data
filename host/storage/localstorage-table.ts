@@ -25,7 +25,7 @@ export class LocalStorageTable {
      * @throws {Error} 
      */
     getP(key: string): PromiseLike<object> {
-        var data = localStorageUtil.getEntity(key, polpwareUtil.tyObject);
+        const data = localStorageUtil.getEntity(key, polpwareUtil.tyObject);
         return polpwareUtil.lift(data, null);
     }
 

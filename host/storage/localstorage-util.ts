@@ -7,8 +7,12 @@
  * @license Copyright @me
  */
 import * as externalInterface from 'principleware-fe-dependencies';
-// as polyfill for localstorage 
-import * as localStorage from 'principleware-tinymce-tailor/src/util/LocalStorage.js';
+// as polyfill for localstorage
+// Do NOT use the LocalStorage as there is global variable which cannot be resolved
+// and which is defined only in TINYMCE.
+// import * as localStorage from 'principleware-tinymce-tailor/src/util/LocalStorage.js';
+
+const globalLocalStorage = window.localStorage;
 
 import {
     defaultValue,
@@ -37,7 +41,7 @@ export interface IEntity {
 export function getEntity(key: string, ty: ITypeDef): any {
     let data = defaultValue(ty);
     try {
-        let tmp = localStorage.getItem(key);
+        let tmp = globalLocalStorage.getItem(key);
         if (tmp && tmp !== 'undefined') {
             tmp = JSON.parse(tmp);
             if (isType(tmp, ty)) {
@@ -58,7 +62,7 @@ export function getEntity(key: string, ty: ITypeDef): any {
  */
 export function updateEntity(key: string, data: any, ty: ITypeDef = null) {
     try {
-        localStorage.setItem(key, JSON.stringify(data));
+        globalLocalStorage.setItem(key, JSON.stringify(data));
     } catch (ex) {
         console.log(ex);
     }
@@ -71,7 +75,7 @@ export function updateEntity(key: string, data: any, ty: ITypeDef = null) {
  */
 export function cleanEntity(key: string, ty: ITypeDef) {
     try {
-        localStorage.setItem(key, JSON.stringify(defaultValue(ty)));
+        globalLocalStorage.setItem(key, JSON.stringify(defaultValue(ty)));
     } catch (ex) {
         console.log(ex);
     }
@@ -146,8 +150,8 @@ export function insertOrUpdateEntity(key: string, entity: IEntity) {
  */
 export function cleanEntityGroup(prefix: string): Array<string> {
     const keys = [];
-    for (let p in localStorage) {
-        if (localStorage.hasOwnProperty(p) &&
+    for (let p in globalLocalStorage) {
+        if (globalLocalStorage.hasOwnProperty(p) &&
             p.indexOf(prefix) === 0) {
             keys.push(p);
         }
@@ -156,7 +160,7 @@ export function cleanEntityGroup(prefix: string): Array<string> {
         return keys;
     }
     keys.forEach(function(k) {
-        localStorage.removeItem(k);
+        globalLocalStorage.removeItem(k);
     });
     return keys;
 }
