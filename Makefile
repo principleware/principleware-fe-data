@@ -35,7 +35,10 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/generic-store/collection-abstract.store.ts \
  $(SRC_DIR)/generic-store/factory.ts \
  $(SRC_DIR)/generic-store/reducers/collection.reducer.ts \
- $(SRC_DIR)/generic-store/reducers/index.ts
+ $(SRC_DIR)/generic-store/reducers/index.ts \
+ $(SRC_DIR)/storage/localstorage-util.ts \
+ $(SRC_DIR)/storage/localstorage-table.ts
+
 
 PACKAGE_TARGETS := $(subst $(SRC_DIR),$(DST_DIR),$(PACKAGE_SOURCES))
 
@@ -77,6 +80,11 @@ $(DST_DIR)/security/%.ts: $(SRC_DIR)/security/%.ts
 	$(CP) $(CPFlALGS) $< $@
 
 $(DST_DIR)/generic-store/%.ts: $(SRC_DIR)/generic-store/%.ts
+	$(ECHO) Making a file $@ from $<
+	$(MKDIR) -p $(dir $@)
+	$(CP) $(CPFlALGS) $< $@
+
+$(DST_DIR)/storage/%.ts: $(SRC_DIR)/storage/%.ts
 	$(ECHO) Making a file $@ from $<
 	$(MKDIR) -p $(dir $@)
 	$(CP) $(CPFlALGS) $< $@
