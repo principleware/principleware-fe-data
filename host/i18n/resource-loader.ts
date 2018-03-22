@@ -20,7 +20,7 @@
 
 
 import * as externalInterface from 'principleware-fe-dependencies';
-import { replace, lift } from 'principleware-fe-utilities/dist';
+import { replace, lift, convert } from 'principleware-fe-utilities/dist';
 
 import { ISlidingExpireCache } from '../cache/sliding-expire-cache.interface';
 
@@ -42,6 +42,12 @@ const isString = _.isString;
 function getByNamespace<T>(repo: { [key: string]: T },
     identifiers: Array<string>,
     startLevel: number = 1): T {
+
+    const restIdentifiers = identifiers.slice(startLevel);
+    const restKey = restIdentifiers.join('.');
+    if (repo[restKey]) {
+        return repo[restKey];
+    }
 
     let initRepo: any = repo;
     for (let index = startLevel; index < identifiers.length; index++) {
@@ -82,14 +88,14 @@ export class ResourceLoader {
      * @param {Number} liveSeconds The cache period.
      * @throws {Error} 
      */
-    register(key: string, uri: string, liveSeconds: number) {
+    register(key: string, uri: string, liveSeconds: number = 60) {
         const configuration = this._configuration;
         if (configuration[key]) {
             throw new Error('Registering an existing resource key: ' + key);
         }
         configuration[key] = {
             uri: uri,
-            liveSeconds: liveSeconds || 60
+            liveSeconds: liveSeconds
         };
     }
 
@@ -111,7 +117,8 @@ export class ResourceLoader {
      * @returns {*} The resource value.
      * @throws {Error} 
      */
-    getPromise<T>(fullyQualifiedNamespace: string): PromiseLike<T> {
+    getPromise<T>(fullyQualifiedNamespace: string,
+        convertor: (any) => any): PromiseLike<T> {
         const identifiers = fullyQualifiedNamespace.split('.');
         const topIdentifier = identifiers[0];
         const cache = this._cache;
@@ -134,6 +141,7 @@ export class ResourceLoader {
 
         // Otherwise, load it
         return loadJsonUriP(entry.uri).then((content) => {
+            content = convertor(content);
             // Cache the new value
             if (cache) {
                 cache.set(topIdentifier, content, entry.liveSeconds);
