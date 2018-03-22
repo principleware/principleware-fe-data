@@ -20,6 +20,8 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/backend/event-hub.ts \
  $(SRC_DIR)/backend/provider.ts \
  $(SRC_DIR)/backend/aggregate-collection.ts \
+ $(SRC_DIR)/i18n/dict.ts \
+ $(SRC_DIR)/i18n/resource-loader.ts \
  $(SRC_DIR)/security/interfaces.ts \
  $(SRC_DIR)/security/policy-base.ts \
  $(SRC_DIR)/security/oauth-token-policy.ts \
@@ -29,6 +31,7 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/security/null-policy.ts \
  $(SRC_DIR)/security/antiforgerykey-policy.ts \
  $(SRC_DIR)/net/xhr-promise.ts \
+ $(SRC_DIR)/net/curl.ts \
  $(SRC_DIR)/generic-store/collection-action-def.ts \
  $(SRC_DIR)/generic-store/collection-store.interface.ts \
  $(SRC_DIR)/generic-store/collection.store.ts \
@@ -89,6 +92,10 @@ $(DST_DIR)/storage/%.ts: $(SRC_DIR)/storage/%.ts
 	$(MKDIR) -p $(dir $@)
 	$(CP) $(CPFlALGS) $< $@
 
+$(DST_DIR)/i18n/%.ts: $(SRC_DIR)/i18n/%.ts
+	$(ECHO) Making a file $@ from $<
+	$(MKDIR) -p $(dir $@)
+	$(CP) $(CPFlALGS) $< $@
 
 prepare_dir:
 	echo "Preparing directory ..."
