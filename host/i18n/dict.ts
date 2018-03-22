@@ -9,6 +9,18 @@ import * as _i18n from 'principleware-tinymce-tailor/src/util/I18n';
 
 export class I18n {
 
+    static getDictByCode(code: string) {
+        return _i18n.data[code];
+    }
+
+    /**
+     * Add a languge dictionary and set the current     
+     * code as the current language.
+     */
+    static add(code: string, items: any) {
+        _i18n.add(code, items);
+    }
+
     /**
      * Trnsaltes a given text. If the given text
      * is missing in the dictionary, use the given default value.
