@@ -1,8 +1,6 @@
-import { Store } from '@ngrx/store';
+import * as ngrxStore from '@ngrx/store';
 
 import { ICollectionItem } from './collection-action-def';
-
-import * as ngrxStore from '@ngrx/store/src';
 
 import * as reducerIndex from './reducers/index';
 
@@ -54,7 +52,7 @@ import * as reducerIndex from './reducers/index';
 
 */
 
-export function factory<T extends ICollectionItem>(): Store<reducerIndex.GenericState<T>> {
+export function factory<T extends ICollectionItem>(): ngrxStore.Store<reducerIndex.GenericState<T>> {
 
     const actionSubject = new ngrxStore.ActionsSubject();
     const scannerActionSubject = new ngrxStore.ScannedActionsSubject();
@@ -72,6 +70,6 @@ export function factory<T extends ICollectionItem>(): Store<reducerIndex.Generic
         scannerActionSubject,
         reducerIndex.buildInitialState<T>());
 
-    const store = new Store<reducerIndex.GenericState<T>>(stateObservable, actionSubject, reducerManager);
+    const store = new ngrxStore.Store<reducerIndex.GenericState<T>>(stateObservable, actionSubject, reducerManager);
     return store;
 }
