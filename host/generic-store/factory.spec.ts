@@ -24,7 +24,7 @@ describe('ngx store add', () => {
             subscribeId.unsubscribe();
             done();
         });
-        q.dispatch({
+        p.dispatch({
             type: 'ADD',
             payload: [{
                 name: 'hello',
@@ -42,7 +42,7 @@ describe('ngx store remove', () => {
     const p = factory();
     const q = p.select('collection');
 
-    q.dispatch({
+    p.dispatch({
         type: 'ADD',
         payload: [{
             name: 'hello',
@@ -61,7 +61,7 @@ describe('ngx store remove', () => {
             subscribeId.unsubscribe();
             done();
         });
-        q.dispatch({
+        p.dispatch({
             type: 'REMOVE',
             payload: [{
                 name: 'hello',
@@ -86,7 +86,7 @@ describe('ngx store remove', () => {
         expect(qq === q).toBeFalsy();
     });
 
-    q.dispatch({
+    p.dispatch({
         type: 'ADD',
         payload: [{
             name: 'hello',
@@ -105,7 +105,7 @@ describe('ngx store remove', () => {
             done();
         });
 
-        q.dispatch({
+        p.dispatch({
             type: 'ADD',
             payload: [{
                 name: 'hello',
