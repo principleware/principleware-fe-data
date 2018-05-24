@@ -3,7 +3,7 @@ import { GlobalProvider, endPointEnum } from './provider';
 
 describe('provider basic', () => {
 
-    let provider = new GlobalProvider({
+    const provider = new GlobalProvider({
         webhost: 'www.peeroffers.com'
     });
 
@@ -34,7 +34,7 @@ describe('provider basic', () => {
 
 describe('mount working', () => {
 
-    let provider = new GlobalProvider({
+    const provider = new GlobalProvider({
         webhost: 'www.peeroffers.com'
     });
 

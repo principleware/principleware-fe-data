@@ -24,23 +24,23 @@ import * as reducerIndex from './reducers/index';
 // ActionsSubject (leaf)
 
 // ReducerManager
-/* 
+/*
    ReducerManagerDispatcher
-   INITIAL_STATE  => pass in parameters  
+   INITIAL_STATE  => pass in parameters
    INITIAL_REDUCERS => ActionReducerMap (pass in parameters)
-   REDUCER_FACTORY => combineReducers  
+   REDUCER_FACTORY => combineReducers
    ActionReducerFactory<any, any>
 */
 
 // ReducerManagerDispatcher
 
-/* 
+/*
    ActionSsubject  (leaf)
 */
 
-// ActionReducerFactory<any, any> (Use combinReducer function from utils) 
+// ActionReducerFactory<any, any> (Use combinReducer function from utils)
 
-/* 
+/*
    ActionReducerMap
    initialState
 
@@ -48,7 +48,7 @@ import * as reducerIndex from './reducers/index';
 */
 
 // createReducerfactory
-/* 
+/*
    ActionReducerFactory
    MataReducerFactory
 

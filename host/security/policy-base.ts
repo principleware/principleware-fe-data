@@ -1,6 +1,6 @@
 /**
  * @fileOverview
- * A base class for defining security plicies. 
+ * A base class for defining security plicies.
  */
 
 import * as dependencies from 'principleware-fe-dependencies';
@@ -39,7 +39,7 @@ export abstract class PolicyBase implements IPolicy {
     /**
      * The interface for retrieving the token from a remote server.
      * This method internally dispatches the call to another method
-     * and cache the token. 
+     * and cache the token.
      */
     getTokenP(): PromiseLike<string> {
         if (!_.isEmpty(this.token) && !this.isExpired()) {

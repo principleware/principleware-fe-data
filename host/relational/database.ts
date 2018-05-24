@@ -1,7 +1,7 @@
 /**
  * @fileOverview
  * Defines a relational database which supports foreign keys and primary keys.
- * Also this database support cascading deletion and addition. 
+ * Also this database support cascading deletion and addition.
  */
 
 import * as dependencies from 'principleware-fe-dependencies';
@@ -50,7 +50,7 @@ export class RelationDatabase implements IRelationalDatabase {
     }
 
     /**
-     * Retrieves a table by name. 
+     * Retrieves a table by name.
      */
     getTable(name: string): IRelationalTable {
         return this._tableCollection[name];

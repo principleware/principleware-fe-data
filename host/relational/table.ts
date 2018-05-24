@@ -22,7 +22,7 @@ export interface IRelationalTableOptions {
     name: string;
     cascade?: boolean;
     dataProviderCtor?: any;
-    dataProviderCtorOption?: any
+    dataProviderCtorOption?: any;
 }
 
 export interface IRelationalTable {
@@ -37,7 +37,7 @@ export interface IRelationalTable {
     hasForeignRelation(foreignKey: string): boolean;
     hasReverseForeignRelation(reverseForeignKey: string): boolean;
     destroy(): void;
-};
+}
 
 export class RelationalTable implements IRelationalTable {
 
@@ -71,7 +71,7 @@ export class RelationalTable implements IRelationalTable {
         this._addConstraint = cjs.constraint([]);
         this._deleteConstraint = cjs.constraint([]);
 
-        // Todo: Figure out parameters 
+        // Todo: Figure out parameters
         this._onDeletedHandler = (...args: any[]) => {
             this.onDeleted();
         };
@@ -164,7 +164,7 @@ export class RelationalTable implements IRelationalTable {
         if (!removedItem) {
             return;
         }
-        // Notify of its collection 
+        // Notify of its collection
         removedItem.set('invalidated', true);
         removedItem.trigger('destroy', removedItem);
 
@@ -203,10 +203,10 @@ export class RelationalTable implements IRelationalTable {
             return addedItem;
         }
 
-        // Otherwise a new item 
+        // Otherwise a new item
         addedItem = dataProvider.add(model);
 
-        // Add convenient methods 
+        // Add convenient methods
         addedItem.destroyFromTable = function() {
             const thatItem = this;
             selfContext.destroyFromTable(thatItem);
@@ -226,7 +226,7 @@ export class RelationalTable implements IRelationalTable {
     }
 
     /**
-     * Add many items into a table. 
+     * Add many items into a table.
      */
     addMany(models: any[]): IFullModelLike[] {
         return models.map(model => {
@@ -272,7 +272,7 @@ export class RelationalTable implements IRelationalTable {
     }
 
     /**
-     * Checks if a given reverse foreign relation is present. 
+     * Checks if a given reverse foreign relation is present.
      */
     hasReverseForeignRelation(reverseForeignKey: string): boolean {
         return !!this._reverseForeignRelation[reverseForeignKey];

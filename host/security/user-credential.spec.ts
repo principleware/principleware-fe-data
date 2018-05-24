@@ -1,12 +1,12 @@
-import { UserCredential } from './user-credential'
-import { IUserProfile } from './user-credential'
+import { UserCredential } from './user-credential';
+import { IUserProfile } from './user-credential';
 import { PolicyBase } from './policy-base';
 
 import { IEventArgs } from '../interfaces/event-args.interface';
 
 describe('user credential basic', () => {
 
-    let credential: UserCredential<PolicyBase> = new UserCredential<PolicyBase>(null);
+    const credential: UserCredential<PolicyBase> = new UserCredential<PolicyBase>(null);
 
     it('readFrom', () => {
         credential.readFrom({
@@ -47,7 +47,7 @@ describe('user credential basic', () => {
 
 describe('subscribe', () => {
 
-    let credential: UserCredential<PolicyBase> = new UserCredential<PolicyBase>(null);
+    const credential: UserCredential<PolicyBase> = new UserCredential<PolicyBase>(null);
 
     let getMessage = 0;
 
@@ -79,9 +79,9 @@ describe('subscribe', () => {
 });
 
 describe('set again again', () => {
-    var originalTimeout;
+    let originalTimeout;
 
-    let credential: UserCredential<PolicyBase> = new UserCredential<PolicyBase>(null);
+    const credential: UserCredential<PolicyBase> = new UserCredential<PolicyBase>(null);
 
     let getMessage = 0;
 
