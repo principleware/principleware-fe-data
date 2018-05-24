@@ -1,6 +1,12 @@
 # Pirncipleware-fe-data
 
+## Introduction 
+
 This project consists of a set of high-level components about observable data, memory relational database, ngrx store, and more. 
+These components are available in their typescript source files. Although there might be some concerns about usability, 
+having their source files available helps users to pick up the components that are only needed. 
+
+Note that since 2.0, we started to use Angular 6.0. 
 
 ## Install 
 
