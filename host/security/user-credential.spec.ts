@@ -34,6 +34,22 @@ describe('user credential basic', () => {
 
     });
 
+});
+
+
+describe('user credential basic', () => {
+
+    const credential: UserCredential<PolicyBase> = new UserCredential<PolicyBase>(null);
+
+    credential.setUser({
+        username: 'world'
+    });
+
+    credential.extendUser({
+        displayName: 'pp'
+    });
+
+
     it('isUserKnow', () => {
         expect(credential.isUserKnown()).toBeTruthy();
     });
@@ -43,6 +59,7 @@ describe('user credential basic', () => {
     });
 
 });
+
 
 
 describe('subscribe', () => {

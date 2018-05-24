@@ -4,7 +4,7 @@ import { GlobalProvider, endPointEnum } from './provider';
 describe('provider basic', () => {
 
     const provider = new GlobalProvider({
-        webhost: 'www.peeroffers.com'
+        webhost: 'www.peeroffers.com1'
     });
 
     it('ctor', () => {
@@ -12,7 +12,7 @@ describe('provider basic', () => {
     });
 
     it('host', () => {
-        expect(provider.host).toEqual('www.peeroffers.com');
+        expect(provider.host).toEqual('www.peeroffers.com1');
     });
 
     it('add endpoint', () => {
@@ -25,22 +25,36 @@ describe('provider basic', () => {
         expect(provider.getEndPoint('filelist')).toBeDefined();
     });
 
-    it('destroy', () => {
+    afterAll(() => {
         provider.destroy();
     });
 
 });
 
+describe('provider can be destoryed', () => {
+
+    const provider = new GlobalProvider({
+        webhost: 'www.peeroffers.com2'
+    });
+
+    it('destroy', () => {
+        provider.destroy();
+        expect(provider.host).toBeNull();
+    });
+
+});
+
+
 
 describe('mount working', () => {
 
     const provider = new GlobalProvider({
-        webhost: 'www.peeroffers.com'
+        webhost: 'www.peeroffers.com3'
     });
 
     let flag = false;
 
-    beforeEach(function(done) {
+    beforeAll(function(done) {
         provider.addEndPoint('filelist', endPointEnum.pagedCollection, {
             url: 'https://www.nxdrive.com',
             securityDelegate: (options) => {
@@ -58,6 +72,11 @@ describe('mount working', () => {
         expect(flag).toBeTruthy();
         done();
     });
+
+    afterAll(() => {
+        provider.destroy();
+    });
+
 
 });
 

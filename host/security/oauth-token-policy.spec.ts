@@ -4,14 +4,16 @@ describe('oauth basic', () => {
 
     let policy: OAuthTokenPolicy;
 
-    it('ctor', () => {
+    beforeAll(() => {
         policy = new OAuthTokenPolicy({
             url: 'me',
             clientId: 'me',
             clientSecret: 'xxx',
             scope: 'all'
         });
+    });
 
+    it('ctor', () => {
         expect(policy).toBeDefined();
     });
 
@@ -23,6 +25,21 @@ describe('oauth basic', () => {
 
     it('isExpired', () => {
         expect(policy.isExpired()).toBeTruthy();
+    });
+});
+
+
+describe('oauth reset', () => {
+
+    let policy: OAuthTokenPolicy;
+
+    beforeAll(() => {
+        policy = new OAuthTokenPolicy({
+            url: 'me',
+            clientId: 'me',
+            clientSecret: 'xxx',
+            scope: 'all'
+        });
     });
 
     it('reset', () => {
