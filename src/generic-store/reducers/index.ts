@@ -6,7 +6,7 @@ import * as fromCollection from './collection.reducer';
 
 
 export interface GenericState<T extends ICollectionItem> {
-    collection: ICollectionState<T>
+    collection: ICollectionState<T>;
 }
 
 export function buildInitialState<T extends ICollectionItem>(): GenericState<T> {

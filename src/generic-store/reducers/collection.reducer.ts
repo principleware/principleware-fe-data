@@ -13,7 +13,7 @@ export function reducer<T extends ICollectionItem>(
         case 'ADD': {
 
             const payload = action.payload.filter(x => {
-                // Look for it in the current list 
+                // Look for it in the current list
                 const index = state.items.findIndex((y) => {
                     return x.id === y.id;
                 });
@@ -26,7 +26,7 @@ export function reducer<T extends ICollectionItem>(
                     ...state.items,
                     ...payload
                 ]
-            }
+            };
         }
 
         case 'REMOVE': {
@@ -41,7 +41,7 @@ export function reducer<T extends ICollectionItem>(
             return {
                 ...state,
                 items: newItems
-            }
+            };
         }
 
         case 'MODIFY': {

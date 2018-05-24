@@ -3,7 +3,7 @@
  * Provides a layer of backend service abstraction.
  * Defines the backend services. This class is built onto the backbone js, but with
  * enhanced abilities of managing the dependency among all services of the backend,
- * and caching some type of objects for a period of time. 
+ * and caching some type of objects for a period of time.
  */
 /*jslint unparam: true */
 
@@ -60,7 +60,7 @@ const globalConfigurationMapping: { [key: string]: IBackboneConfiguration } = {}
 const mountedFeatureRemovers: any[] = [];
 
 // Idempotent
-// Instance once ... 
+// Instance once ...
 function mountFeatures() {
 
     if (mountedFeatureRemovers.length > 0) {
@@ -172,7 +172,7 @@ function mountFeatures() {
 const defaultLivePeroid = 60 * 5;
 
 export interface IGlobalProviderCtorOptions {
-    webhost?: string
+    webhost?: string;
 }
 
 export class GlobalProvider {

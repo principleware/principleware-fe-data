@@ -22,7 +22,7 @@ const meld = dependencies.meld;
  * Sets up a callback for listening to the sync events from Backbone.
  * @function mountSyncListener
  * @param {EventHubcallback} callback
- * @throws {Error} 
+ * @throws {Error}
  */
 export function mountSyncListener(callback) {
     // Collection

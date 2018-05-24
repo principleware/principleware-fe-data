@@ -42,13 +42,13 @@ export interface IEndpointSpec {
     [key: string]: {
         url: string,
         options?: IBackboneOptions
-    }
+    };
 }
 
 
 export interface IParserTableSpec {
     [key: string]: {
         parser: string
-    }
+    };
 }
 

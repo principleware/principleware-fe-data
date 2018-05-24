@@ -31,7 +31,7 @@ function isEquiva(a: any, b: any): boolean {
     }
 
     // Compare number, boolean, string, undefined
-    if (typeof a !== "object" || typeof b !== "object") {
+    if (typeof a !== 'object' || typeof b !== 'object') {
         return a === b;
     }
 
@@ -50,17 +50,23 @@ function isEquiva(a: any, b: any): boolean {
     }
 
     const checked = {};
-    for (const k in b) {
-        if (!isEquiva(a[k], b[k])) {
-            return false;
-        }
+    const objectB = b as Object;
+    for (const k in objectB) {
+        if (objectB.hasOwnProperty(k)) {
+            if (!isEquiva(a[k], b[k])) {
+                return false;
+            }
 
-        checked[k] = true;
+            checked[k] = true;
+        }
     }
 
-    for (const k in a) {
-        if (!checked[k] && !isEquiva(a[k], b[k])) {
-            return false;
+    const objectA = a as Object;
+    for (const k in objectA) {
+        if (objectA.hasOwnProperty(k)) {
+            if (!checked[k] && !isEquiva(a[k], b[k])) {
+                return false;
+            }
         }
     }
 
@@ -74,7 +80,7 @@ export interface IUserProfile {
     displayName?: string;
 }
 
-// immutable 
+// immutable
 
 @observableDecorator
 export class UserCredential<T extends IPolicy> {
