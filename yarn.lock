@@ -5696,8 +5696,8 @@ plugin-error@^0.1.2:
   resolved "https://github.com/polpware/polpware-fe-utilities.git#a3fc7687bfd2156ca34c695c8f3c802912f7a8c0"
 
 "polpware-tinymce-tailor@https://github.com/polpware/polpware-tinymce-tailor.git":
-  version "4.7.6"
-  resolved "https://github.com/polpware/polpware-tinymce-tailor.git#382f7ad1366571ec27133cc64c50fdbd2c0a748d"
+  version "4.7.7"
+  resolved "https://github.com/polpware/polpware-tinymce-tailor.git#80d826f0d3fa49fd28952d8f3823c0318d869100"
 
 portfinder@^1.0.13, portfinder@^1.0.9:
   version "1.0.13"

@@ -1,6 +1,6 @@
 {
     "name": "polpware-fe-data",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "A set of data construct, including memory relational database, ngrx store, memory cache, observable object, and so on",
     "main": "index.ts",
     "repository": {
@@ -30,7 +30,7 @@
         "@types/underscore": "^1.8.8",
         "polpware-fe-dependencies": "https://github.com/polpware/polpware-fe-dependencies.git",
         "polpware-fe-utilities": "https://github.com/polpware/polpware-fe-utilities.git#2.x",
-        "polpware-tinymce-tailor": "https://github.com/polpware/polpware-tinymce-tailor.git"      
+        "polpware-tinymce-tailor": "https://github.com/polpware/polpware-tinymce-tailor.git"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~0.6.3",
@@ -53,7 +53,7 @@
         "gulp": "^3.9.1",
         "gulp-ignore": "^2.0.2",
         "gulp-typedoc": "^2.2.0",
-        "jasmine": "^3.1.0",      
+        "jasmine": "^3.1.0",
         "jasmine-core": "~3.1.0",
         "jasmine-spec-reporter": "~4.2.1",
         "karma": "~2.0.2",
