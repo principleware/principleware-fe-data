@@ -3,9 +3,9 @@
  * Defines a base class for retrieving OAuth2 tokens.
  */
 
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
-import { safeParseInt } from 'principleware-fe-utilities/dist';
+import { safeParseInt } from 'polpware-fe-utilities/dist';
 import {
     IOAuthTokenPolicyCtorOptions,
     IOAuthToken,

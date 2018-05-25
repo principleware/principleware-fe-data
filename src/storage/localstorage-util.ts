@@ -6,11 +6,11 @@
  * @author Xiaolong Tang <xxlongtang@gmail.com>
  * @license Copyright @me
  */
-import * as externalInterface from 'principleware-fe-dependencies';
+import * as externalInterface from 'polpware-fe-dependencies';
 // as polyfill for localstorage
 // Do NOT use the LocalStorage as there is global variable which cannot be resolved
 // and which is defined only in TINYMCE.
-// import * as localStorage from 'principleware-tinymce-tailor/src/util/LocalStorage.js';
+// import * as localStorage from 'polpware-tinymce-tailor/src/util/LocalStorage.js';
 
 const globalLocalStorage = window.localStorage;
 
@@ -19,7 +19,7 @@ import {
     ITypeDef,
     tyArray,
     ok as isType
-} from 'principleware-fe-utilities/dist';
+} from 'polpware-fe-utilities/dist';
 
 const _ = externalInterface.underscore,
     find = _.find,
