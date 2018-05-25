@@ -9,7 +9,7 @@
  * preversing the state of each data provider.
  */
 
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
 import { IBackboneCollectionLike } from '../interfaces/backbone.interface';
 

@@ -3,11 +3,11 @@
  * Defines a class for performing XHR in an exception way and in a promise way
  */
 
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
-import * as XHR from 'principleware-tinymce-tailor/src/util/XHR';
+import * as XHR from 'polpware-tinymce-tailor/src/util/XHR';
 
-import { urlEncode } from 'principleware-fe-utilities/dist';
+import { urlEncode } from 'polpware-fe-utilities/dist';
 
 const _ = dependencies.underscore;
 

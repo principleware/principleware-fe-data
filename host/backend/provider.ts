@@ -7,9 +7,9 @@
  */
 /*jslint unparam: true */
 
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
-import { urlEncode } from 'principleware-fe-utilities/dist';
+import { urlEncode } from 'polpware-fe-utilities/dist';
 
 import { SlidingExpirationCache } from '../cache/sliding-expiration-cache';
 

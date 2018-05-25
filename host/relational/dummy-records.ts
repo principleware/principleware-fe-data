@@ -2,7 +2,7 @@
  * @fileOverview
  * Defines a global dummy records for tables. Each table is configured with a dummy record.
  */
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
 import { IModelLike } from '../interfaces/backbone.interface';
 

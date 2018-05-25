@@ -3,9 +3,9 @@
  * A base class for defining security plicies.
  */
 
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
-import { lift } from 'principleware-fe-utilities/dist';
+import { lift } from 'polpware-fe-utilities/dist';
 
 import { IPolicyCtorOptions, IPolicy } from './interfaces';
 

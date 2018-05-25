@@ -1,11 +1,11 @@
-import * as tools from 'principleware-tinymce-tailor/src/util/Tools';
+import * as tools from 'polpware-tinymce-tailor/src/util/Tools';
 
 import { Test } from './test-class.spec';
 
 import { IObservable } from '../interfaces/observable.interface';
 
 
-import * as EventDispatcher from 'principleware-tinymce-tailor/src/util/EventDispatcher';
+import * as EventDispatcher from 'polpware-tinymce-tailor/src/util/EventDispatcher';
 
 describe('event dispather', () => {
     it('loaded', () => {

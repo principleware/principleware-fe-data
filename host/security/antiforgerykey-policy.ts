@@ -5,9 +5,9 @@
  * @author Xiaolong Tang <xxlongtang@gmail.com>
  * @license Copyright @me
  */
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
-import { liftWithGuard } from 'principleware-fe-utilities/dist';
+import { liftWithGuard } from 'polpware-fe-utilities/dist';
 
 import { IAntiForgeryKeyCtorOptions } from './interfaces';
 

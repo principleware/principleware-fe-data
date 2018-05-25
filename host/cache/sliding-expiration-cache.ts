@@ -1,5 +1,5 @@
 //
-// Author:: Tom Tang <principleware@gmail.com>
+// Author:: Tom Tang <polpware@gmail.com>
 // Copyright:: Copyright (c) 2017, Xiaolong Tang
 //
 // Permission is hereby granted, free of charge, to any person obtaining
@@ -27,7 +27,7 @@
 // authorization.
 
 
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
 import { MemoryBackend } from './memory-backend';
 import { observableDecorator } from '../decorators/observable.decorator';

@@ -19,8 +19,8 @@
  */
 
 
-import * as externalInterface from 'principleware-fe-dependencies';
-import { replace, lift, convert } from 'principleware-fe-utilities/dist';
+import * as externalInterface from 'polpware-fe-dependencies';
+import { replace, lift, convert } from 'polpware-fe-utilities/dist';
 
 import { ISlidingExpireCache } from '../cache/sliding-expire-cache.interface';
 
