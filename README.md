@@ -1,4 +1,4 @@
-# Pirncipleware-fe-data
+# Polpware-fe-data
 
 ## Introduction 
 
@@ -12,7 +12,7 @@ Note that since 2.0, we started to use Angular 6.0.
 
 To use it, clone this repo and install it from you local disk, or run the command as follows 
 
-> yarn add https://github.com/principleware/principleware-fe-data.git
+> yarn add https://github.com/polpware/polpware-fe-data.git
 
 ## Development and Test
 
@@ -30,4 +30,4 @@ To generate documents, run
 
 ## Documents 
 
-[Visit documents](https://principleware.github.io/principleware-fe-data)
+[Visit documents](https://polpware.github.io/polpware-fe-data)

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "principleware-fe-data-host": {
+    "polpware-fe-data-host": {
       "root": "",
       "sourceRoot": "host",
       "projectType": "application",
@@ -48,18 +48,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "principleware-fe-data-host:build"
+            "browserTarget": "polpware-fe-data-host:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "principleware-fe-data-host:build:production"
+              "browserTarget": "polpware-fe-data-host:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "principleware-fe-data-host:build"
+            "browserTarget": "polpware-fe-data-host:build"
           }
         },
         "test": {
@@ -91,7 +91,7 @@
         }
       }
     },
-    "principleware-fe-data-host-e2e": {
+    "polpware-fe-data-host-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -100,7 +100,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "principleware-fe-data-host:serve"
+            "devServerTarget": "polpware-fe-data-host:serve"
           }
         },
         "lint": {
@@ -115,7 +115,7 @@
       }
     }
   },
-  "defaultProject": "principleware-fe-data-host",
+  "defaultProject": "polpware-fe-data-host",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
