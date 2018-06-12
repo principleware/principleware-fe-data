@@ -4,7 +4,7 @@
  * in a nonintrusive manner.
  */
 
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
 const backbone = dependencies.backbone;
 const meld = dependencies.meld;
@@ -22,7 +22,7 @@ const meld = dependencies.meld;
  * Sets up a callback for listening to the sync events from Backbone.
  * @function mountSyncListener
  * @param {EventHubcallback} callback
- * @throws {Error} 
+ * @throws {Error}
  */
 export function mountSyncListener(callback) {
     // Collection

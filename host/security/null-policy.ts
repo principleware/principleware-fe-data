@@ -1,4 +1,4 @@
-import { lift } from 'principleware-fe-utilities/dist';
+import { lift } from 'polpware-fe-utilities/dist';
 
 import { IPolicy } from './interfaces';
 

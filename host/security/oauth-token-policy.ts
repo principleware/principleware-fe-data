@@ -1,11 +1,11 @@
 /**
  * @fileOverview
- * Defines a base class for retrieving OAuth2 tokens. 
+ * Defines a base class for retrieving OAuth2 tokens.
  */
 
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
-import { safeParseInt } from 'principleware-fe-utilities/dist';
+import { safeParseInt } from 'polpware-fe-utilities/dist';
 import {
     IOAuthTokenPolicyCtorOptions,
     IOAuthToken,
@@ -79,7 +79,7 @@ export class OAuthTokenPolicy extends PolicyBase {
         };
     }
 
-    // TODO: Support progress loading 
+    // TODO: Support progress loading
     getTokenInternal(): PromiseLike<string> {
         const params = this.getParams();
         return $.ajax({
@@ -121,7 +121,7 @@ export class OAuthTokenPolicy extends PolicyBase {
      */
     applyTo(options: any): void {
         options.beforeSend = (xhr) => {
-            xhr.setRequestHeader('Authorization', ("Bearer ".concat(this.token)));
+            xhr.setRequestHeader('Authorization', ('Bearer '.concat(this.token)));
         };
     }
 
@@ -131,7 +131,7 @@ export class OAuthTokenPolicy extends PolicyBase {
     applyToV2(options: any): void {
         options.headers = options.headers || {};
         options.headers = {
-            Authorization: "Bearer ".concat(this.token)
+            Authorization: 'Bearer '.concat(this.token)
         };
     }
 
@@ -142,7 +142,7 @@ export class OAuthTokenPolicy extends PolicyBase {
         options.requestheaders = options.requestheaders || [];
         options.requestheaders.push({
             key: 'Authorization',
-            value: "Bearer ".concat(this.token)
+            value: 'Bearer '.concat(this.token)
         });
     }
 

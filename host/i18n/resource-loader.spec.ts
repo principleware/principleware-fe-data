@@ -9,7 +9,7 @@ describe('add and translate', () => {
     it('get resource', (done) => {
 
         loader.register('en-us',
-            'https://principleware.github.io/principleware-fe-data/test.json');
+            'https://polpware.github.io/polpware-fe-data/test.json');
 
         loader.getPromise<string>('en-us.global.alert', x => x.items)
             .then((v) => {

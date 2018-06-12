@@ -24,9 +24,9 @@ describe('Basic cache', () => {
 });
 
 
-describe("long asynchronous specs", function() {
-    var originalTimeout;
-    var myname = 'worl';
+describe('long asynchronous specs', function() {
+    let originalTimeout;
+    let myname = 'worl';
     const another = new SlidingExpirationCache<string>(2);
     another.set('name', 'hello', 2);
 
@@ -35,7 +35,7 @@ describe("long asynchronous specs", function() {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
     });
 
-    it("takes a long time", function(done) {
+    it('takes a long time', function(done) {
         setTimeout(function() {
             myname = another.get('name');
             expect(myname).toBeNull();
@@ -50,8 +50,8 @@ describe("long asynchronous specs", function() {
 
 
 describe('stop expiring', () => {
-    var originalTimeout;
-    var myname = 'worl';
+    let originalTimeout;
+    let myname = 'worl';
     const another = new SlidingExpirationCache<string>(2);
     another.set('name', 'hello', 2);
 
@@ -67,7 +67,7 @@ describe('stop expiring', () => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
     });
 
-    it("takes a long time", function(done) {
+    it('takes a long time', function(done) {
         setTimeout(function() {
             myname = another.get('name');
             expect(myname).toBe('hello');
@@ -82,8 +82,8 @@ describe('stop expiring', () => {
 
 
 describe('void event handler', () => {
-    var originalTimeout;
-    var myname = 'worl';
+    let originalTimeout;
+    let myname = 'worl';
     const another = new SlidingExpirationCache<string>(2);
     another.set('name', 'hello', 2);
 
@@ -99,7 +99,7 @@ describe('void event handler', () => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
     });
 
-    it("takes a long time", function(done) {
+    it('takes a long time', function(done) {
 
         another.rmOnExpireHandler('name', callback);
 
@@ -117,8 +117,8 @@ describe('void event handler', () => {
 
 
 describe('after remove', () => {
-    var originalTimeout;
-    var myname = 'worl';
+    let originalTimeout;
+    let myname = 'worl';
     const another = new SlidingExpirationCache<string>(2);
 
     beforeEach(function(done) {
@@ -137,7 +137,7 @@ describe('after remove', () => {
 
     });
 
-    it("takes a long time", function(done) {
+    it('takes a long time', function(done) {
         expect(myname).toEqual('gogo');
         done();
     });
@@ -149,8 +149,8 @@ describe('after remove', () => {
 
 
 describe('clean and then triggerd after remove', () => {
-    var originalTimeout;
-    var myname = 'worl';
+    let originalTimeout;
+    let myname = 'worl';
     const another = new SlidingExpirationCache<string>(2);
 
     beforeEach(function(done) {
@@ -166,7 +166,7 @@ describe('clean and then triggerd after remove', () => {
         another.reset();
     });
 
-    it("takes a long time", function(done) {
+    it('takes a long time', function(done) {
         expect(myname).toEqual('gogo');
         done();
     });
@@ -178,9 +178,9 @@ describe('clean and then triggerd after remove', () => {
 
 
 
-describe("schedule off ", function() {
-    var originalTimeout;
-    var myname = 'worl';
+describe('schedule off ', function() {
+    let originalTimeout;
+    const myname = 'worl';
     let another: SlidingExpirationCache<string>;
 
     beforeEach(function(done) {
@@ -191,7 +191,7 @@ describe("schedule off ", function() {
         done();
     });
 
-    it("takes a long time", function(done) {
+    it('takes a long time', function(done) {
         setTimeout(function() {
             expect(another.count).toBe(1);
             done();
@@ -204,9 +204,9 @@ describe("schedule off ", function() {
 });
 
 
-describe("schedule on ", function() {
-    var originalTimeout;
-    var myname = 'worl';
+describe('schedule on ', function() {
+    let originalTimeout;
+    const myname = 'worl';
     let another: SlidingExpirationCache<string>;
 
     beforeEach(function(done) {
@@ -217,7 +217,7 @@ describe("schedule on ", function() {
         done();
     });
 
-    it("takes a long time", function(done) {
+    it('takes a long time', function(done) {
         setTimeout(function() {
             expect(another.count).toBe(0);
             done();

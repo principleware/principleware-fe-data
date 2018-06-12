@@ -8,19 +8,19 @@
  * Note that the resources are expected to be organized in
  * a common namespace hierarchy.
  * E.g.,
- * x.y.z corresponds to a json resource like: 
+ * x.y.z corresponds to a json resource like:
  *    {
  *       y: {
  *             z: 112
  *          }
- *    }      
+ *    }
  * @author Xiaolong Tang <xxlongtang@gmail.com>
  * @license Copyright @me
  */
 
 
-import * as externalInterface from 'principleware-fe-dependencies';
-import { replace, lift, convert } from 'principleware-fe-utilities/dist';
+import * as externalInterface from 'polpware-fe-dependencies';
+import { replace, lift, convert } from 'polpware-fe-utilities/dist';
 
 import { ISlidingExpireCache } from '../cache/sliding-expire-cache.interface';
 
@@ -34,10 +34,10 @@ const isString = _.isString;
 /**
  * Retrieves a value from a variable by a given namespace nested structure.
  * @function getByNamespace
- * @param {Object} repo 
+ * @param {Object} repo
  * @param {*} fullyQualifiedNamespace A string or an arry of string defining the namespace.
- * @param {Number}[] startLevel 
- * @returns {*} 
+ * @param {Number}[] startLevel
+ * @returns {*}
  */
 function getByNamespace<T>(repo: { [key: string]: T },
     identifiers: Array<string>,
@@ -54,7 +54,7 @@ function getByNamespace<T>(repo: { [key: string]: T },
         if (!initRepo) {
             break;
         }
-        let key = identifiers[index];
+        const key = identifiers[index];
         initRepo = initRepo[key];
     }
     return initRepo;
@@ -86,7 +86,7 @@ export class ResourceLoader {
      * @param {String} key The resource key.
      * @param {String} uri The resource URI.
      * @param {Number} liveSeconds The cache period.
-     * @throws {Error} 
+     * @throws {Error}
      */
     register(key: string, uri: string, liveSeconds: number = 60) {
         const configuration = this._configuration;
@@ -115,7 +115,7 @@ export class ResourceLoader {
      * @function getPromise
      * @param {String} fullyQualifiedNamespace The resource key.
      * @returns {*} The resource value.
-     * @throws {Error} 
+     * @throws {Error}
      */
     getPromise<T>(fullyQualifiedNamespace: string,
         convertor: (any) => any): PromiseLike<T> {

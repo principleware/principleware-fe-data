@@ -1,11 +1,11 @@
 /**
  * @fileOverview
- * Provides i18n service. This module is designed as 
+ * Provides i18n service. This module is designed as
  * a delegate of the tinymce I18n service.
  * @author Xiaolong Tang <xxlongtang@gmail.com>
  * @license Copyright @me
  */
-import * as _i18n from 'principleware-tinymce-tailor/src/util/I18n';
+import * as _i18n from 'polpware-tinymce-tailor/src/util/I18n';
 
 export class I18n {
 
@@ -14,7 +14,7 @@ export class I18n {
     }
 
     /**
-     * Add a languge dictionary and set the current     
+     * Add a languge dictionary and set the current
      * code as the current language.
      */
     static add(code: string, items: any) {
@@ -27,7 +27,7 @@ export class I18n {
      * @function translate
      * @param {String} text A text to be translated.
      * @param {String} defaultText The default value.
-     * @returns {String} The translation for the given text. 
+     * @returns {String} The translation for the given text.
      */
     static translate(text: string, defaultText: string) {
         const value = _i18n.translate(text);
@@ -45,7 +45,7 @@ export class I18n {
     static recycleOthers(code: string) {
         const data = _i18n.data;
         const recycleList = [];
-        for (let key in data) {
+        for (const key in data) {
             // skip loop if the property is from prototype
             if (data.hasOwnProperty(key) && key !== code) {
                 recycleList.push(key);
@@ -53,7 +53,7 @@ export class I18n {
         }
         /*jslint plusplus: true */
         for (let i = 0; i < recycleList.length; i++) {
-            let k = recycleList[i];
+            const k = recycleList[i];
             delete data[k];
         }
     }

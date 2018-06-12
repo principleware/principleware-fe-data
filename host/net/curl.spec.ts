@@ -8,7 +8,7 @@ describe('loadJsonUriP', () => {
     beforeEach((done) => {
         originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
-        loadJsonUriP('https://principleware.github.io/principleware-fe-data/test.json').then((r) => {
+        loadJsonUriP('https://polpware.github.io/polpware-fe-data/test.json').then((r) => {
             value = true;
             done();
         }, (error) => {
@@ -35,7 +35,7 @@ describe('pingP', () => {
     beforeEach((done) => {
         originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
-        pingP('https://principleware.github.io/principleware-fe-data/index.html', {}).then((r) => {
+        pingP('https://polpware.github.io/polpware-fe-data/index.html', {}).then((r) => {
             value = true;
             done();
         }, (error) => {
@@ -63,7 +63,7 @@ describe('loadHtmlP', () => {
     beforeEach((done) => {
         originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
-        loadHtmlP('https://principleware.github.io/principleware-fe-data/index.html').then((r) => {
+        loadHtmlP('https://polpware.github.io/polpware-fe-data/index.html').then((r) => {
             value = true;
             done();
         }, (error) => {

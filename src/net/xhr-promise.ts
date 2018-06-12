@@ -3,24 +3,24 @@
  * Defines a class for performing XHR in an exception way and in a promise way
  */
 
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
-import * as XHR from 'principleware-tinymce-tailor/src/util/XHR';
+import * as XHR from 'polpware-tinymce-tailor/src/util/XHR';
 
-import { urlEncode } from 'principleware-fe-utilities/dist';
+import { urlEncode } from 'polpware-fe-utilities/dist';
 
 const _ = dependencies.underscore;
 
 export interface IXHRCtorOption {
     url: string;
     async?: boolean;
-    type?: 'POST' | 'GET',
-    content_type: 'application/x-www-form-urlencoded' | 'application/json' | '',
-    response_type: 'json' | 'blob' | 'document' | 'text' | 'arraybuffer' | '',
+    type?: 'POST' | 'GET';
+    content_type: 'application/x-www-form-urlencoded' | 'application/json' | '';
+    response_type: 'json' | 'blob' | 'document' | 'text' | 'arraybuffer' | '';
     requestheaders: any[];
-    scope?: any,
-    success_scope?: any,
-    error_scope?: any,
+    scope?: any;
+    success_scope?: any;
+    error_scope?: any;
     data?: any;
 }
 
@@ -37,7 +37,7 @@ const defaultOptions = {
 export function sendPromise(options: IXHRCtorOption): PromiseLike<any> {
     const settings = _.extend({}, defaultOptions, options);
 
-    let promise: PromiseLike<any> = new Promise((resolve, reject) => {
+    const promise: PromiseLike<any> = new Promise((resolve, reject) => {
         const xhrSettings = {
             url: settings.url,
             content_type: settings.content_type,

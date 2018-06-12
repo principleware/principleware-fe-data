@@ -4,7 +4,7 @@ import { AggregateCollection } from './aggregate-collection';
 describe('aggregate collection basic', () => {
 
     const dummyGenerator = {
-        hasMore: () => { return false },
+        hasMore: () => false,
         getNext: () => {
             const p = new Promise((resolved, rejected) => resolved([]));
             return p as PromiseLike<any>;
@@ -13,7 +13,7 @@ describe('aggregate collection basic', () => {
         }
     };
 
-    let c = new AggregateCollection(dummyGenerator);
+    const c = new AggregateCollection(dummyGenerator);
 
     it('ctor', () => {
         expect(c).toBeDefined();

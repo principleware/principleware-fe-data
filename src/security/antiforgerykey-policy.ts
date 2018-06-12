@@ -5,9 +5,9 @@
  * @author Xiaolong Tang <xxlongtang@gmail.com>
  * @license Copyright @me
  */
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
-import { liftWithGuard } from 'principleware-fe-utilities/dist';
+import { liftWithGuard } from 'polpware-fe-utilities/dist';
 
 import { IAntiForgeryKeyCtorOptions } from './interfaces';
 
@@ -27,7 +27,7 @@ function getTokenInternal(url: string, elementTag: string, inputField: string): 
         dataType: 'html text'
     }).then(function(data) {
         /*global DOMParser */
-        var doc, token, elm;
+        let doc, token, elm;
         token = '';
         doc = new DOMParser().parseFromString(data, 'text/html');
         if (elementTag) {
@@ -81,7 +81,7 @@ export class AntiForgeryKeyPolicy extends PolicyBase {
      * usually from local storage
      * @function readFrom
      * @param {Object} settings
-     * @returns {Object} 
+     * @returns {Object}
      */
     readFrom(settings) {
         this.token = settings.token;
@@ -90,7 +90,7 @@ export class AntiForgeryKeyPolicy extends PolicyBase {
     /**
      * Returns the object that are persistentable.
      * @function persistent
-     * @returns {Object} 
+     * @returns {Object}
      */
     persistent() {
         return {
@@ -105,13 +105,13 @@ export class AntiForgeryKeyPolicy extends PolicyBase {
      * @param {String}[url] The URL where the response from it may contain
      * the anti-forgery token; it is optional and used when you want to
      * overwrite the instance url.
-     * @returns {Promise} 
-     * @throws {} 
+     * @returns {Promise}
+     * @throws {}
      */
     getTokenInternal(): PromiseLike<string> {
-        let ret = getTokenInternal(this.url, this._elementTag, this.inputField());
-        let p = liftWithGuard(ret, function(token) {
-            var isGoodToken = token && token.length > 0;
+        const ret = getTokenInternal(this.url, this._elementTag, this.inputField());
+        const p = liftWithGuard(ret, function(token) {
+            const isGoodToken = token && token.length > 0;
             this._expired = !isGoodToken;
             return isGoodToken;
         });
@@ -121,7 +121,7 @@ export class AntiForgeryKeyPolicy extends PolicyBase {
     /**
      * Applys the anti-forgery key and its value to the given options.
      * @function apply
-     * @param {Object} options The options to be used for making a request. 
+     * @param {Object} options The options to be used for making a request.
      */
     applyTo(options) {
         const data = options.data;
@@ -131,14 +131,14 @@ export class AntiForgeryKeyPolicy extends PolicyBase {
     /**
      * Apply security policy to the given options.
      * @function applyToV2
-     * @param {Object} options A params field is expected. 
+     * @param {Object} options A params field is expected.
      */
     applyToV2(options) {
         options.params = options.params || {};
         options.params[this._antiForgeryKey] = this.token;
     }
 
-    // TODO: 
+    // TODO:
     applyToV3(options) {
     }
 

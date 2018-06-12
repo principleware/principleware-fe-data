@@ -6,11 +6,11 @@
  * @author Xiaolong Tang <xxlongtang@gmail.com>
  * @license Copyright @me
  */
-import * as externalInterface from 'principleware-fe-dependencies';
+import * as externalInterface from 'polpware-fe-dependencies';
 // as polyfill for localstorage
 // Do NOT use the LocalStorage as there is global variable which cannot be resolved
 // and which is defined only in TINYMCE.
-// import * as localStorage from 'principleware-tinymce-tailor/src/util/LocalStorage.js';
+// import * as localStorage from 'polpware-tinymce-tailor/src/util/LocalStorage.js';
 
 const globalLocalStorage = window.localStorage;
 
@@ -19,7 +19,7 @@ import {
     ITypeDef,
     tyArray,
     ok as isType
-} from 'principleware-fe-utilities/dist';
+} from 'polpware-fe-utilities/dist';
 
 const _ = externalInterface.underscore,
     find = _.find,
@@ -27,8 +27,8 @@ const _ = externalInterface.underscore,
     union = _.union;
 
 export interface IEntity {
-    Id: any
-};
+    Id: any;
+}
 
 /**
  * Reads the value of an entity by its key.
@@ -115,7 +115,7 @@ export function findEntityById(key: string, id): IEntity {
  * Removes an element of an entity of type array.
  * @function removeEntityById
  * @param {String} key The entity key.
- * @param {Number} id The identifier value for the element to be removed. 
+ * @param {Number} id The identifier value for the element to be removed.
  */
 export function removeEntityById(key: string, id) {
     const data = getEntity(key, tyArray) as Array<IEntity>;
@@ -146,11 +146,11 @@ export function insertOrUpdateEntity(key: string, entity: IEntity) {
  * Removes a group of entities by a given prefix.
  * @function cleanEntityGroup
  * @param {String} prefix The prefix of the keys of the entities to be removed. We organize entities somewhat hirarchly.
- * @returns {Boolean} 
+ * @returns {Boolean}
  */
 export function cleanEntityGroup(prefix: string): Array<string> {
     const keys = [];
-    for (let p in globalLocalStorage) {
+    for (const p in globalLocalStorage) {
         if (globalLocalStorage.hasOwnProperty(p) &&
             p.indexOf(prefix) === 0) {
             keys.push(p);

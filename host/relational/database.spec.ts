@@ -20,6 +20,22 @@ describe('database basic', () => {
         expect(db.getTable('offer')).toBeDefined();
     });
 
+});
+
+
+describe('database foreign key', () => {
+
+    const db = new RelationDatabase();
+
+    db.addTable({
+        name: 'product'
+    });
+
+    db.addTable({
+        name: 'offer'
+    });
+
+
     it('addForeignKey', () => {
 
         expect(() => {
@@ -63,22 +79,20 @@ describe('databse usecase', () => {
 
     const oM1 = offer.add(o1);
 
-    it('The foreign model of offer defined by productId is just product', () => {
-        expect(oM1.getForeignModel('productId')).toEqual(oP1);
-    });
 
     it('Product has no more reference after destroying offer', () => {
+
+        expect(oM1.getForeignModel('productId')).toEqual(oP1);
+
         oM1.destroyFromTable();
 
         expect(offer.get('o1')).toBeUndefined();
         expect(oP1.hasAnyReference()).toBeFalsy();
-    });
 
-    it('Product has no more reference after destroying offer', () => {
         oP1.destroyFromTable();
 
         expect(product.get('p1')).toBeUndefined();
-    });
 
+    });
 
 });

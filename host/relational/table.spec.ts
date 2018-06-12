@@ -7,11 +7,10 @@ describe('Table basic', () => {
         name: 'student'
     }, new DummyRecords());
 
-    it('get return null', () => {
-        expect(table.get('tom')).toBeUndefined();
-    });
-
     it('add', () => {
+
+        expect(table.get('tom')).toBeUndefined();
+
         table.add({
             id: 'tom',
             age: 33
@@ -33,6 +32,29 @@ describe('Table basic', () => {
         }]);
 
         expect(table.get('lulu').attributes.age).toBe(22);
+
+        const lulu = table.get('lulu');
+
+        expect(lulu).toBeDefined();
+
+        const f = lulu.getForeignModel('any');
+
+        expect(f).toBeDefined();
+
+    });
+
+});
+
+
+describe('Table destroy', () => {
+    const table = new RelationalTable({
+        name: 'student'
+    }, new DummyRecords());
+
+
+    table.add({
+        id: 'tom',
+        age: 33
     });
 
     it('destrory', () => {
@@ -43,16 +65,6 @@ describe('Table basic', () => {
         expect(table.get('tom')).toBeUndefined();
     });
 
-    it('getForeignModel', () => {
-        const lulu = table.get('lulu');
-
-        expect(lulu).toBeDefined();
-
-        const f = lulu.getForeignModel('any');
-
-        expect(f).toBeDefined();
-
-    });
 
 });
 
@@ -79,26 +91,22 @@ describe('Table relation', () => {
     it('addForeignRelation', () => {
         offer.addForeignRelation('productId', product);
         expect(offer.hasForeignRelation('productId')).toBeDefined();
-    });
 
-    it('addForeignRelation throw', () => {
         expect(() => {
             offer.addForeignRelation('productId', product);
         }).toThrowError();
-    });
 
+    });
 
     it('addReverseForeignRelation', () => {
         product.addReverseForeignRelation('productId', offer);
         expect(product.hasReverseForeignRelation('productId')).toBeDefined();
-    });
 
-    it('addReverseForeignRelation throw', () => {
         expect(() => {
             product.addReverseForeignRelation('productId', offer);
         }).toThrowError();
-    });
 
+    });
 
 });
 

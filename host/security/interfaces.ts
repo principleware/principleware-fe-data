@@ -49,7 +49,7 @@ export interface IPolicy {
     /**
      * The interface for retrieving the token from a remote server.
      * This method internally dispatches the call to another method
-     * and cache the token. 
+     * and cache the token.
      */
     getTokenP(): PromiseLike<string>;
 

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, } from '@ngrx/store';
+
+import { Observable } from 'rxjs';
 
 import { factory } from './factory';
 
@@ -18,15 +20,18 @@ import {
 export class CollectionStore<T extends ICollectionItem>
     extends CollectionAbstractStore<T> {
 
-    private _store: Store<ICollectionState<T>>;
+    private _store: Store<GenericState<T>>;
 
     constructor() {
         super();
-        const gstore = factory<T>();
-        this._store = gstore.select('collection');
+        this._store = factory<T>();
     }
 
-    public getState(): Store<ICollectionState<T>> {
+    public getStore(): Store<GenericState<T>> {
         return this._store;
+    }
+
+    public getState(): Observable<ICollectionState<T>> {
+        return this._store.select('collection');
     }
 }

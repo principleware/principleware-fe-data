@@ -1,13 +1,13 @@
 /**
  * @fileOverview
- * Provides a bunch of utilties on network communication. 
+ * Provides a bunch of utilties on network communication.
  * @name Curl.js
  * @module hypercom/util/Curl
  * @author Xiaolong Tang <xxlongtang@gmail.com>
  * @license Copyright @me
  */
-import * as dependencies from 'principleware-fe-dependencies';
-import * as tools from 'principleware-tinymce-tailor/src/util/Tools';
+import * as dependencies from 'polpware-fe-dependencies';
+import * as tools from 'polpware-tinymce-tailor/src/util/Tools';
 
 const $ = dependencies.jquery;
 
@@ -22,7 +22,7 @@ const $ = dependencies.jquery;
  * therefore, please use "then" to go future.
  * @function loadJsonUriP
  * @param {String} url
- * @returns {Promise} 
+ * @returns {Promise}
  */
 export function loadJsonUriP(url) {
     const deferred = $.ajax({
@@ -37,8 +37,8 @@ export function loadJsonUriP(url) {
  * Tests if a url is reachable.
  * @function pingP
  * @param {String} url The url to be tested.
- * @param {Object} [options]  A set of ajax parameters. 
- * @returns {Promise} 
+ * @param {Object} [options]  A set of ajax parameters.
+ * @returns {Promise}
  */
 export function pingP(url, options) {
     options = options || {};
@@ -51,7 +51,7 @@ export function pingP(url, options) {
  * parses it into a jquery object.
  * @function loadHtmlP
  * @param {String} url
- * @returns {Promise} 
+ * @returns {Promise}
  */
 export function loadHtmlP(url) {
     return $.ajax({

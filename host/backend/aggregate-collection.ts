@@ -4,12 +4,12 @@
  * Note that the caller is responsible for resetting underlying data providers
  * and even caching them.
  * Moreover, this class does not assume any knowledge about providerGenerator.
- * providerGenerator may generate the same thing again as again. 
+ * providerGenerator may generate the same thing again as again.
  * Also note that it is the provider generator's responsibilty for
  * preversing the state of each data provider.
  */
 
-import * as dependencies from 'principleware-fe-dependencies';
+import * as dependencies from 'polpware-fe-dependencies';
 
 import { IBackboneCollectionLike } from '../interfaces/backbone.interface';
 
@@ -45,7 +45,7 @@ export class AggregateCollection {
     }
 
     hasNextPage(): boolean {
-        // Case 1: The first time we request, we always have something. 
+        // Case 1: The first time we request, we always have something.
         if (this._workingProviders.length === 0) {
             return true;
         }
