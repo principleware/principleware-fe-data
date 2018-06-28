@@ -45,18 +45,18 @@ export function sendPromise(options: IXHRCtorOption): PromiseLike<any> {
             type: settings.type,
             data: settings.data,
             async: settings.async,
-            success: (output, xhr, settings) => {
+            success: (output, xhr, input) => {
                 resolve({
                     response: output,
                     xhr: xhr,
-                    settings: settings
+                    settings: input
                 });
             },
-            error: (output, xhr, settings) => {
+            error: (output, xhr, input) => {
                 reject({
                     error: output,
                     xhr: xhr,
-                    settings: settings
+                    settings: input
                 });
             },
             success_scope: settings.success_scope,
