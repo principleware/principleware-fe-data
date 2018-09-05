@@ -90,13 +90,13 @@ export class SlidingExpirationCache<T> implements ISlidingExpireCache<T> {
                 ngZone.runOutsideAngular(() => {
                     this._timeInterval = setInterval(() => {
                         this._cache.cleanup();
-                    }, scheduleInterval);
+                    }, scheduleInterval * 1000);
                 });
             }
             else {
                 this._timeInterval = setInterval(() => {
                     this._cache.cleanup();
-                }, scheduleInterval);
+                }, scheduleInterval * 1000);
             }
         } else {
             this._timeInterval = null;
