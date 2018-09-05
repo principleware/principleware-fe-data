@@ -26,7 +26,6 @@
 // sale, use or other dealings in this Software without prior written
 // authorization.
 
-
 import * as dependencies from 'polpware-fe-dependencies';
 
 import { MemoryBackend } from './memory-backend';
@@ -35,6 +34,7 @@ import { observableDecorator } from '../decorators/observable.decorator';
 import { IEventArgs } from '../interfaces/event-args.interface';
 import { IObservable } from '../interfaces/observable.interface';
 import { IJoinpoint } from '../interfaces/joint-point.interface';
+import { INgZoneLike } from '../interfaces/ng-zone-like.interface';
 
 import { ISlidingExpireCache } from './sliding-expire-cache.interface';
 
@@ -54,7 +54,7 @@ export class SlidingExpirationCache<T> implements ISlidingExpireCache<T> {
     private _timeInterval: any;
 
     constructor(private _defaultSeconds: number,
-        scheduleInterval?: number) {
+        scheduleInterval?: number, ngZone?: INgZoneLike) {
 
         const backend = new MemoryBackend<T>();
         this._cache = locache.locache.createCache({ storage: backend });
@@ -86,9 +86,18 @@ export class SlidingExpirationCache<T> implements ISlidingExpireCache<T> {
 
         // interval
         if (scheduleInterval) {
-            this._timeInterval = setInterval(() => {
-                this._cache.cleanup();
-            }, scheduleInterval);
+            if (ngZone) {
+                ngZone.runOutsideAngular(() => {
+                    this._timeInterval = setInterval(() => {
+                        this._cache.cleanup();
+                    }, scheduleInterval);
+                });
+            }
+            else {
+                this._timeInterval = setInterval(() => {
+                    this._cache.cleanup();
+                }, scheduleInterval);
+            }
         } else {
             this._timeInterval = null;
         }

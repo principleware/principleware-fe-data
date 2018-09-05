@@ -7,6 +7,7 @@ PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/interfaces/joint-point.interface.ts \
  $(SRC_DIR)/interfaces/observable.interface.ts \
  $(SRC_DIR)/interfaces/backbone.interface.ts \
+ $(SRC_DIR)/interfaces/ng-zone-like.interface.ts \
  $(SRC_DIR)/decorators/observable.decorator.ts \
  $(SRC_DIR)/cache/cache-backend.interface.ts \
  $(SRC_DIR)/cache/memory-backend.ts \
