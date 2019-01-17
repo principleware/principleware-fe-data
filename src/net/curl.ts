@@ -6,7 +6,7 @@
  * @author Xiaolong Tang <xxlongtang@gmail.com>
  * @license Copyright @me
  */
-import * as dependencies from 'polpware-fe-dependencies';
+import * as dependencies from '@polpware/fe-dependencies';
 import * as tools from 'polpware-tinymce-tailor/src/util/Tools';
 
 const $ = dependencies.jquery;

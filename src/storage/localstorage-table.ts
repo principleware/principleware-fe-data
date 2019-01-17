@@ -8,7 +8,7 @@
  * @license Copyright @me
  */
 
-import * as polpwareUtil from 'polpware-fe-utilities/dist';
+import * as polpwareUtil from '@polpware/fe-utilities/dist';
 
 import * as localStorageUtil from './localstorage-util';
 

@@ -4,7 +4,7 @@
  * in a nonintrusive manner.
  */
 
-import * as dependencies from 'polpware-fe-dependencies';
+import * as dependencies from '@polpware/fe-dependencies';
 
 const backbone = dependencies.backbone;
 const meld = dependencies.meld;

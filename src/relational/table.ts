@@ -4,8 +4,8 @@
  * This table is observable, i.e., any change on this table will be notified to its listeners.
  */
 
-import * as dependencies from 'polpware-fe-dependencies';
-import { pushArray } from 'polpware-fe-utilities/dist';
+import * as dependencies from '@polpware/fe-dependencies';
+import { pushArray } from '@polpware/fe-utilities/dist';
 import {
     IModelLike,
     IBackboneCollectionLike,
