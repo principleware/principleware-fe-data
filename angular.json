@@ -7,9 +7,11 @@
             "root": "",
             "sourceRoot": "host",
             "projectType": "application",
-            "prefix": "",            
-            "@schematics/angular:component": {
-                "styleext": "css"
+            "prefix": "",
+            "schematics": {            
+                "@schematics/angular:component": {
+                    "styleext": "css"
+                }
             },
             "architect": {
                 "build": {
@@ -44,6 +46,13 @@
                                 {
                                     "replace": "host/environments/environment.ts",
                                     "with": "host/environments/environment.prod.ts"
+                                }
+                            ],
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
                                 }
                             ]
                         }
@@ -90,7 +99,9 @@
                             "host/tsconfig.app.json",
                             "host/tsconfig.spec.json"
                         ],
-                        "exclude": []
+                        "exclude": [
+                            "**/node_modules/**"                            
+                        ]
                     }
                 }
             }
