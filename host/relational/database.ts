@@ -4,7 +4,7 @@
  * Also this database support cascading deletion and addition.
  */
 
-import * as dependencies from 'polpware-fe-dependencies';
+import * as dependencies from '@polpware/fe-dependencies';
 
 import { IRelationalTableOptions, IRelationalTable, RelationalTable } from './table';
 import { DummyRecords } from './dummy-records';

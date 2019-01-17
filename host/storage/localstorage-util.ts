@@ -6,7 +6,7 @@
  * @author Xiaolong Tang <xxlongtang@gmail.com>
  * @license Copyright @me
  */
-import * as externalInterface from 'polpware-fe-dependencies';
+import * as externalInterface from '@polpware/fe-dependencies';
 // as polyfill for localstorage
 // Do NOT use the LocalStorage as there is global variable which cannot be resolved
 // and which is defined only in TINYMCE.
@@ -19,7 +19,7 @@ import {
     ITypeDef,
     tyArray,
     ok as isType
-} from 'polpware-fe-utilities/dist';
+} from '@polpware/fe-utilities/dist';
 
 const _ = externalInterface.underscore,
     find = _.find,

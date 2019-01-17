@@ -26,7 +26,7 @@
 // sale, use or other dealings in this Software without prior written
 // authorization.
 
-import * as dependencies from 'polpware-fe-dependencies';
+import * as dependencies from '@polpware/fe-dependencies';
 
 import { MemoryBackend } from './memory-backend';
 import { observableDecorator } from '../decorators/observable.decorator';
