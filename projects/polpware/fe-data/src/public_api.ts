@@ -1,7 +1,40 @@
-/*
- * Public API Surface of fe-data
- */
 
-export * from './lib/fe-data.service';
-export * from './lib/fe-data.component';
-export * from './lib/fe-data.module';
+export * from './lib/relational/table';
+export * from './lib/relational/dummy-records';
+export * from './lib/relational/database';
+export * from './lib/relational/interfaces';
+export * from './lib/net/xhr-promise';
+export * from './lib/net/curl';
+export * from './lib/cache/sliding-expiration-cache';
+export * from './lib/cache/cache-backend.interface';
+export * from './lib/cache/memory-backend';
+export * from './lib/cache/sliding-expire-cache.interface';
+export * from './lib/security/open-id-policy';
+export * from './lib/security/policy-base';
+export * from './lib/security/null-policy';
+export * from './lib/security/user-credential';
+export * from './lib/security/antiforgerykey-policy';
+export * from './lib/security/oauth-token-ext-policy';
+export * from './lib/security/oauth-token-policy';
+export * from './lib/security/interfaces';
+export * from './lib/decorators/observable.decorator';
+export * from './lib/generic-store/collection-action-def';
+export * from './lib/generic-store/factory';
+export * from './lib/generic-store/collection-store.interface';
+export * from './lib/generic-store/collection.store';
+export * from './lib/generic-store/collection-abstract.store';
+export * from './lib/generic-store/reducers/collection.reducer';
+export * from './lib/generic-store/reducers/index';
+export * from './lib/backend/aggregate-collection';
+export * from './lib/backend/event-hub';
+export * from './lib/backend/provider';
+export * from './lib/backend/interfaces';
+export * from './lib/storage/localstorage-util';
+export * from './lib/storage/localstorage-table';
+export * from './lib/i18n/dict';
+export * from './lib/i18n/resource-loader';
+export * from './lib/interfaces/joint-point.interface';
+export * from './lib/interfaces/event-args.interface';
+export * from './lib/interfaces/observable.interface';
+export * from './lib/interfaces/backbone.interface';
+export * from './lib/interfaces/ng-zone-like.interface';
