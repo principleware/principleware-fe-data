@@ -1,7 +1,13 @@
 {
-  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../../dist/polpware/fe-data",
-  "lib": {
-    "entryFile": "src/public_api.ts"
-  }
+    "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+    "dest": "../../../dist/polpware/fe-data",
+    "lib": {
+        "entryFile": "src/public_api.ts",
+        "umdModuleIds": {
+            "polpware-tinymce-tailor/src/util/XHR": "polpware-tinymce-tailor/src/util/XHR",
+            "polpware-tinymce-tailor/src/util/Tools": "polpware-tinymce-tailor/src/util/Tools",
+            "polpware-tinymce-tailor/src/util/EventDispatcher": "polpware-tinymce-tailor/src/util/EventDispatcher",
+            "polpware-tinymce-tailor/src/util/I18n": "polpware-tinymce-tailor/src/util/I18n"
+        }
+    }
 }
