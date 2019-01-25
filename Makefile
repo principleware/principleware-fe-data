@@ -111,4 +111,10 @@ test:
 	echo $(PACKAGE_SOURCES)
 	echo $(PACKAGE_TARGETS)
 
+# deployment
 
+BuildDist := ./dist
+BuildDoc := ./docs
+DeployTarget := ./deployment/polpware-fe-data
+
+include Makefile.deployment
