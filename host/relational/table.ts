@@ -5,7 +5,7 @@
  */
 
 import * as dependencies from '@polpware/fe-dependencies';
-import { pushArray } from '@polpware/fe-utilities/dist';
+import { pushArray } from '@polpware/fe-utilities';
 import {
     IModelLike,
     IBackboneCollectionLike,

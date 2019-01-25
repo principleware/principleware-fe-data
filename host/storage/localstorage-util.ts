@@ -19,7 +19,7 @@ import {
     ITypeDef,
     tyArray,
     ok as isType
-} from '@polpware/fe-utilities/dist';
+} from '@polpware/fe-utilities';
 
 const _ = externalInterface.underscore,
     find = _.find,

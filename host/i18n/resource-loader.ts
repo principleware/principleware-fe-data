@@ -20,7 +20,7 @@
 
 
 import * as externalInterface from '@polpware/fe-dependencies';
-import { replace, lift, convert } from '@polpware/fe-utilities/dist';
+import { replace, lift, convert } from '@polpware/fe-utilities';
 
 import { ISlidingExpireCache } from '../cache/sliding-expire-cache.interface';
 

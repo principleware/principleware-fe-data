@@ -7,7 +7,7 @@
  */
 import * as dependencies from '@polpware/fe-dependencies';
 
-import { liftWithGuard } from '@polpware/fe-utilities/dist';
+import { liftWithGuard } from '@polpware/fe-utilities';
 
 import { IAntiForgeryKeyCtorOptions } from './interfaces';
 

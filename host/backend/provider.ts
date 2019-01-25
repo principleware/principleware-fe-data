@@ -9,7 +9,7 @@
 
 import * as dependencies from '@polpware/fe-dependencies';
 
-import { urlEncode } from '@polpware/fe-utilities/dist';
+import { urlEncode } from '@polpware/fe-utilities';
 
 import { SlidingExpirationCache } from '../cache/sliding-expiration-cache';
 

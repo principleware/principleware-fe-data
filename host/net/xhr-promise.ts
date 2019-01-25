@@ -7,7 +7,7 @@ import * as dependencies from '@polpware/fe-dependencies';
 
 import * as XHR from 'polpware-tinymce-tailor/src/util/XHR';
 
-import { urlEncode } from '@polpware/fe-utilities/dist';
+import { urlEncode } from '@polpware/fe-utilities';
 
 const _ = dependencies.underscore;
 

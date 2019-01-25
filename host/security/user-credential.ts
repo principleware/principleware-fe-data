@@ -8,7 +8,7 @@ import * as dependencies from '@polpware/fe-dependencies';
 
 import {
     isArray
-} from '@polpware/fe-utilities/dist';
+} from '@polpware/fe-utilities';
 
 import { observableDecorator } from '../decorators/observable.decorator';
 import { IObservable } from '../interfaces/observable.interface';

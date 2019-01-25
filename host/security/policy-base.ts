@@ -5,7 +5,7 @@
 
 import * as dependencies from '@polpware/fe-dependencies';
 
-import { lift } from '@polpware/fe-utilities/dist';
+import { lift } from '@polpware/fe-utilities';
 
 import { IPolicyCtorOptions, IPolicy } from './interfaces';
 

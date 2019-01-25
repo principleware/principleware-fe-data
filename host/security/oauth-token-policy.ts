@@ -5,7 +5,7 @@
 
 import * as dependencies from '@polpware/fe-dependencies';
 
-import { safeParseInt } from '@polpware/fe-utilities/dist';
+import { safeParseInt } from '@polpware/fe-utilities';
 import {
     IOAuthTokenPolicyCtorOptions,
     IOAuthToken,
