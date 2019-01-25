@@ -147,7 +147,13 @@
           "options": {
             "tsConfig": "projects/polpware/fe-data/tsconfig.lib.json",
             "project": "projects/polpware/fe-data/ng-package.json"
-          }
+          },
+            "configurations": {
+                "production": {
+                    "optimization": false,                  
+                    "aot": false
+                }
+            }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
