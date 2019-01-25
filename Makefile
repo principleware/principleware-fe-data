@@ -113,7 +113,7 @@ test:
 
 # deployment
 
-BuildDist := ./dist
+BuildDist := ./dist/polpware/fe-data
 BuildDoc := ./docs
 DeployTarget := ./deployment/polpware-fe-data
 
