@@ -1,0 +1,3 @@
+[submodule "deployment/polpware-fe-data"]
+	path = deployment/polpware-fe-data
+	url = https://github.com/polpware-frontend-modules/polpware-fe-data
