@@ -10,6 +10,14 @@
     "@angular-devkit/core" "7.2.2"
     rxjs "6.3.3"
 
+"@angular-devkit/architect@0.12.3":
+  version "0.12.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.12.3.tgz#93671d6cf47a3d75104753a4e4eac4cc81a4d39d"
+  integrity sha512-nRZkuQkUMW0HS/YbVjsEA5zPMgsL4Icd0nFV2gM9vAK5X+Vzn9gZyCL1ogkOsJNlEP6Rc/Pc6Q1PPO2p5NxPsQ==
+  dependencies:
+    "@angular-devkit/core" "7.2.3"
+    rxjs "6.3.3"
+
 "@angular-devkit/build-angular@~0.12.2":
   version "0.12.2"
   resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-0.12.2.tgz#4776f535633227848c4bda34b1e8f89574c33746"
@@ -64,6 +72,16 @@
   optionalDependencies:
     node-sass "4.10.0"
 
+"@angular-devkit/build-ng-packagr@~0.12.0":
+  version "0.12.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.12.3.tgz#21f7fa31bbb53ead6c21fffda44c01419dd1ff80"
+  integrity sha512-Uct5nuQt+TWGNNcgaXqDTbi/x08GJkNgCoEmJuA0F40vfPNxLiD0ocpryMIczQ8qWNlpCb6Kdv/GEvKB42GgQw==
+  dependencies:
+    "@angular-devkit/architect" "0.12.3"
+    "@angular-devkit/core" "7.2.3"
+    rxjs "6.3.3"
+    semver "5.5.1"
+
 "@angular-devkit/build-optimizer@0.12.2":
   version "0.12.2"
   resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.12.2.tgz#c35f4a67a2304a4deeb8e5d2e6c1edde0429c309"
@@ -87,6 +105,17 @@
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.2.2.tgz#f0daf3e24f0ce8105341118f4505c1db4e284ab0"
   integrity sha512-gDF8iXiPN870WuBMl7bCQ5+Qz5SjGL/qMcvP4hli5hkn+kMAhgG38ligUK1bbhPQUJ+Z/nSOEmyv8gLHO09SZg==
+  dependencies:
+    ajv "6.6.2"
+    chokidar "2.0.4"
+    fast-json-stable-stringify "2.0.0"
+    rxjs "6.3.3"
+    source-map "0.7.3"
+
+"@angular-devkit/core@7.2.3":
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.2.3.tgz#03fad4edcbfbf5b2f0d35a121eca45b1273b238a"
+  integrity sha512-NnN8O+97nJAxqD2zVTDlU8dSzrGCZmqYMDqDoRJJChYxAgmGwP4lhb+Jyi5D34tPxgKRTnjTOwC+G7D+WrXSDQ==
   dependencies:
     ajv "6.6.2"
     chokidar "2.0.4"
