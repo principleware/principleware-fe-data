@@ -42,7 +42,7 @@ function bump() {
 
 // bump versions on package/bower/manifest
     return src(['./package.json', './projects/polpware/fe-data/package.json'])
-        .pipe(bump({
+        .pipe(bumpversion({
             version: newVer
         }))
         .pipe(dest(function(x) {
