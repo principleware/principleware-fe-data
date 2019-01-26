@@ -1,7 +1,7 @@
 include Makefile.inc
 
-DST_DIR := src
-SRC_DIR := host
+DST_DIR := deployment/polpware-fe-data/src
+SRC_DIR := projects/polpware/fe-data/src/lib
 
 PACKAGE_SOURCES := $(SRC_DIR)/interfaces/event-args.interface.ts \
  $(SRC_DIR)/interfaces/joint-point.interface.ts \
@@ -110,6 +110,8 @@ publish: $(PACKAGE_TARGETS)
 test:
 	echo $(PACKAGE_SOURCES)
 	echo $(PACKAGE_TARGETS)
+
+.PHONY: publish test
 
 # deployment
 

@@ -38,7 +38,7 @@ push:
 	cd $(DeployTarget) && git push
 	echo "Push done"
 
-deploy: build copy doc push
+deploy: build copy doc publish push
 
 
 .PHONY: build copy doc push deploy
