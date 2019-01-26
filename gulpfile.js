@@ -5,10 +5,18 @@ const bumpversion = require('gulp-bump');
 // `fs` is used instead of require to prevent caching in watch (require caches)
 const fs = require('fs');
 
+function getVersion() {
+    return fs.readFileSync('./VERSION', 'utf8', function(err, data) {
+        return data;
+    });
+};
+
 function doc() {
+    const newVer = getVersion().trim();
+    
     return src(["projects/polpware/fe-data/src/lib/**/*.ts"])
         .pipe(typedoc({
-            name: "Polpware typescript data (3.0.1)",            
+            name: "Polpware typescript data " + newVer,            
             out: "docs/",            
             
             module: "commonjs",
@@ -30,12 +38,6 @@ function doc() {
 }
 
  
-function getVersion() {
-    return fs.readFileSync('./VERSION', 'utf8', function(err, data) {
-        return data;
-    });
-};
-
 function bump() {
 
     const newVer = getVersion().trim();
