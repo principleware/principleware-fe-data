@@ -11,7 +11,7 @@ build:
 
 copy:
 	echo "Clean old files ..."
-	cd $(DeployTarget) && find . -path ./.git -prune -o -name "README.md" -prune -o -type f -exec rm {} \;
+	cd $(DeployTarget) && find . -path ./.git -prune -o -name "README.md" -prune -o -name ".nojekyll" -prune -o -type f -exec rm {} \;
 	echo "Clean old files done"
 	echo "Copy files ..."
 	cp -r $(BuildDist)/* $(DeployTarget)/
