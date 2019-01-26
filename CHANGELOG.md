@@ -1,3 +1,6 @@
+## 3.0.2 (January 26, 2019)
+  - Scripts for bumping versions
+
 ## 0.1.0 (January 26, 2019)
   - Scripts for publishing src
   - Clean up
