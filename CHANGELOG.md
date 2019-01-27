@@ -1,3 +1,11 @@
+## 3.0.3 (January 27, 2019)
+  - Replace the use of data-flow with dataflow
+  - Upgrade packages
+  - Improve scripts for docs
+  - k
+  - Bump to 3.0.2
+  - Fix bump scripts
+
 ## 3.0.2 (January 26, 2019)
   - Scripts for bumping versions
 
