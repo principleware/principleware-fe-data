@@ -23,7 +23,7 @@ import {
 
 import { IBackboneOptions, IBackboneConfiguration } from './interfaces';
 
-const DataFlow = dependencies['data-flow'];
+const DataFlow = dependencies['dataflow'];
 const backbone = dependencies['backbone'];
 const _ = dependencies.underscore;
 
