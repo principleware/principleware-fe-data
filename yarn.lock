@@ -346,8 +346,8 @@
     webpack-sources "1.2.0"
 
 "@polpware/fe-dependencies@https://github.com/polpware-frontend-modules/polpware-fe-dependencies.git":
-  version "1.2.0"
-  resolved "https://github.com/polpware-frontend-modules/polpware-fe-dependencies.git#71233daae0df2c7f5201413befdd746929cc4eef"
+  version "1.3.2"
+  resolved "https://github.com/polpware-frontend-modules/polpware-fe-dependencies.git#cde6fc313065772762eb3b22125a7e03faff383f"
   dependencies:
     backbone "^1.3.3"
     backbone.paginator "^2.0.8"
