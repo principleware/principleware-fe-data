@@ -7,7 +7,8 @@
  * @license Copyright @me
  */
 import * as dependencies from '@polpware/fe-dependencies';
-import * as tools from 'polpware-tinymce-tailor/src/util/Tools';
+
+const tools = dependencies.Tools;
 
 const $ = dependencies.jquery;
 

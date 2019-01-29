@@ -1,5 +1,5 @@
 //
-// Author:: Tom Tang <principlewar@gmail.com>
+// Author:: Tom Tang <principleware@gmail.com>
 // Copyright:: Copyright (c) 2017, Xiaolong Tang
 //
 // Permission is hereby granted, free of charge, to any person obtaining
@@ -26,8 +26,9 @@
 // sale, use or other dealings in this Software without prior written
 // authorization.
 
+import * as dependencies from '@polpware/fe-dependencies';
 
-import * as EventDispatcher from 'polpware-tinymce-tailor/src/util/EventDispatcher';
+const EventDispatcher = dependencies.EventDispatcher;
 
 import { IEventArgs } from '../interfaces/event-args.interface';
 
@@ -46,7 +47,7 @@ const getEventDispatcher = function(obj) {
     return obj._eventDispatcher;
 };
 
-export function observableDecorator<T extends { new (...args: any[]) }>(constructor: T) {
+export function observableDecorator<T extends { new(...args: any[]) }>(constructor: T) {
     return class extends constructor {
 
         public fire<U>(name: string, evt: IEventArgs<U>, bubble?: boolean): IEventArgs<U> {

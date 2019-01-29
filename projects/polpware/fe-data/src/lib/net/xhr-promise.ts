@@ -5,7 +5,7 @@
 
 import * as dependencies from '@polpware/fe-dependencies';
 
-import * as XHR from 'polpware-tinymce-tailor/src/util/XHR';
+const XHR = dependencies.XHR;
 
 import { urlEncode } from '@polpware/fe-utilities';
 

@@ -5,7 +5,10 @@
  * @author Xiaolong Tang <xxlongtang@gmail.com>
  * @license Copyright @me
  */
-import * as _i18n from 'polpware-tinymce-tailor/src/util/I18n';
+
+import * as dependencies from '@polpware/fe-dependencies';
+
+const _i18n = dependencies.I18n;
 
 export class I18n {
 
