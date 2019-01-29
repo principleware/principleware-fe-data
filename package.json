@@ -1,6 +1,6 @@
 {
     "name": "@polpware/fe-data",
-    "version": "3.0.3",
+    "version": "3.0.4",
     "description": "A set of data construct, including memory relational database, ngrx store, memory cache, observable object, and so on",
     "main": "index.ts",
     "repository": {
