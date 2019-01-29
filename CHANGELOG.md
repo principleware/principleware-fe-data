@@ -1,3 +1,11 @@
+## 3.0.4 (January 29, 2019)
+  - Update package
+  - Fix the use of polpware-tinymce-tailor
+  - Update packages
+  - k
+  - Do not publish src in the deployment repo
+  - Bump package version
+
 ## 3.0.3 (January 27, 2019)
   - Replace the use of data-flow with dataflow
   - Upgrade packages
