@@ -36,6 +36,8 @@ export class OAuthTokenPolicy extends PolicyBase {
     protected refreshToken: string;
     public grantType: 'authorization_code' | 'refresh_token' | 'password' | 'client_credentials';
 
+    public response: any;
+
     constructor(settings: IOAuthTokenPolicyCtorOptions) {
         super(settings);
 
@@ -45,6 +47,8 @@ export class OAuthTokenPolicy extends PolicyBase {
         this.expiresIn = null;
         this.createdOn = null;
         this.refreshToken = '';
+
+        this.response = null;
     }
 
     /**
@@ -87,9 +91,14 @@ export class OAuthTokenPolicy extends PolicyBase {
             data: params,
             method: 'POST'
         }).then((resp) => {
+
+            // Put down the response
+            this.response = resp;
+
             this.createdOn = new Date().getTime();
             this.expiresIn = resp.expires_in;
             this.refreshToken = resp.refreshToken || '';
+            resp.scope && (this.scope = resp.scope);
             return (resp.access_token);
         });
     }
