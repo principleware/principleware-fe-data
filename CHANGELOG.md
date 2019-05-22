@@ -1,3 +1,7 @@
+## 3.1.0 (May 22, 2019)
+  - Take into account the scope and other information on processing the response from requesting a token
+  - Update package versions
+
 ## 3.0.4 (January 29, 2019)
   - Update package
   - Fix the use of polpware-tinymce-tailor
