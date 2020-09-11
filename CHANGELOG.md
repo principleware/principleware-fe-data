@@ -1,3 +1,10 @@
+## 9.0.0 (September 10, 2020)
+  - Upgrade to 9.0
+  - k
+  - Disable annotation warnings
+  - Fix an issue as the result of an old ng-packager
+  - Bump versions
+
 ## 3.1.0 (May 22, 2019)
   - Take into account the scope and other information on processing the response from requesting a token
   - Update package versions
