@@ -171,6 +171,12 @@ export class SlidingExpirationCache<T> implements ISlidingExpireCache<T> {
         return value;
     }
 
+    invalidate(key: string): void {
+        let keys: string[] = this._cache.keys() || [];
+        keys = keys.filter(a => a.indexOf(key) !== -1);
+        this.resetInternal(keys);
+    }
+
     rmOnExpireHandler(key: string, callback: (evt: IEventArgs<{}>) => IEventArgs<{}>): void {
         this.asObservable.off(this.onExpireEventName(key), callback);
     }
@@ -184,7 +190,11 @@ export class SlidingExpirationCache<T> implements ISlidingExpireCache<T> {
     }
 
     reset() {
-        const keys = this._cache.keys();
+        const keys = this._cache.keys() || [];
+        this.resetInternal(keys);
+    }
+
+    private resetInternal(keys: string[]) {
         keys.forEach((k) => {
             this.asObservable.off(this.onExpireEventName(k), null);
             originalRemove.call(this._cache, k);
