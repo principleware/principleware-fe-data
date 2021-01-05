@@ -1,3 +1,12 @@
+## 9.1.0 (January 05, 2021)
+  - Enhance sliding expiring cache to allow invalidating a single key or a group of keys
+  - k
+  - k
+  - k
+  - Version
+  - Bump version
+  - missed files
+
 ## 9.0.0 (September 10, 2020)
   - Upgrade to 9.0
   - k
