@@ -1,3 +1,8 @@
+## 9.1.2 (January 27, 2021)
+  - Fix dependencies
+  - k
+  - Bump version
+
 ## 9.1.1 (January 27, 2021)
   - Fix dependencies
   - k
