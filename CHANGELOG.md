@@ -1,3 +1,8 @@
+## 9.1.1 (January 27, 2021)
+  - Fix dependencies
+  - k
+  - Bump version
+
 ## 9.1.0 (January 05, 2021)
   - Enhance sliding expiring cache to allow invalidating a single key or a group of keys
   - k
