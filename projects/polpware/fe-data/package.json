@@ -6,8 +6,8 @@
         "@angular/core": "^9.0.0",
         "@ngrx/store": "^9.0.0",
         "@ngrx/store-devtools": "^9.0.0",
-        "@polpware/fe-dependencies": "https://github.com/polpware-frontend-modules/polpware-fe-dependencies.git",
-        "@polpware/fe-utilities": "https://github.com/polpware-frontend-modules/polpware-fe-utilities.git",
-        "polpware-tinymce-tailor": "https://github.com/polpware-frontend-modules/polpware-tinymce-tailor.git"
+        "@polpware/fe-dependencies": "^9.0.0",
+        "@polpware/fe-utilities": "^9.0.0",
+        "polpware-tinymce-tailor": "^4.7.0"
     }
 }
